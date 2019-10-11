@@ -2,7 +2,8 @@ export default class Game extends Phaser.Scene {
   constructor() {
     super({ key: 'main' });
   }
-  preload() {  
+  preload() { 
+     this.load.image('prueba','descarga.jpg')
   }
 
   create() {
