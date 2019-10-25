@@ -1,3 +1,4 @@
+import Player from './Player.js';
 export default class Game extends Phaser.Scene {
   constructor() {
     super({ key: 'main' });
@@ -7,7 +8,10 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
-    this.add.image(400, 300, 'personaje');
+    //this.add.image(400, 300, 'personaje');
+    let Personaje = new Player (this, 700, 500, "personaje");
+    this.add.existing(Personaje);
+    
     
   }
 
