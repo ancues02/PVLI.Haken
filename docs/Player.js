@@ -3,21 +3,31 @@ export default class Player extends Phaser.GameObjects.Sprite{
         super(scene, x, y, sprite);
 
         
-        //scene.physics.world.enable(this);
+        //.physics.world.enable(this);
+        //this.scene.physics.setGravityY(0);
+        scene.setBounce(0.2);
         scene.add.existing(this);
         //this.input.keyboard.on;
-        this.d=scene.input.keyboard.addKey("A");
-        this.a=scene.input.keyboard.addKey("D");
+        this.a=scene.input.keyboard.addKey("A");
+        this.d=scene.input.keyboard.addKey("D");
+        this.w=scene.input.keyboard.addKey("SPACE");
+       // this.setGravityY(0);
+        //this.setImmovable();
+
+        //this.keySpace=this.input.keyboard.addkey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        //console.log(keySpace);
     }
 
     
-    create(){
+    /*create(){
         console.log('cambio de posicion en Update')
 
         this.d=scene.input.keyboard.addKey("A");
         this.a=scene.input.keyboard.addKey("D");
+       // this.SPACE=scene.input.keyboard.addKey("SPACE");
+        this.keySpace=this.input.keyboard.addkey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-    }
+    }*/
     preUpdate(){ 
         
         //console.log('cambio de posicion');
@@ -30,10 +40,14 @@ export default class Player extends Phaser.GameObjects.Sprite{
            this.x++;
         }*/
          if(this.a.isDown){
-            this.x++;
-        }else if(this.d.isDown){
             this.x--;
+        }else if(this.d.isDown){
+            this.x++;
         }
+        else if(this.w.isDown){
+            this.y=this.y-5;
+        }
+        
 
     }
 
