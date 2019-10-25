@@ -3,14 +3,27 @@ export default class Player extends Phaser.GameObjects.Sprite{
         super(scene, x, y, sprite);
 
         
-        //.physics.world.enable(this);
+       // this.scene.physics.world.enable(this);
+        
         //this.scene.physics.setGravityY(0);
-        scene.setBounce(0.2);
+        //this.setBounce(0.2);
         scene.add.existing(this);
+        this.scene.physics.add.existing(this);
+        this.body.setCollideWorldBounds();
+        //this.scene.physics.add.sprite(x,y,sprite);
+        //this.scene.setBounce(0.2);
+        //this.scene.physics.add.setCollideWorldBounds(true);
+
         //this.input.keyboard.on;
+        this.dimension= true; //true -> lado izquierdo; 
+        this.jump = -300;
+        this.speed = 500;
+
         this.a=scene.input.keyboard.addKey("A");
         this.d=scene.input.keyboard.addKey("D");
-        this.w=scene.input.keyboard.addKey("SPACE");
+        this.space=scene.input.keyboard.addKey("SPACE");
+        this.k=scene.input.keyboard.addKey("K");
+        
        // this.setGravityY(0);
         //this.setImmovable();
 
@@ -39,13 +52,50 @@ export default class Player extends Phaser.GameObjects.Sprite{
            // this.ChangePos(this.mouse.worldX - this.x, this.mouse.worldY-this.y, 0.03);
            this.x++;
         }*/
-         if(this.a.isDown){
-            this.x--;
-        }else if(this.d.isDown){
-            this.x++;
+        //if(this.x > 0 && this.x < (this.x % 700) )
+        if(this.dimension){
+            if( this.a.isDown){
+                //if(this.x>0)
+                
+                this.body.setVelocityX(-this.speed);
+                
+            }else if(this.d.isDown){
+                //if(this.x< 700)
+                this.body.setVelocityX(this.speed);
+
+               
+            }
+            else this.body.setVelocityX(0);
         }
-        else if(this.w.isDown){
-            this.y=this.y-5;
+        else{
+            if( this.a.isDown){
+                this.body.setVelocityX(this.speed);
+                
+            }else if(this.d.isDown){
+                this.body.setVelocityX(-this.speed);
+
+            }
+            else this.body.setVelocityX(0);
+
+        }
+        
+         if(this.space.isDown && this.body.onFloor()){
+            this.body.setVelocityY(this.jump);
+        }
+        if(Phaser.Input.Keyboard.JustDown(this.k)){
+            
+            console.log(this.x);
+            this.dimension = !this.dimension;
+            if(this.x<=700 && this.x>=0){
+                this.x += 700;
+
+            }
+            else{
+                this.x -=700;
+            }
+            
+
+            console.log(this.x);
         }
         
 
