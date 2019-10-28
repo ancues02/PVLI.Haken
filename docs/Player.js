@@ -17,13 +17,12 @@ export default class Player extends Phaser.GameObjects.Sprite{
         //this.input.keyboard.on;
         this.dimension= true; //true -> lado izquierdo; 
         this.jump = -350;
-        this.speed = 500;
+        this.speed = 300;
 
         this.a=scene.input.keyboard.addKey("A");
         this.d=scene.input.keyboard.addKey("D");
         this.space=scene.input.keyboard.addKey("SPACE");
         this.k=scene.input.keyboard.addKey("K");
-        
        // this.setGravityY(0);
         //this.setImmovable();
 
@@ -32,15 +31,10 @@ export default class Player extends Phaser.GameObjects.Sprite{
     }
 
     
-    /*create(){
-        console.log('cambio de posicion en Update')
+    // create(){
+        
+    // }
 
-        this.d=scene.input.keyboard.addKey("A");
-        this.a=scene.input.keyboard.addKey("D");
-       // this.SPACE=scene.input.keyboard.addKey("SPACE");
-        this.keySpace=this.input.keyboard.addkey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-
-    }*/
     preUpdate(){ 
         
         //console.log('cambio de posicion');

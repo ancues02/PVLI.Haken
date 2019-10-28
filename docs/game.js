@@ -9,7 +9,8 @@ export default class Game extends Phaser.Scene {
      this.load.image('plataforma','platform.jfif');
      this.load.image('plataforma2','platformGirada.jfif');
      this.load.image('muroCentral','divCentral.png');
-     this.load.image('muroCentral','divCentral.png');
+
+    // this.load.image('muroCentral','divCentral.png');
      this.load.image('platHor','platHorizontal.png')
      //var platforms =this.physics.add.staticGroup();;
 
@@ -24,11 +25,21 @@ export default class Game extends Phaser.Scene {
     //platforms=this.physics.add.staticGroup();
     // let platforms;
     this.platforms =this.add.group();
-    new Plataformas (this,this.player, this.platforms,500, 600, "platHor");
+
     new Plataformas (this,this.player, this.platforms,150, 700, "platHor");
     new Plataformas (this,this.player, this.platforms,1250, 700, "platHor");
+    new Plataformas (this,this.player, this.platforms,500, 600, "platHor");
     new Plataformas (this,this.player, this.platforms,900, 600, "platHor");
-    new Plataformas (this,this.player, this.platforms,700, 400, "muroCentral");
+    new Plataformas (this,this.player, this.platforms,1250, 500, "platHor");
+    new Plataformas (this,this.player, this.platforms,150, 500, "platHor");
+    new Plataformas (this,this.player, this.platforms,900, 400, "platHor");
+    new Plataformas (this,this.player, this.platforms,500, 400, "platHor");
+    new Plataformas (this,this.player, this.platforms,150, 300, "platHor");
+    new Plataformas (this,this.player, this.platforms,1250, 300, "platHor");
+    new Plataformas (this,this.player, this.platforms,500, 200, "platHor");
+    new Plataformas (this,this.player, this.platforms,900, 200, "platHor");
+    
+    new Plataformas (this,this.player, this.platforms,700, 800, "muroCentral");
     // //platforms.create(400,568,'plataforma').setScale(2).refreshBody();
     //this.platforms.create(300, 400, 'plataforma');
     //this.platforms.create(500, 20, 'plataforma');
