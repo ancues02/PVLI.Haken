@@ -16,7 +16,7 @@ export default class Player extends Phaser.GameObjects.Sprite{
 
         //this.input.keyboard.on;
         this.dimension= true; //true -> lado izquierdo; 
-        this.jump = -300;
+        this.jump = -350;
         this.speed = 500;
 
         this.a=scene.input.keyboard.addKey("A");
