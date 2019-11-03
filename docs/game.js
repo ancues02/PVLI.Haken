@@ -1,5 +1,6 @@
 import Player from './Player.js';
 import Plataformas from './Plataformas.js';
+import PickMe from './PickMe.js';
 export default class Game extends Phaser.Scene {
   constructor() {
     super({ key: 'main' });
@@ -19,6 +20,7 @@ export default class Game extends Phaser.Scene {
   create() {
     //this.add.image(400, 300, 'plataforma');
     this.player = new Player (this, 500, 200, "personaje");
+    this.pickUp = new PickMe (this, 1000, 300, "pickUp");
     //this.add.existing(Personaje);
     //this.platforms = this.physics.add.staticGroup();
     //new Plataformas(this,this.player, this.platforms,500,400,90);

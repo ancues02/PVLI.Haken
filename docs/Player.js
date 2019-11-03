@@ -30,6 +30,10 @@ export default class Player extends Phaser.GameObjects.Sprite{
         //console.log(keySpace);
     }
 
+    addPoint(){
+        this.score++;
+        console.log(this.score);
+    }
     
     // create(){
         

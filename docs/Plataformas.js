@@ -2,8 +2,6 @@ export default class Player extends Phaser.GameObjects.Sprite{
     constructor(scene, player, platformGroup, x, y, key){
         super(scene, x, y, key);
         this.scene.add.existing(this);
-        //this.anchor.setTo(0.5);
-        //this.angle = 90; 
         this.scene.physics.add.existing(this,true);        //Añado comportamiento físico
         platformGroup.add(this);
         this.scene.physics.add.collider(this, player);
