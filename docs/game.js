@@ -1,6 +1,7 @@
-import Player from './Player.js';
+import Personaje from './Personaje.js';
 import Plataformas from './Plataformas.js';
 import PickMe from './PickMe.js';
+//import Prota from './Prota.js';
 export default class Game extends Phaser.Scene {
   constructor() {
     super({ key: 'main' });
@@ -20,13 +21,12 @@ export default class Game extends Phaser.Scene {
 
   create() {
     
-    //this.add.image(400, 300, 'plataforma');
-    this.player = new Player (this, 500, 200, "personaje");
-    //this.cameras.main.startFollow(this.player);
+    this.player = new Personaje (this, 500, 200, "personaje");
     this.pickUp = new PickMe (this, 1000, 300, "pickUp");
+    //this.prota = new Prota (this, 500, 200, "personaje");
+
     this.textScore = this.add.text(this.cameras.main.left, this.player.getY());
     this.textScore.setFontSize(25);
-    //this.add.existing(Personaje);
     //this.platforms = this.physics.add.staticGroup();
     //new Plataformas(this,this.player, this.platforms,500,400,90);
     //platforms=this.physics.add.staticGroup();
@@ -48,17 +48,13 @@ export default class Game extends Phaser.Scene {
     //platforms.create(400,568,'platform.jfif').setScale(2).refreshBody();
   }
   updateScore(){
-    //this.textScore.position(5,5)// = (this.cameras.main.left, this.player.getY());
 
-    //this.textScore.setY(this.cameras.main.y)
     this.textScore.y=(this.player.getY()-this.cameras.main.width/4);
     this.textScore.text = 'Score: ' + this.player.getScore();
 
 }
   update(time, delta) {  
     this.cameras.main.centerOnY( this.player.getY());
-    //this.textScore.x=(this.player.getX()-400);
-    //this.textScore.x=(this.player.getX()-this.cameras.main.height/2);
 
     this.updateScore();
   }
