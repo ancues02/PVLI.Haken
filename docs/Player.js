@@ -1,16 +1,15 @@
 export default class Player extends Phaser.GameObjects.Sprite{
     constructor(scene, x,y, sprite){
         super(scene, x, y, sprite);
-        
-
-        
+        this.startPos={x,y};
+        this.alive=true;//es por si muere poder resetear su posicion
        // this.scene.physics.world.enable(this);
         
         //this.scene.physics.setGravityY(0);
         //this.setBounce(0.2);
         scene.add.existing(this);
         this.scene.physics.add.existing(this);
-        this.body.setCollideWorldBounds();
+        this.body.collideWorldBounds=true;
         //this.scene.physics.add.sprite(x,y,sprite);
         //this.scene.setBounce(0.2);
         //this.scene.physics.add.setCollideWorldBounds(true);
@@ -51,8 +50,14 @@ return this.score;
     
     preUpdate(){ 
        
-
-       
+        if(this.y>=780){//esto es por si se cae, luego no será necesario
+               this.alive=false;
+        }
+       if(!this.alive){
+            this.y= this.startPos.y;
+            this.x=this.startPos.x;
+            this.alive=true;
+       }
         if(this.dimension){
             if( this.a.isDown){
                 //if(this.x>0)
