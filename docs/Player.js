@@ -1,6 +1,7 @@
 export default class Player extends Phaser.GameObjects.Sprite{
     constructor(scene, x,y, sprite){
         super(scene, x, y, sprite);
+        
 
         
        // this.scene.physics.world.enable(this);
@@ -23,6 +24,9 @@ export default class Player extends Phaser.GameObjects.Sprite{
         this.d=scene.input.keyboard.addKey("D");
         this.space=scene.input.keyboard.addKey("SPACE");
         this.k=scene.input.keyboard.addKey("K");
+        
+        //this.updateScore();
+
        // this.setGravityY(0);
         //this.setImmovable();
 
@@ -32,30 +36,23 @@ export default class Player extends Phaser.GameObjects.Sprite{
 
     addPoint(){
         this.score++;
+        //this.updateScore();
         console.log(this.score);
     }
+    getScore(){
+return this.score;
+    }
+    getX(){
+        return this.x;
+    }
+    getY(){
+        return this.y;
+    }
     
-    /*create(){
-        console.log('cambio de posicion en Update')
-
-        this.d=scene.input.keyboard.addKey("A");
-        this.a=scene.input.keyboard.addKey("D");
-       // this.SPACE=scene.input.keyboard.addKey("SPACE");
-        this.keySpace=this.input.keyboard.addkey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-
-    }*/
     preUpdate(){ 
-        
-        //console.log('cambio de posicion');
-        //this.right=this.input.keyboard.addKey("keyup_RIGHT");
-        //this.left=this.input.keyboard.addKey("LEFT");
+       
 
-       /* if(this.keyboard==="keydown_RIGHT"){
-            console.log('cambio de posicion')
-           // this.ChangePos(this.mouse.worldX - this.x, this.mouse.worldY-this.y, 0.03);
-           this.x++;
-        }*/
-        //if(this.x > 0 && this.x < (this.x % 700) )
+       
         if(this.dimension){
             if( this.a.isDown){
                 //if(this.x>0)
@@ -100,7 +97,7 @@ export default class Player extends Phaser.GameObjects.Sprite{
 
             console.log(this.x);
         }
-        
+
 
     }
 
