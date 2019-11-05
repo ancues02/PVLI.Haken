@@ -1,4 +1,5 @@
-import Personaje from './Personaje.js';
+//import Personaje from './Personaje.js';
+import Prota from './Prota.js';
 import Plataformas from './Plataformas.js';
 import PickMe from './PickMe.js';
 //import Prota from './Prota.js';
@@ -21,7 +22,7 @@ export default class Game extends Phaser.Scene {
 
   create() {
     
-    this.player = new Personaje (this, 500, 200, "personaje");
+    this.player = new Prota (this, 500, 200, 500, {x:0, y:0}, 0, -350, "personaje");
     this.pickUp = new PickMe (this, 1000, 300, "pickUp");
     //this.prota = new Prota (this, 500, 200, "personaje");
 
@@ -50,7 +51,7 @@ export default class Game extends Phaser.Scene {
   updateScore(){
 
     this.textScore.y=(this.player.getY()-this.cameras.main.width/4);
-    this.textScore.text = 'Score: ' + this.player.getScore();
+    this.textScore.text = 'Score: ' + this.player.getPoints();
 
 }
   update(time, delta) {  
