@@ -7,13 +7,13 @@ export default class Game extends Phaser.Scene {
     super({ key: 'main' });
   }
   preload() { 
-     this.load.image('personaje','favicon.png');
-     this.load.image('plataforma','platform.jfif');
-     this.load.image('plataforma2','platformGirada.jfif');
-     this.load.image('muroCentral','divCentral.png');
-     this.load.image('muroCentral','divCentral.png');
-     this.load.image('platHor','platHorizontal.png');
-     this.load.image('pickUp', 'SPRITE.jpg');
+     this.load.image('personaje','..//images//favicon.png');
+     this.load.image('plataforma','..//images//platform.jfif');
+     this.load.image('plataforma2','..//images//platformGirada.jfif');
+     this.load.image('muroCentral','..//images//divCentral.png');
+     this.load.image('muroCentral','..//images//divCentral.png');
+     this.load.image('platHor','..//images//platHorizontal.png');
+     this.load.image('pickUp', '..//images//SPRITE.jpg');
      //var platforms =this.physics.add.staticGroup();;
      
 
