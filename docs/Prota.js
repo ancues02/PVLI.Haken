@@ -7,7 +7,7 @@ export default class Prota extends Personaje {
         //this.lives=1;//es por si muere poder resetear su posicion
         //this.dimension= true; //true -> lado izquierdo; 
         this.jumpImpulse = jumpImpulse;
-
+        this.dimValue = 1; //1 == lado izq, -1 == lado derecho
         //teclas para manejo de eventos
         this.a=scene.input.keyboard.addKey("A");
         this.d=scene.input.keyboard.addKey("D");
@@ -20,24 +20,17 @@ export default class Prota extends Personaje {
         //this.updateScore();
         console.log(this.points);
     }
-    getScore(){
-        return this.score;
-    }
-    getX(){
-        return this.pos.x;
-    }
-    getY(){
-        return this.pos.y;
-    }
     start(){
         this.y= this.startPos.y;
         this.x=this.startPos.x;
         this.dimension=true;
         this.lives=1;
     }
-
+    changeDimValue(){
+        this.dimValue *= -1;
+    }
     preUpdate(){
-    if(this.pos.y >= 780){//esto es por si se cae, luego no será necesario
+    if(this.y >= 780){//esto es por si se cae, luego no será necesario
         this.lives = 0;
     }
     if(this.lives<=0){
@@ -71,31 +64,43 @@ export default class Prota extends Personaje {
     if( this.a.isDown){
         //if(this.x>0)
         //this.body.setVelocityX(-this.dimValue * this.speed)
-        super.horizontalMove(-1);
+        //super.horizontalMove(-1);
+        super.changeDirection(-1 * this.dimValue, 0);
+        super.horizontalMove2();
     }else if(this.d.isDown){
         //if(this.x< 700)
-        super.horizontalMove(1);     
+        //super.horizontalMove(1); 
+        super.changeDirection(1 * this.dimValue, 0);
+        super.horizontalMove2();    
+    }
+    else{
+        //super.horizontalMove(0);
+        super.stop();
     }
      
-      if(this.space.isDown && this.body.onFloor()){
-         this.body.setVelocityY(this.jump);
-     }
-     if(Phaser.Input.Keyboard.JustDown(this.k)){
+    //jump
+    if(this.space.isDown && this.body.onFloor()){
+        this.body.setVelocityY(this.jumpImpulse);
+    }
+    
+    //Cambio de dimension
+    if(Phaser.Input.Keyboard.JustDown(this.k)){
          
         console.log(this.x);
         //this.dimension = !this.dimension;
-        super.reverseDirection();
-        if(this.pos.x<=700 && this.pos.x>=0){
-        this.pos.x += 700;
+        this.changeDimValue();
+        //super.reverseDirection();
+        if(this.x<=700 && this.x>=0){
+            this.x += 700;
 
         }
         else{
-        this.pos.x -=700;
+        this.x -=700;
         }
         
 
-        console.log(this.x);
-     }
+        //console.log(this.x);
+    }
 
 
  }
