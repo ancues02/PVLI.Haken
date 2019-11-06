@@ -1,6 +1,6 @@
 import Personaje from './Personaje.js';  //esto esta aqui porque funciona
-export default class Prota extends Personaje {
-    constructor(scene, x,y, speed, dir, points, jumpImpulse, sprite){
+export default class Prota extends Personaje  {
+    constructor(scene, x,y, speed, dir, points, jumpImpulse, sprite,espada){
         super(scene,x,y, speed, dir, points, sprite);
         //this.scene.add.existing(this);
         this.startPos={x: x, y: y};
@@ -14,14 +14,19 @@ export default class Prota extends Personaje {
         this.space=scene.input.keyboard.addKey("SPACE");
         this.k=scene.input.keyboard.addKey("K");
 
-        /*this.container=this.scene.add.container(10,0);
-        this.sprite1= this.scene.add.sprite(x,y,sprite);
+        this.container=this.scene.add.container(200,300);
+        this.sprite1= this.scene.add.sprite(x,y,espada);
         this.container.add(this.sprite1);
-        this.container.setSize(128, 64);
-        this.scene.physics.add.existing(this.container);
+        //this.container.add(this);
+        //this.container.setSize(128, 64);
+        //this.scene.physics.add.existing(this.container);
         //this.physics.world.enable(this.container);
-        this.container.body.collideWorldBounds=true;*/
+        //this.container.body.collideWorldBounds=true;
+        
 
+    }
+    getContainer(){
+        return this.container;
     }
 
     addPoint(){
@@ -39,6 +44,7 @@ export default class Prota extends Personaje {
         this.dimValue *= -1;
     }
     preUpdate(){
+        
     if(this.y >= 780){//esto es por si se cae, luego no será necesario
         this.lives = 0;
     }
@@ -83,7 +89,7 @@ export default class Prota extends Personaje {
         super.changeDirection(1 * this.dimValue, 0);
         super.horizontalMove2();    
     }
-    else{
+    else {
         //super.horizontalMove(0);
         super.stop();
     }
@@ -111,7 +117,9 @@ export default class Prota extends Personaje {
 
         //console.log(this.x);
     }
-
+    //this.container.x=this.x;
+    //this.container.y=this.y;
+    //console.log("Mi posicion es " +this.x+"   y la del contenedor es: " +this.container.x + "    y la de la espada es:  "+this.sprite1.x);
 
  }
 
