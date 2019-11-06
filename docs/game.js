@@ -22,7 +22,18 @@ export default class Game extends Phaser.Scene {
 
   create() {
     
-    this.player = new Prota (this, 500, 200, 500, {x:1, y:0}, 0, -350, "personaje");
+    this.contenedor = new Phaser.GameObjects.Container(this, 500, 200); // Martian es un Sprite
+    this.b = this.add.sprite(50, 0,"pickUp");
+    this.add.existing(this.b);
+    //this.physics.add.existing(this.contenedor);
+
+  //this.contenedor.body.collideWorldBounds=true;
+    this.contenedor.add(this.b); // hacemos que `b` sea hijo de `a`
+   // this.b.y = 10; // relativo a `a`
+    this.add.existing(this.contenedor);
+
+    this.player = new Prota (this, 0, 0, 500, {x:1, y:0}, 0, -350, "personaje");
+    this.contenedor.add(this.player);
     this.pickUp = new PickMe (this, 1000, 300, "pickUp");
     //this.prota = new Prota (this, 500, 200, "personaje");
 
@@ -56,6 +67,14 @@ export default class Game extends Phaser.Scene {
 }
   update(time, delta) {  
     this.cameras.main.centerOnY( this.player.getY());
+    this.contenedor.x = this.player.getX();
+    this.contenedor.y = this.player.getY()-1;
+
+    console.log(this.player.x);
+    console.log(this.contenedor.x+"contenedor");
+    console.log(this.b.x);
+
+
 
     this.updateScore();
   }

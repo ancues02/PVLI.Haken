@@ -7,6 +7,7 @@ export default class Personaje extends Phaser.GameObjects.Sprite{
         //this.scene.physics.add.sprite(x,y,sprite);
         //this.scene.setBounce(0.2);
         //this.scene.physics.add.setCollideWorldBounds(true);
+        //this.sprite0= this.physics.add.sprite(-100,0,sprite);
 
         //this.input.keyboard.on; 
         

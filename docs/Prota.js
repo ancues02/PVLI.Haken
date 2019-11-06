@@ -13,6 +13,15 @@ export default class Prota extends Personaje {
         this.d=scene.input.keyboard.addKey("D");
         this.space=scene.input.keyboard.addKey("SPACE");
         this.k=scene.input.keyboard.addKey("K");
+
+        /*this.container=this.scene.add.container(10,0);
+        this.sprite1= this.scene.add.sprite(x,y,sprite);
+        this.container.add(this.sprite1);
+        this.container.setSize(128, 64);
+        this.scene.physics.add.existing(this.container);
+        //this.physics.world.enable(this.container);
+        this.container.body.collideWorldBounds=true;*/
+
     }
 
     addPoint(){
@@ -23,7 +32,7 @@ export default class Prota extends Personaje {
     start(){
         this.y= this.startPos.y;
         this.x=this.startPos.x;
-        this.dimension=true;
+        this.dimValue=1;
         this.lives=1;
     }
     changeDimValue(){
@@ -36,6 +45,7 @@ export default class Prota extends Personaje {
     if(this.lives<=0){
         this.start()
     }
+    //this.container.rotation += 0.02;
     //  if(this.dimension){
     //     if( this.a.isDown){
     //          //if(this.x>0)
