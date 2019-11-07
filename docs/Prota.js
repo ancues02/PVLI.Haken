@@ -8,13 +8,27 @@ export default class Prota extends Personaje {
         //this.dimension= true; //true -> lado izquierdo; 
         this.jumpImpulse = jumpImpulse;
         this.dimValue = 1; //1 == lado izq, -1 == lado derecho
+        // this.invokeDash = setInterval(() => {
+        //     this.body.setVelocityX(this.direction.x * this.dashSpeed);
+        // }, 100);
+        this.dashTime = 10;
+        this.dashStartTime = 0;
+        this.dashing = false;
+        this.dashSpeed = 20;
+        this.dashAvailble = true;
         //teclas para manejo de eventos
         this.a=scene.input.keyboard.addKey("A");
         this.d=scene.input.keyboard.addKey("D");
+        this.w=scene.input.keyboard.addKey("W");
+        this.s=scene.input.keyboard.addKey("S");
         this.space=scene.input.keyboard.addKey("SPACE");
         this.k=scene.input.keyboard.addKey("K");
+        this.j=scene.input.keyboard.addKey("J"); //tecla del dash
     }
-
+    dash(){
+        this.body.setVelocityX(this.direction.x * this.dashSpeed);
+        
+    }
     addPoint(){
         this.points++;
         //this.updateScore();
@@ -36,53 +50,74 @@ export default class Prota extends Personaje {
     if(this.lives<=0){
         this.start()
     }
-    //  if(this.dimension){
-    //     if( this.a.isDown){
-    //          //if(this.x>0)
-             
-    //          this.body.setVelocityX(-this.speed);
-             
-    //      }else if(this.d.isDown){
-    //          //if(this.x< 700)
-    //          this.body.setVelocityX(this.speed);
-
-            
-    //      }
-    //      else this.body.setVelocityX(0);
-    //  }
-    //  else{
-    //      if( this.a.isDown){
-    //          this.body.setVelocityX(this.speed);
-             
-    //      }else if(this.d.isDown){
-    //          this.body.setVelocityX(-this.speed);
-
-    //      }
-    //      else this.body.setVelocityX(0);
-
-    //  }
-    if( this.a.isDown){
-        //if(this.x>0)
-        //this.body.setVelocityX(-this.dimValue * this.speed)
-        //super.horizontalMove(-1);
-        super.changeDirection(-1 * this.dimValue, 0);
-        super.horizontalMove2();
-    }else if(this.d.isDown){
-        //if(this.x< 700)
-        //super.horizontalMove(1); 
-        super.changeDirection(1 * this.dimValue, 0);
-        super.horizontalMove2();    
+    if(this.dashing){
+        if(this.dashStartTime < this.dashTime){
+            //clearInterval()
+            //this.body.setVelocityX(this.direction.x * this.dashSpeed);
+            //this.body.setVelocityY(this.direction.y * this.dashSpeed);
+            this.x += this.direction.x * this.dashSpeed;
+            this.y += this.direction.y * this.dashSpeed;
+            this.dashStartTime++;
+            console.log("Hallome dasheando");
+        }
+        else{
+            this.dashing = false;
+            this.dashStartTime = 0;
+            setTimeout(() => { this.dashAvailble = true}, 3000)
+        }
     }
     else{
-        //super.horizontalMove(0);
-        super.stop();
-    }
-     
-    //jump
-    if(this.space.isDown && this.body.onFloor()){
-        this.body.setVelocityY(this.jumpImpulse);
+        if(this.w.isDown){
+            super.changeDirectionY(-1);
+        }
+        else if(this.s.isDown){
+            super.changeDirectionX(1);
+        }
+        else if(this.a.isDown){
+            //if(this.x>0)
+            //this.body.setVelocityX(-this.dimValue * this.speed)
+            //super.horizontalMove(-1);
+            super.changeDirectionX(-1 * this.dimValue);
+            super.horizontalMove();
+        }else if(this.d.isDown){
+            //if(this.x< 700)
+            //super.horizontalMove(1); 
+            super.changeDirectionX(1 * this.dimValue);
+            super.horizontalMove();    
+        }
+        else{
+            //super.horizontalMove(0);
+            this.changeDirectionX(0);
+            this.changeDirectionY(0);
+            super.stop();
+        }
+        
+        //jump
+        if(this.space.isDown && this.body.onFloor()){
+            this.body.setVelocityY(this.jumpImpulse);
+        }
+        //Dash
+        if(this.dashAvailble && Phaser.Input.Keyboard.JustDown(this.j)){
+            //this.dash();  
+            //this.body.setVelocityX(this.direction.x * this.dashSpeed);
+            //this.dash();
+            //setInterval(this.dash, 100);
+            //this.invokeDash.apply(this);
+            this.dashAvailble = false;
+            this.dashing = true;
+            /*setInterval(() => {
+                this.body.setVelocityX(this.direction.x * this.dashSpeed);
+                console.log("Hallome dasheando");
+                this.dashing = true;
+                this.dashStartTIme++;
+            }, 100);*/
+            //console.log("Hallome dasheando");
+        }
     }
     
+    // if (this.scene.physics.overlap(this, this.scene.platforms)){
+    //     clearInterval(this.dashTime);
+    // }
     //Cambio de dimension
     if(Phaser.Input.Keyboard.JustDown(this.k)){
          

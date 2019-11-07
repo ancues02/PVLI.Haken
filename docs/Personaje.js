@@ -36,16 +36,22 @@ export default class Personaje extends Phaser.GameObjects.Sprite{
         //console.log(keySpace);
     }
     
-    changeDirection(nx, ny){
-        this.direction = {x: nx, y:ny};
+    changeDirectionX(nx){
+        this.direction.x = nx;
         // this.direction.x = nx;
         // this.direction.y = ny;
+    }
+    changeDirectionY(ny){
+        this.direction.y = ny;
     }
     stop(){
         this.body.setVelocityX(0);
     }
-    horizontalMove2(){
+    horizontalMove(){
         this.body.setVelocityX(this.direction.x * this.speed);
+    }
+    verticalMove(){
+        this.body.setVelocityY(this.direction.y * this.speed);
     }
     //no lo uso
     // horizontalMove(inv){
