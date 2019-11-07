@@ -16,14 +16,26 @@ export default class Game extends Phaser.Scene {
      this.load.image('platHor','..//images//platHorizontal.png');
      this.load.image('pickUp', '..//images//SPRITE.jpg');
      this.load.image('espada', '..//images//espada.png');
+     this.load.image ('tile','..//images//Sprute.png')
 
+     this.load.tilemapTiledJSON("tilemap","..//Map//Mapa.json")
      //var platforms =this.physics.add.staticGroup();;
      
 
   }
 
   create() {
-    
+    this.map = this.make.tilemap(
+      {
+      key:'tilemap',
+      tileWidth:32,
+      tileHeight:32,
+      
+    });
+    this.map.addTilesetImage('TileMap','tile');
+    //let mappy = this.add.tilemap("mappy");
+    //let terrain= mappy.addTilesetImage("TileMap");
+    //let platLayer= mappy.createStaticLayer("plataformas", [terrain], 0,0);
     /*this.contenedor = new Phaser.GameObjects.Container(this, 500, 200); // Martian es un Sprite
     this.b = this.add.sprite(50, 0,"pickUp");
     this.add.existing(this.b);
@@ -68,7 +80,9 @@ export default class Game extends Phaser.Scene {
 
 }
   update(time, delta) {  
-    this.cameras.main.centerOnY( this.player.getY());
+    //dthis.cameras.main.centerOnY( this.player.getY());
+    console.log(this.map);
+
     //this.contenedor.x = this.player.getX();
     //this.contenedor.y = this.player.getY();
 
