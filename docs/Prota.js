@@ -22,7 +22,8 @@ export default class Prota extends Personaje  {
         //this.scene.physics.add.existing(this.container);
         //this.physics.world.enable(this.container);
         //this.container.body.collideWorldBounds=true;
-        
+        this.body.collideWorldBounds=false;
+
 
     }
     getContainer(){
@@ -45,7 +46,7 @@ export default class Prota extends Personaje  {
     }
     preUpdate(){
         
-    if(this.y >= 780){//esto es por si se cae, luego no será necesario
+    if(this.y >= 3100){//esto es por si se cae, luego no será necesario
         this.lives = 0;
     }
     if(this.lives<=0){

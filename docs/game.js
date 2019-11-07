@@ -16,11 +16,11 @@ export default class Game extends Phaser.Scene {
      this.load.image('platHor','..//images//platHorizontal.png');
      this.load.image('pickUp', '..//images//SPRITE.jpg');
      this.load.image('espada', '..//images//espada.png');
+     
+     //var platforms =this.physics.add.staticGroup();;
      this.load.image ('tile','..//images//Sprute.png')
 
      this.load.tilemapTiledJSON("tilemap","..//Map//Mapa.json")
-     //var platforms =this.physics.add.staticGroup();;
-     
 
   }
 
@@ -33,9 +33,11 @@ export default class Game extends Phaser.Scene {
       
     });
     this.map.addTilesetImage('TileMap','tile');
-    //let mappy = this.add.tilemap("mappy");
-    //let terrain= mappy.addTilesetImage("TileMap");
-    //let platLayer= mappy.createStaticLayer("plataformas", [terrain], 0,0);
+    this.map.createDynamicLayer('Plataformas','TileMap',0,0);
+    //Plataformas.setCollisionByProperty({solido:true});
+    //Plataformas.setCollisionByProperty({ colision: true });
+    //this.physics.add.collider(this.player,colision);
+    
     /*this.contenedor = new Phaser.GameObjects.Container(this, 500, 200); // Martian es un Sprite
     this.b = this.add.sprite(50, 0,"pickUp");
     this.add.existing(this.b);
@@ -46,7 +48,7 @@ export default class Game extends Phaser.Scene {
    // this.b.y = 10; // relativo a `a`
     this.add.existing(this.contenedor);*/
 
-    this.player = new Prota (this, 0, 0, 500, {x:1, y:0}, 0, -350, "personaje","espada");
+    this.player = new Prota (this, 50, 0, 500, {x:1, y:0}, 0, -350, "personaje","espada");
     //this.contenedor.add(this.player);
     this.pickUp = new PickMe (this, 1000, 300, "pickUp");
     //this.prota = new Prota (this, 500, 200, "personaje");
@@ -63,6 +65,9 @@ export default class Game extends Phaser.Scene {
     new Plataformas (this,this.player, this.platforms,1250, 700, "platHor");
     new Plataformas (this,this.player, this.platforms,900, 600, "platHor");
     new Plataformas (this,this.player, this.platforms,700, 400, "muroCentral");
+    new Plataformas (this,this.player, this.platforms,0, 410, "muroCentral");
+    new Plataformas (this,this.player, this.platforms,1400, 400, "muroCentral");
+
     // //platforms.create(400,568,'plataforma').setScale(2).refreshBody();
     //this.platforms.create(300, 400, 'plataforma');
     //this.platforms.create(500, 20, 'plataforma');
@@ -80,9 +85,11 @@ export default class Game extends Phaser.Scene {
 
 }
   update(time, delta) {  
-    //dthis.cameras.main.centerOnY( this.player.getY());
-    console.log(this.map);
+    this.cameras.main.centerOnY( this.player.getY());
+    console.log(this.cameras.main.height);
+    this.cameras.main.setSize(1400,500);
 
+    //this.cameras.main.setBounds(0,0,10,10);
     //this.contenedor.x = this.player.getX();
     //this.contenedor.y = this.player.getY();
 
