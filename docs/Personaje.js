@@ -3,7 +3,6 @@ export default class Personaje extends Phaser.GameObjects.Sprite{
         super(scene, x, y, sprite);   
         scene.add.existing(this);
         this.scene.physics.add.existing(this);
-        this.body.collideWorldBounds=true;
         //this.scene.physics.add.sprite(x,y,sprite);
         //this.scene.setBounce(0.2);
         //this.scene.physics.add.setCollideWorldBounds(true);

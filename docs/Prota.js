@@ -22,7 +22,7 @@ export default class Prota extends Personaje  {
         //this.scene.physics.add.existing(this.container);
         //this.physics.world.enable(this.container);
         //this.container.body.collideWorldBounds=true;
-        this.body.collideWorldBounds=false;
+        this.body.setMaxVelocity(500,800)
 
 
     }
@@ -45,7 +45,6 @@ export default class Prota extends Personaje  {
         this.dimValue *= -1;
     }
     preUpdate(){
-        this.body.setMaxVelocity(500,800)
 
     if(this.y >= 3100){//esto es por si se cae, luego no será necesario
         this.lives = 0;
