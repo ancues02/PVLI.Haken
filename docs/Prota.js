@@ -15,7 +15,7 @@ export default class Prota extends Personaje  {
         this.k=scene.input.keyboard.addKey("K");
 
         this.container=this.scene.add.container(200,300);
-        this.sprite1= this.scene.add.sprite(x,y,espada);
+        this.sprite1= this.scene.add.sprite(20,180,espada);
         this.container.add(this.sprite1);
         //this.container.add(this);
         //this.container.setSize(128, 64);
@@ -45,7 +45,8 @@ export default class Prota extends Personaje  {
         this.dimValue *= -1;
     }
     preUpdate(){
-        
+        this.body.setMaxVelocity(500,800)
+
     if(this.y >= 3100){//esto es por si se cae, luego no será necesario
         this.lives = 0;
     }
@@ -107,12 +108,12 @@ export default class Prota extends Personaje  {
         //this.dimension = !this.dimension;
         this.changeDimValue();
         //super.reverseDirection();
-        if(this.x<=700 && this.x>=0){
-            this.x += 700;
+        if(this.x<=750 && this.x>=0){
+            this.x += 750;
 
         }
         else{
-        this.x -=700;
+        this.x -=750;
         }
         
 
