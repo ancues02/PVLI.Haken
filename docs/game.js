@@ -1,7 +1,7 @@
 //import Personaje from './Personaje.js';
 import Prota from './Prota.js';
-import Plataformas from './Plataformas.js';
 import PickMe from './PickMe.js';
+import Enemy from './Enemy.js';
 //import Prota from './Prota.js';
 export default class Game extends Phaser.Scene {
   constructor() {
@@ -19,7 +19,8 @@ export default class Game extends Phaser.Scene {
      this.load.image('platHor','..//images//platHorizontal.png');
      this.load.image('pickUp', '..//images//SPRITE.jpg');
      this.load.image('espada', '..//images//espada.png');
-     
+     this.load.image('enemigo', '..//images//Enemy.png');
+
      //var platforms =this.physics.add.staticGroup();;
      this.load.image ('tile','..//images//Sprute.png')
 
@@ -28,7 +29,9 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
-    this.player = new Prota (this, 50, 0, 500, {x:1, y:0}, 0, -350, "personaje","espada");
+    this.player = new Prota (this, 50, 0, 500, {x:1, y:0}, 0, -350, 1,"personaje","espada");
+    this.enemigo = new Enemy (this, 500, 600, 500, {x:1, y:0}, 2, 1, 1,"enemigo");
+
     this.pickUp = new PickMe (this, 1000, 300, "pickUp");
     this.map = this.make.tilemap(
       {
@@ -41,7 +44,8 @@ export default class Game extends Phaser.Scene {
     this.layer=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
     this.layer.setCollisionByProperty({ colision: true });
     this.physics.add.collider(this.player,this.layer);
-    
+    this.physics.add.collider(this.enemigo,this.layer);
+
 
     //Plataformas.setCollisionByProperty({solido:true});
     //Plataformas.setCollisionByProperty({ colision: true });

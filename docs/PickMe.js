@@ -7,7 +7,7 @@ export default class PickMe extends Phaser.GameObjects.Sprite{
 
     preUpdate(){
         if (this.scene.physics.overlap(this.scene.player, this)){
-            this.scene.player.addPoint();
+            this.scene.player.addPoint(2);
             this.destroy();
         }
     }

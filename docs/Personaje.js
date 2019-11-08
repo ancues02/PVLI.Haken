@@ -1,5 +1,5 @@
 export default class Personaje extends Phaser.GameObjects.Sprite{
-    constructor(scene, x,y, speed, dir, points, sprite){
+    constructor(scene, x,y, speed, dir, points, lives,sprite){
         super(scene, x, y, sprite);   
         scene.add.existing(this);
         this.scene.physics.add.existing(this);
@@ -13,7 +13,7 @@ export default class Personaje extends Phaser.GameObjects.Sprite{
         //this.dimension= true; //true -> lado izquierdo; 
         //this.dimValue = 1;
         //this.startPos={x,y};
-        this.lives = 1;//es por si muere poder resetear su posicion / vida
+        this.lives = lives;//es por si muere poder resetear su posicion / vida
         //this.pos = {x: x, y: y};
         this.direction = dir;
         this.speed = speed;
@@ -35,7 +35,9 @@ export default class Personaje extends Phaser.GameObjects.Sprite{
         //this.keySpace=this.input.keyboard.addkey(Phaser.Input.Keyboard.KeyCodes.SPACE);
         //console.log(keySpace);
     }
-    
+    decreaseHealth(){
+        this.lives--;
+    }
     changeDirectionX(nx){
         this.direction.x = nx;
         // this.direction.x = nx;

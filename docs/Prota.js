@@ -1,7 +1,7 @@
 import Personaje from './Personaje.js';  //esto esta aqui porque funciona
 export default class Prota extends Personaje  {
-    constructor(scene, x,y, speed, dir, points, jumpImpulse, sprite,espada){
-        super(scene,x,y, speed, dir, points, sprite);
+    constructor(scene, x,y, speed, dir, points, jumpImpulse,lives, sprite,espada){
+        super(scene,x,y, speed, dir, points, lives,sprite);
         //this.scene.add.existing(this);
         this.startPos={x: x, y: y};
         //this.lives=1;//es por si muere poder resetear su posicion
@@ -24,7 +24,7 @@ export default class Prota extends Personaje  {
         this.space=scene.input.keyboard.addKey("SPACE");
         this.k=scene.input.keyboard.addKey("K");
         this.j=scene.input.keyboard.addKey("J"); //tecla del dash
-        
+
         this.container=this.scene.add.container(200,300);
         this.sprite1= this.scene.add.sprite(20,180,espada);
         this.container.add(this.sprite1);
@@ -37,11 +37,14 @@ export default class Prota extends Personaje  {
 
 
     }
+    isDashing(){
+        return this.dashing;
+    }
     getContainer(){
         return this.container;
     }
-    addPoint(){
-        this.points++;
+    addPoint(points){
+        this.points+=points;
         //this.updateScore();
         console.log(this.points);
     }
@@ -62,25 +65,12 @@ export default class Prota extends Personaje  {
     if(this.lives<=0){
         this.start()
     }
-    //this.container.rotation += 0.02;
-    //  if(this.dimension){
-    //     if( this.a.isDown){
-    //          //if(this.x>0)
-             
-    //          this.body.setVelocityX(-this.speed);
-             
-    //      }else if(this.d.isDown){
-    //          //if(this.x< 700)
-    //          this.body.setVelocityX(this.speed);
+
 
     if(this.dashing){
         if(this.dashStartTime < this.dashTime){
-            //clearInterval()
             
-            // this.x += this.direction.x * this.dashSpeed;
-            // this.y += this.direction.y * this.dashSpeed;
             this.dashStartTime++;
-            console.log("Hallome dasheando");
         }
         else{
             this.dashing = false;
@@ -95,23 +85,22 @@ export default class Prota extends Personaje  {
         }
         else if(this.s.isDown){
             super.changeDirectionY (1);
+            
         }
-        else if(this.a.isDown){
-            //if(this.x>0)
-            //this.body.setVelocityX(-this.dimValue * this.speed)
-            //super.horizontalMove(-1);
+        else{
+            this.changeDirectionY(0);
+        }
+        if(this.a.isDown){
+            
             super.changeDirectionX(-1 * this.dimValue);
             super.horizontalMove();
         }else if(this.d.isDown){
-            //if(this.x< 700)
-            //super.horizontalMove(1); 
+             
             super.changeDirectionX(1 * this.dimValue);
             super.horizontalMove();    
         }
         else{
-            //super.horizontalMove(0);
             this.changeDirectionX(0);
-            this.changeDirectionY(0);
             super.stop();
         }
         
@@ -123,12 +112,7 @@ export default class Prota extends Personaje  {
         if(this.dashAvailble && Phaser.Input.Keyboard.JustDown(this.j)){
            
            
-            //this.dash();  
-            // this.body.setVelocityX(this.direction.x * this.dashSpeed);
-            // this.body.setVelocityY(this.direction.y * this.dashSpeed);
-            //this.dash();
-            //setInterval(this.dash, 100);
-            //this.invokeDash.apply(this);
+            
             this.body.setVelocityX(this.direction.x * this.dashSpeed);
             this.body.setVelocityY(this.direction.y * this.dashSpeed);
             this.dashAvailble = false;
@@ -143,16 +127,11 @@ export default class Prota extends Personaje  {
         }
     }
     
-    // if (this.scene.physics.overlap(this, this.scene.platforms)){
-    //     clearInterval(this.dashTime);
-    // }
     //Cambio de dimension
     if(Phaser.Input.Keyboard.JustDown(this.k)){
          
         console.log(this.x);
-        //this.dimension = !this.dimension;
         this.changeDimValue();
-        //super.reverseDirection();
         if(this.x<=750 && this.x>=0){
             this.x += 750;
 
@@ -161,13 +140,8 @@ export default class Prota extends Personaje  {
         this.x -=750;
         }
         
-
-        //console.log(this.x);
     }
-    //this.container.x=this.x;
-    //this.container.y=this.y;
-    //console.log("Mi posicion es " +this.x+"   y la del contenedor es: " +this.container.x + "    y la de la espada es:  "+this.sprite1.x);
-
+    
  }
 
     
