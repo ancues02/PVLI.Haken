@@ -22,7 +22,7 @@ export default class Game extends Phaser.Scene {
 
   create() {
     
-    this.player = new Prota (this, 500, 200, 500, {x:1, y:0}, 0, -350, "personaje");
+    this.player = new Prota (this, 500, 200, 300, {x:1, y:0}, 0, -350, "personaje");
     this.pickUp = new PickMe (this, 1000, 300, "pickUp");
     //this.prota = new Prota (this, 500, 200, "personaje");
 

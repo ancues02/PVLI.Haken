@@ -14,7 +14,7 @@ export default class Prota extends Personaje {
         this.dashTime = 10;
         this.dashStartTime = 0;
         this.dashing = false;
-        this.dashSpeed = 20;
+        this.dashSpeed = 600;
         this.dashAvailble = true;
         //teclas para manejo de eventos
         this.a=scene.input.keyboard.addKey("A");
@@ -53,17 +53,17 @@ export default class Prota extends Personaje {
     if(this.dashing){
         if(this.dashStartTime < this.dashTime){
             //clearInterval()
-            //this.body.setVelocityX(this.direction.x * this.dashSpeed);
-            //this.body.setVelocityY(this.direction.y * this.dashSpeed);
-            this.x += this.direction.x * this.dashSpeed;
-            this.y += this.direction.y * this.dashSpeed;
+            
+            // this.x += this.direction.x * this.dashSpeed;
+            // this.y += this.direction.y * this.dashSpeed;
             this.dashStartTime++;
             console.log("Hallome dasheando");
         }
         else{
             this.dashing = false;
             this.dashStartTime = 0;
-            setTimeout(() => { this.dashAvailble = true}, 3000)
+            this.body.setVelocityY(0);
+            setTimeout(() => { this.dashAvailble = true}, 1000)
         }
     }
     else{
@@ -71,7 +71,7 @@ export default class Prota extends Personaje {
             super.changeDirectionY(-1);
         }
         else if(this.s.isDown){
-            super.changeDirectionX(1);
+            super.changeDirectionY (1);
         }
         else if(this.a.isDown){
             //if(this.x>0)
@@ -98,11 +98,16 @@ export default class Prota extends Personaje {
         }
         //Dash
         if(this.dashAvailble && Phaser.Input.Keyboard.JustDown(this.j)){
+           
+           
             //this.dash();  
-            //this.body.setVelocityX(this.direction.x * this.dashSpeed);
+            // this.body.setVelocityX(this.direction.x * this.dashSpeed);
+            // this.body.setVelocityY(this.direction.y * this.dashSpeed);
             //this.dash();
             //setInterval(this.dash, 100);
             //this.invokeDash.apply(this);
+            this.body.setVelocityX(this.direction.x * this.dashSpeed);
+            this.body.setVelocityY(this.direction.y * this.dashSpeed);
             this.dashAvailble = false;
             this.dashing = true;
             /*setInterval(() => {
