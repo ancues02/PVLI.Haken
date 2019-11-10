@@ -109,7 +109,7 @@ export default class Prota extends Personaje  {
             this.body.setVelocityY(this.jumpImpulse);
         }
         //Dash
-        if(this.dashAvailble && Phaser.Input.Keyboard.JustDown(this.j)){
+        if(this.dashAvailble && (this.direction.x != 0 || this.direction.y != 0) && Phaser.Input.Keyboard.JustDown(this.j)){
            
            
             
