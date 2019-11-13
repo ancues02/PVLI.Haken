@@ -24,7 +24,7 @@ export default class Reizen extends Enemy  {
                 this.changeDirectionX(1);
             }
         }
-        super.preUpdate();   
+        super.colisionPlayer();   
 
     }
 }
