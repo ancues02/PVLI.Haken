@@ -2,6 +2,7 @@
 import Prota from './Prota.js';
 import PickMe from './PickMe.js';
 import Rinne from './Rinne.js';
+import Reizen from './Reizen.js';
 import Zoppo from './Zoppo.js'
 //import Prota from './Prota.js';
 export default class Game extends Phaser.Scene {
@@ -32,7 +33,7 @@ export default class Game extends Phaser.Scene {
   create() {
     this.player = new Prota (this, 50, 0, 500, {x:1, y:0}, 0, -350, 1,"personaje","espada");
     this.enemigo = new Zoppo (this, 600, 200, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
-    this.enemigo1 = new Rinne (this, 230, 350, 500, {x:1, y:0}, 2, 1, 1,"enemigo");
+    this.enemigo1 = new Rinne (this, 230, 250, 500, {x:1, y:0}, 2, 1, 1,"enemigo");
 
     this.pickUp = new PickMe (this, 1000, 300, "pickUp");
     this.map = this.make.tilemap(
@@ -65,30 +66,10 @@ export default class Game extends Phaser.Scene {
 
     //this.contenedor.add(this.player);
     
-    //this.prota = new Prota (this, 500, 200, "personaje");
 
     this.textScore = this.add.text(this.cameras.main.left, this.player.getY());
     this.textScore.setFontSize(25);
     this.textScore.x=50;
-    
-    // this.platforms =this.add.group();
-    // new Plataformas (this,this.player, this.platforms,500, 600, "platHor");
-    // new Plataformas (this,this.player, this.platforms,150, 700, "platHor");
-    // new Plataformas (this,this.player, this.platforms,1250, 700, "platHor");
-    // new Plataformas (this,this.player, this.platforms,900, 600, "platHor");
-    // new Plataformas (this,this.player, this.platforms,700, 400, "muroCentral");
-    // new Plataformas (this,this.player, this.platforms,0, 410, "muroCentral");
-    // new Plataformas (this,this.player, this.platforms,1400, 400, "muroCentral");
-
-    // //platforms.create(400,568,'plataforma').setScale(2).refreshBody();
-    //this.platforms.create(300, 400, 'plataforma');
-    //this.platforms.create(500, 20, 'plataforma');
-    // platforms.create(700, 400, 'plataforma2');
-    //this.physics.add.collider(this.player, this.platforms)
-    //let Plataforma=new Plataformas (this, 700,600,"plataforma");
-    //platforms = this.physics.add.staticGroup();
-    //platform=this.physics.add.staticGroup();
-    //platforms.create(400,568,'platform.jfif').setScale(2).refreshBody();
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
 
   }

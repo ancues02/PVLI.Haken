@@ -13,7 +13,7 @@ export default class Rinne extends Enemy  {
             else this.direction.x=-1;
         } 
         //else {this.startMove=false;}
-        if(this.body.onFloor()===false || this.body.onWall()===true) {
+        if(this.startMove && (this.body.onFloor()===false || this.body.onWall()===true)) {
             if(this.direction.x===1){
                 this.x-=30;
                 this.changeDirectionX(-1);
@@ -23,6 +23,6 @@ export default class Rinne extends Enemy  {
                 this.changeDirectionX(1);
             }
         }
-        super.preUpdate();   
+        super.preUpdate();  
     }
 }

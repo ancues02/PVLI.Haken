@@ -3,8 +3,8 @@ export default class Enemy extends Personaje  {
     constructor(scene, x,y, speed, dir, points, damage, lives,  sprite){
         super(scene,x,y, speed, dir, points, lives, sprite);
         this.damage = damage;
-        this.scene.add.existing(this);
-        this.scene.physics.add.existing(this,true);
+        //this.scene.add.existing(this);
+        //this.scene.physics.add.existing(this,true);
     }
 
     preUpdate(){
