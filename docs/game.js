@@ -1,7 +1,8 @@
 //import Personaje from './Personaje.js';
 import Prota from './Prota.js';
 import PickMe from './PickMe.js';
-import Enemy from './Enemy.js';
+import Rinne from './Rinne.js';
+import Zoppo from './Zoppo.js'
 //import Prota from './Prota.js';
 export default class Game extends Phaser.Scene {
   constructor() {
@@ -30,7 +31,8 @@ export default class Game extends Phaser.Scene {
 
   create() {
     this.player = new Prota (this, 50, 0, 500, {x:1, y:0}, 0, -350, 1,"personaje","espada");
-    this.enemigo = new Enemy (this, 500, 600, 500, {x:1, y:0}, 2, 1, 1,"enemigo");
+    this.enemigo = new Zoppo (this, 600, 200, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
+    this.enemigo1 = new Rinne (this, 230, 350, 500, {x:1, y:0}, 2, 1, 1,"enemigo");
 
     this.pickUp = new PickMe (this, 1000, 300, "pickUp");
     this.map = this.make.tilemap(
@@ -45,11 +47,11 @@ export default class Game extends Phaser.Scene {
     this.layer.setCollisionByProperty({ colision: true });
     this.physics.add.collider(this.player,this.layer);
     this.physics.add.collider(this.enemigo,this.layer);
+    this.physics.add.collider(this.enemigo1,this.layer);
 
 
-    //Plataformas.setCollisionByProperty({solido:true});
-    //Plataformas.setCollisionByProperty({ colision: true });
-    //this.physics.add.collider(this.player,colision);
+
+    
     
     /*this.contenedor = new Phaser.GameObjects.Container(this, 500, 200); // Martian es un Sprite
     this.b = this.add.sprite(50, 0,"pickUp");
@@ -67,7 +69,7 @@ export default class Game extends Phaser.Scene {
 
     this.textScore = this.add.text(this.cameras.main.left, this.player.getY());
     this.textScore.setFontSize(25);
-    
+    this.textScore.x=50;
     
     // this.platforms =this.add.group();
     // new Plataformas (this,this.player, this.platforms,500, 600, "platHor");
@@ -93,6 +95,7 @@ export default class Game extends Phaser.Scene {
   updateScore(){
 
     this.textScore.y=(this.player.getY()-this.cameras.main.width/4+100);
+    if (this.textScore.y<=0)this.textScore.y=0;
     this.textScore.text = 'Score: ' + this.player.getPoints();
 
 }
