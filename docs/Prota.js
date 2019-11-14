@@ -15,7 +15,7 @@ export default class Prota extends Personaje  {
         this.dashStartTime = 0;
         this.dashing = false;
         this.dashSpeed = 600;
-        this.dashAvailble = true;
+        this.dashAvailable = true;
         //teclas para manejo de eventos
         this.a=scene.input.keyboard.addKey("A");
         this.d=scene.input.keyboard.addKey("D");
@@ -48,6 +48,14 @@ export default class Prota extends Personaje  {
         //this.updateScore();
         console.log(this.points);
     }
+    changeJumpImpulse(){
+        let aux = this.jumpImpulse;
+        this.jumpImpulse = 1.5 * this.jumpImpulse;
+        setTimeout(() => {this.jumpImpulse = aux}, 2000);
+    }
+    resetDash(){
+        this.dashAvailable = true;
+    }
     start(){
         this.y= this.startPos.y;
         this.x=this.startPos.x;
@@ -75,7 +83,7 @@ export default class Prota extends Personaje  {
             this.dashing = false;
             this.dashStartTime = 0;
             this.body.setVelocityY(0);
-            setTimeout(() => { this.dashAvailble = true}, 1000)
+            setTimeout(() => { this.dashAvailable = true}, 1000)
         }
     }
     else{
@@ -108,13 +116,13 @@ export default class Prota extends Personaje  {
             this.body.setVelocityY(this.jumpImpulse);
         }
         //Dash
-        if(this.dashAvailble && (this.direction.x != 0 || this.direction.y != 0) && Phaser.Input.Keyboard.JustDown(this.j)){
+        if(this.dashAvailable && (this.direction.x != 0 || this.direction.y != 0) && Phaser.Input.Keyboard.JustDown(this.j)){
            
            
             
             this.body.setVelocityX(this.direction.x * this.dashSpeed);
             this.body.setVelocityY(this.direction.y * this.dashSpeed);
-            this.dashAvailble = false;
+            this.dashAvailable = false;
             this.dashing = true;
             /*setInterval(() => {
                 this.body.setVelocityX(this.direction.x * this.dashSpeed);

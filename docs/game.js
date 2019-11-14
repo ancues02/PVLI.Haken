@@ -1,6 +1,9 @@
 //import Personaje from './Personaje.js';
 import Prota from './Prota.js';
-import PickMe from './PickMe.js';
+//import PickMe from './PickMe.js';
+import Coin from './Coin.js';
+import Spring from './Spring.js';
+import BateriaDash from './BateriaDash.js';
 import Rinne from './Rinne.js';
 import Reizen from './Reizen.js';
 import Zoppo from './Zoppo.js'
@@ -22,6 +25,8 @@ export default class Game extends Phaser.Scene {
      this.load.image('pickUp', '..//images//SPRITE.jpg');
      this.load.image('espada', '..//images//espada.png');
      this.load.image('enemigo', '..//images//Enemy.png');
+     this.load.image('muelle', '..//images//muelle.png');
+     this.load.image('zumito', '..//images//zumito.png');
 
      //var platforms =this.physics.add.staticGroup();;
      this.load.image ('tile','..//images//Sprute.png')
@@ -35,7 +40,10 @@ export default class Game extends Phaser.Scene {
     this.enemigo = new Zoppo (this, 600, 200, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 250, 500, {x:1, y:0}, 2, 1, 1,"enemigo");
 
-    this.pickUp = new PickMe (this, 1000, 300, "pickUp");
+    //this.coin = new Coin (this, 1000, 300, "pickUp");
+    //this.spring = new Spring(this, 1200, 500, "muelle");
+    //this.bateriaDash = new BateriaDash(this, 1000, 300, "zumito");
+
     this.map = this.make.tilemap(
       {
       key:'tilemap',
