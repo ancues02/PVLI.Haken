@@ -1,10 +1,53 @@
-export default class Personaje extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y){
-        super(scene,x,y,'favicon');
-        this.scene.add.existing(this);
+export default class Personaje extends Phaser.GameObjects.Sprite{
+    constructor(scene, x,y, speed, dir, points, lives,sprite){
+        super(scene, x, y, sprite);   
+        scene.add.existing(this);
+        this.scene.physics.add.existing(this);
+        this.lives = lives;//es por si muere poder resetear su posicion / vida
+        //this.pos = {x: x, y: y};
+        this.direction = dir;
+        this.speed = speed;
+        this.points = points;
+        
     }
-    point(){
-
+    decreaseHealth(){
+        this.lives--;
+    }
+    changeDirectionX(nx){
+        this.direction.x = nx;
+        // this.direction.x = nx;
+        // this.direction.y = ny;
+    }
+    changeDirectionY(ny){
+        this.direction.y = ny;
+    }
+    stop(){
+        this.body.setVelocityX(0);
+    }
+    horizontalMove(){
+        this.body.setVelocityX(this.direction.x * this.speed);
+    }
+    verticalMove(){
+        this.body.setVelocityY(this.direction.y * this.speed);
+    }
+    //no lo uso
+    // horizontalMove(inv){
+    //     this.body.setVelocityX(inv * this.direction.x * this.speed);
+    // }
+    dies(){
+        this.destroy();
     }
 
+    //getters
+    getPoints(){
+        return this.points;
+    }
+    getX(){
+        return this.x;
+    }
+    getY(){
+        return this.y;
+    }
+
+    
 }
