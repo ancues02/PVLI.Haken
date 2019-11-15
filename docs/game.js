@@ -16,22 +16,17 @@ export default class Game extends Phaser.Scene {
 
 
   preload() { 
-     this.load.image('personaje','..//images//favicon.png');
-     this.load.image('plataforma','..//images//platform.jfif');
-     this.load.image('plataforma2','..//images//platformGirada.jfif');
-     this.load.image('muroCentral','..//images//divCentral.png');
-     this.load.image('muroCentral','..//images//divCentral.png');
-     this.load.image('platHor','..//images//platHorizontal.png');
-     this.load.image('pickUp', '..//images//SPRITE.jpg');
-     this.load.image('espada', '..//images//espada.png');
-     this.load.image('enemigo', '..//images//Enemy.png');
-     this.load.image('muelle', '..//images//muelle.png');
-     this.load.image('zumito', '..//images//zumito.png');
+     this.load.image('personaje','./favicon.png');
+     this.load.image('pickUp', './SPRITE.jpg');
+     this.load.image('espada', './espada.png');
+     this.load.image('enemigo', './Enemy.png');
+     this.load.image('muelle', './muelle.png');
+     this.load.image('zumito', './zumito.png');
 
      //var platforms =this.physics.add.staticGroup();;
-     this.load.image ('tile','..//images//Sprute.png')
+     this.load.image ('tile','./Sprute.png')
 
-     this.load.tilemapTiledJSON("tilemap","..//Map//Mapa.json")
+     this.load.tilemapTiledJSON("tilemap","./Mapa.json")
 
   }
 
