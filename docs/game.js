@@ -89,7 +89,7 @@ export default class Game extends Phaser.Scene {
 
 }
   update(time, delta) {  
-    this.cameras.main.centerOnY( this.player.getY());
+    this.cameras.main.centerOnY( this.player.getY() + 100);
 
     //console.log(this.cameras.main.height);
     this.cameras.main.setSize(1500,600);
