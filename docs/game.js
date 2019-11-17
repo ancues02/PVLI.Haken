@@ -17,9 +17,10 @@ export default class Game extends Phaser.Scene {
 
   preload() { 
      this.load.image('personaje','./favicon.png');
-     this.load.image('pickUp', './SPRITE.jpg');
+     this.load.image('pickUp', './coin.png');
      this.load.image('espada', './espada.png');
      this.load.image('enemigo', './Enemy.png');
+     this.load.image('enemigo2', './enemy2.png');
      this.load.image('muelle', './muelle.png');
      this.load.image('zumito', './zumito.png');
 
@@ -32,12 +33,12 @@ export default class Game extends Phaser.Scene {
 
   create() {
     this.player = new Prota (this, 50, 0, 500, {x:1, y:0}, 0, -350, 1,"personaje","espada");
-    this.enemigo = new Zoppo (this, 600, 200, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
-    this.enemigo1 = new Rinne (this, 230, 250, 500, {x:1, y:0}, 2, 1, 1,"enemigo");
+    this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
+    this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1,"enemigo2");
 
-    //this.coin = new Coin (this, 1000, 300, "pickUp");
-    //this.spring = new Spring(this, 1200, 500, "muelle");
-    //this.bateriaDash = new BateriaDash(this, 1000, 300, "zumito");
+    this.coin = new Coin (this, 300, 600, "pickUp");
+    this.spring = new Spring(this, 1300, 650, "muelle");
+    //this.bateriaDash = new BateriaDash(this, 500, 960, "zumito");
 
     this.map = this.make.tilemap(
       {
@@ -77,14 +78,15 @@ export default class Game extends Phaser.Scene {
 
   }
   updateScore(){
-
-    this.textScore.y=(this.player.getY()-this.cameras.main.width/4+100);
+    //console.log(this.textScore.y);
+    this.textScore.y=(this.player.getY()-this.cameras.main.width/4+170);
     if (this.textScore.y<=0)this.textScore.y=0;
     this.textScore.text = 'Score: ' + this.player.getPoints();
 
 }
   update(time, delta) {  
     this.cameras.main.centerOnY( this.player.getY() + 100);
+    //console.log(this.player.y+" playern");
 
     //console.log(this.cameras.main.height);
     this.cameras.main.setSize(1500,600);
