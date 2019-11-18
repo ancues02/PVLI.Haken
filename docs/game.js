@@ -7,7 +7,7 @@ import BateriaDash from './BateriaDash.js';
 import Rinne from './Rinne.js';
 import Reizen from './Reizen.js';
 import Zoppo from './Zoppo.js'
-//import Prota from './Prota.js';
+import Menu from './Menu.js';
 export default class Game extends Phaser.Scene {
   constructor() {
     super({ key: 'main' });
@@ -75,6 +75,9 @@ export default class Game extends Phaser.Scene {
     this.textScore.setFontSize(25);
     this.textScore.x=50;
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
+
+    //this.menu=new Menu(this);
+
 
   }
   updateScore(){
