@@ -32,13 +32,13 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
-    this.player = new Prota (this, 50, 0, 500, {x:1, y:0}, 0, -350, 1,"personaje","espada");
+    this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada");
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1,"enemigo2");
 
     this.coin = new Coin (this, 300, 600, "pickUp");
     this.spring = new Spring(this, 1300, 650, "muelle");
-    //this.bateriaDash = new BateriaDash(this, 500, 960, "zumito");
+    this.bateriaDash = new BateriaDash(this, 500, 960, "zumito");
 
     this.map = this.make.tilemap(
       {
@@ -97,7 +97,6 @@ export default class Game extends Phaser.Scene {
     //this.cameras.main.setBounds(0,0,10,10);
     //this.contenedor.x = this.player.getX();
     //this.contenedor.y = this.player.getY();
-
     /*console.log(this.player.x);
     console.log(this.contenedor.x+"contenedor");
     console.log(this.b.x);*/

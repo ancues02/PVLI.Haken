@@ -11,6 +11,7 @@ export default class Prota extends Personaje  {
         // this.invokeDash = setInterval(() => {
         //     this.body.setVelocityX(this.direction.x * this.dashSpeed);
         // }, 100);
+        this.scene=scene;
         this.dashTime = 10;
         this.dashStartTime = 0;
         this.dashing = false;
@@ -27,7 +28,7 @@ export default class Prota extends Personaje  {
 
         this.container=this.scene.add.container(200,300);
         this.sprite1= this.scene.add.sprite(20,180,espada);
-        this.container.add(this.sprite1);
+        //this.container.add(this.sprite1);
         //this.container.add(this);
         //this.container.setSize(128, 64);
         //this.scene.physics.add.existing(this.container);
@@ -83,7 +84,7 @@ export default class Prota extends Personaje  {
             this.dashing = false;
             this.dashStartTime = 0;
             this.body.setVelocityY(0);
-            setTimeout(() => { this.dashAvailable = true}, 1000)
+            setTimeout(() => { this.dashAvailable = true}, 1500)
         }
     }
     else{
