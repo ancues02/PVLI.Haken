@@ -57,12 +57,7 @@ export default class Prota extends Personaje  {
     resetDash(){
         this.dashAvailable = true;
     }
-    start(){
-        this.y= this.startPos.y;
-        this.x=this.startPos.x;
-        this.dimValue=1;
-        this.lives=1;
-    }
+    
     changeDimValue(){
         this.dimValue *= -1;
     }
@@ -71,7 +66,7 @@ export default class Prota extends Personaje  {
         this.lives = 0;
     }
     if(this.lives<=0){
-        this.start()
+        this.scene.start('Game')
     }
 
 
