@@ -63,7 +63,7 @@ export default class Game extends Phaser.Scene {
     this.physics.add.collider(this.player,this.layer);
     this.physics.add.collider(this.enemigo,this.layer);
     this.physics.add.collider(this.enemigo1,this.layer);
-
+    this.time = 0;
 
 
     
@@ -84,17 +84,35 @@ export default class Game extends Phaser.Scene {
     this.textScore = this.add.text(this.cameras.main.left, this.player.getY());
     this.textScore.setFontSize(25);
     this.textScore.x=50;
+   
+    this.textDepth = this.add.text(this.cameras.main.left, this.player.getY());
+    this.textDepth.setFontSize(25);
+    this.textDepth.x=50;
+    
+    this.textTime = this.add.text(this.cameras.main.left, this.player.getY());
+    this.textTime.setFontSize(25);
+    this.textTime.x=50;
+
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
 
 
-
+    setInterval(()=>this.time++, 1000);
   }
+  
   updateScore(){
     //console.log(this.textScore.y);
     this.textScore.y=(this.player.getY()-this.cameras.main.width/4+170);
     if (this.textScore.y<=0)this.textScore.y=0;
     this.textScore.text = 'Score: ' + this.player.getPoints();
 
+    this.textDepth.y=(this.player.getY()-this.cameras.main.width/4+200);
+    if (this.textDepth.y<=30)this.textDepth.y=30;
+    this.textDepth.text = 'Depth: ' + Math.round(this.player.y);
+    
+    this.textTime.y=(this.player.getY()-this.cameras.main.width/4+230);
+    if (this.textTime.y<=60)this.textTime.y=60;
+    this.textTime.text = 'Time: ' + this.time;
+   
 }
 managePause() {
   //console.log(this.scene.isActive('Game'));
@@ -109,6 +127,8 @@ managePause() {
 }
 
 changeScene(nameScene){
+  this.scene.stop();
+
   this.scene.start(nameScene);
 
 }
