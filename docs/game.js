@@ -7,7 +7,7 @@ import BateriaDash from './BateriaDash.js';
 import Rinne from './Rinne.js';
 import Reizen from './Reizen.js';
 import Zoppo from './Zoppo.js'
-import Menu from './Menu.js';
+import Shield from './Shield.js';
 export default class Game extends Phaser.Scene {
   constructor() {
     super( 'Game' );
@@ -22,8 +22,9 @@ export default class Game extends Phaser.Scene {
   //     strokeThickness: 5, 
   //     align: "center"
   // };
-     this.load.image('personaje','./favicon.png');
-     this.load.image('pickUp', './coin.png');
+  this.load.image('personaje','./favicon.png');
+  this.load.image('shield','./shield.png');
+  this.load.image('pickUp', './coin.png');
      this.load.image('espada', './espada.png');
      this.load.image('enemigo', './Enemy.png');
      this.load.image('enemigo2', './enemy2.png');
@@ -38,13 +39,14 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
+    this.escape2=this.input.keyboard.addKey("Q"); //tecla del dash
 
-    this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
-    this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada");
+    //this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
+    this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","shield");
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1,"enemigo2");
 
-    this.coin = new Coin (this, 300, 600, "pickUp");
+    this.shield = new Shield (this, 300, 600, "shield");
     this.spring = new Spring(this, 1300, 650, "muelle");
     this.bateriaDash = new BateriaDash(this, 500, 960, "zumito");
 
@@ -102,12 +104,12 @@ managePause() {
   this.scene.pause();
   //console.log(this.scene.isPaused('Game'));
 
-  this.scene.start('Pause');
+  this.scene.run('Pause');
 
 }
 
-start(scene){
-  this.scene.start(scene);
+changeScene(nameScene){
+  this.scene.start(nameScene);
 
 }
 
@@ -145,8 +147,8 @@ start(scene){
       this.updateScore();
     
     
-    if(this.escape.isDown){
-      
+    if(this.escape2.isDown){
+      console.log("hols");
       this.managePause();
 
     }

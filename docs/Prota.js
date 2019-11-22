@@ -1,17 +1,19 @@
 import Personaje from './Personaje.js';  //esto esta aqui porque funciona
 export default class Prota extends Personaje  {
-    constructor(scene, x,y, speed, dir, points, jumpImpulse,lives, sprite,espada){
+    constructor(scene, x,y, speed, dir, points, jumpImpulse,lives, sprite,espada,shield){
         super(scene,x,y, speed, dir, points, lives,sprite);
         //this.scene.add.existing(this);
         this.startPos={x: x, y: y};
+        this.shield=shield;//escudo, protege de un golpe
         //this.lives=1;//es por si muere poder resetear su posicion
         //this.dimension= true; //true -> lado izquierdo; 
         this.jumpImpulse = jumpImpulse;
         this.dimValue = 1; //1 == lado izq, -1 == lado derecho
+        this.damageCD = true;//es para controlar que los enemigos no hagan daño todo el rato
         // this.invokeDash = setInterval(() => {
         //     this.body.setVelocityX(this.direction.x * this.dashSpeed);
         // }, 100);
-        this.scene=scene;
+        //this.nameScene=scene;
         this.dashTime = 10;
         this.dashStartTime = 0;
         this.dashing = false;
@@ -49,6 +51,20 @@ export default class Prota extends Personaje  {
         //this.updateScore();
         console.log(this.points);
     }
+    decreaseHealth(){
+        if(this.damageCD)
+        {
+            super.decreaseHealth();
+            if(this.lives === 1){
+                this.damageCD = false;
+                setTimeout(()=>this.damageCD = true,2000); //desactivar escudo
+            }
+            else if(this.lives<=0){
+                this.scene.changeScene('Game')
+            }
+        }
+        
+    }
     changeJumpImpulse(){
         let aux = this.jumpImpulse;
         this.jumpImpulse = 1.5 * this.jumpImpulse;
@@ -57,17 +73,19 @@ export default class Prota extends Personaje  {
     resetDash(){
         this.dashAvailable = true;
     }
-    
+    shielded(){
+        if(this.lives === 1)this.lives++;
+     //activar el shield del contenedor
+    }
     changeDimValue(){
         this.dimValue *= -1;
     }
     preUpdate(){
     if(this.y >= 3100){//esto es por si se cae, luego no será necesario
-        this.lives = 0;
+        this.scene.changeScene('Game')
+        
     }
-    if(this.lives<=0){
-        this.scene.start('Game')
-    }
+    
 
 
     if(this.dashing){
