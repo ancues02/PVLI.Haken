@@ -8,7 +8,6 @@ export default class PickMe extends Phaser.GameObjects.Sprite{
     }
     //Esto es mas comodo creo hacerlo con componentes, o de otra forma xd
     preUpdate(){
-        console.log(this.activePower);
         if (this.scene.physics.overlap(this.scene.player, this)){
            // this.scene.player.addPoint(2);
             this.activePower=true;

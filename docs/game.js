@@ -8,6 +8,7 @@ import Rinne from './Rinne.js';
 import Reizen from './Reizen.js';
 import Zoppo from './Zoppo.js'
 import Shield from './Shield.js';
+//import Contenerdor from './Contenedor.js';
 export default class Game extends Phaser.Scene {
   constructor() {
     super( 'Game' );
@@ -39,17 +40,6 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
-    //this.escape2=this.input.keyboard.addKey("Q"); //tecla del dash
-
-    this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
-    this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","shield");
-    this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
-    this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1,"enemigo2");
-
-    this.shield = new Shield (this, 300, 600, "shield");
-    this.spring = new Spring(this, 1300, 650, "muelle");
-    this.bateriaDash = new BateriaDash(this, 500, 960, "zumito");
-
     this.map = this.make.tilemap(
       {
       key:'tilemap',
@@ -59,6 +49,18 @@ export default class Game extends Phaser.Scene {
     });
     this.map.addTilesetImage('TileMap','tile');
     this.layer=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
+    //this.escape2=this.input.keyboard.addKey("Q"); //tecla del dash
+//this.player=new Contenerdor(this,400,200,"personaje","espada","shield");
+    this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
+    this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","shield");
+    this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
+    this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1,"enemigo2");
+
+    this.shield = new Shield (this, 300, 600, "shield");
+    this.spring = new Spring(this, 1300, 650, "muelle");
+    this.bateriaDash = new BateriaDash(this, 500, 960, "zumito");
+
+    
     this.layer.setCollisionByProperty({ colision: true });
     this.physics.add.collider(this.player,this.layer);
     this.physics.add.collider(this.enemigo,this.layer);
