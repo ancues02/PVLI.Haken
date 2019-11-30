@@ -39,9 +39,9 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {
-    this.escape2=this.input.keyboard.addKey("Q"); //tecla del dash
+    //this.escape2=this.input.keyboard.addKey("Q"); //tecla del dash
 
-    //this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
+    this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
     this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","shield");
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1,"enemigo2");
@@ -96,7 +96,6 @@ export default class Game extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
 
 
-    setInterval(()=>this.time++, 1000);
   }
   
   updateScore(){
@@ -111,7 +110,7 @@ export default class Game extends Phaser.Scene {
     
     this.textTime.y=(this.player.getY()-this.cameras.main.width/4+230);
     if (this.textTime.y<=60)this.textTime.y=60;
-    this.textTime.text = 'Time: ' + this.time;
+    this.textTime.text = 'Time: ' + Math.round(this.time/1000);
    
 }
 managePause() {
@@ -122,7 +121,7 @@ managePause() {
   this.scene.pause();
   //console.log(this.scene.isPaused('Game'));
 
-  this.scene.run('Pause');
+  this.scene.resume('Pause');
 
 }
 
@@ -133,7 +132,8 @@ changeScene(nameScene){
 
 }
 
-  update(time, delta) {  
+  update(time, delta) { 
+     this.time += Math.round(delta); 
     //console.log(this.scene.isPaused());
 
     /*this.q.on('up',function (event){
@@ -167,8 +167,8 @@ changeScene(nameScene){
       this.updateScore();
     
     
-    if(this.escape2.isDown){
-      console.log("hols");
+    if(this.escape.isDown){
+      //console.log("hols");
       this.managePause();
 
     }

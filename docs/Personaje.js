@@ -1,6 +1,10 @@
 export default class Personaje extends Phaser.GameObjects.Sprite{
+    // export default class Personaje extends Phaser.GameObjects.Container{
     constructor(scene, x,y, speed, dir, points, lives,sprite){
         super(scene, x, y, sprite);   
+        // this.yoMismo= scene.add.spriter(...)
+        //this.add(this.yoMismo)
+        //this.add(this.epada)
         scene.add.existing(this);
         this.scene.physics.add.existing(this);
         this.lives = lives;//es por si muere poder resetear su posicion / vida
