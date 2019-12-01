@@ -10,114 +10,111 @@
     <title>¡NAKHEVARI!</title>
 </head>
 
-<body>
-    <h1>HAKEN</h1>
-    <p class = "footer">Developed by <a href=https://github.com/ancues02>Andrés de la Cuesta</a> & <a href=https://github.com/PabloRBGM>Pablo Rodríguez-Bobada</a></p>
+    <body>
+        <h1>HAKEN</h1>
+        <p class = "footer">Developed by <a href=https://github.com/ancues02>Andrés de la Cuesta</a> & <a href=https://github.com/PabloRBGM>Pablo Rodríguez-Bobada</a></p>
 
-    
-    <table class="egh">
-    
-       
-        <th colspan="2" scope="rowgroup">-----------------------CONTROLES-----------------------</th>
-      <tr>
-    
-        <th>Teclas</th>
-    
-        <th>Descripción</th>
-    
-      </tr>
-    
-      <tr>
-    
-        <td>A   D</td>
-    
-        <td>Movimiento lateral</td>
-    
-      </tr>
-      <tr>
-    
-        <td>SPACE</td>
-    
-        <td>Salto</td>
-    
-      </tr>
-    
-      <tr>
-    
-        <td>J</td>
-    
-        <td>Ataque en el sitio</td>
-    
-      </tr>
-    
-      <tr>
-    
-        <td>WASD + J  </td>
-    
-        <td>Dash en una de las 8 direcciones, hace daño </td>
-    
-      </tr>
-
-      <tr>
-    
-        <td>K</td>
-    
-        <td>Cambiar de pantalla</td>
-    
-      </tr>
-
-      <tr>
-    
-        <td>ESC</td>
-    
-        <td>Activar / desactivar menú de pausa</td>
-    
-      </tr>
-    
-      
-    
-      
-    
-    </table>
-    <script type="module">
-        import Game from './game.js';
-        import Personaje from './Personaje.js';
-        import Prota from './Prota.js';
         
-        import PickMe from './PickMe.js';
-        import Spring from './Spring.js';
-        import Coin from './Coin.js';
-        import BateriaDash from './BateriaDash.js';
+        <table class="egh">
+        
+        
+            <th colspan="2" scope="rowgroup">-----------------------CONTROLES-----------------------</th>
+            <tr>
+            
+                <th>Teclas</th>
+            
+                <th>Descripción</th>
+            
+            </tr>
+            
+            <tr>
+            
+                <td>A   D</td>
+            
+                <td>Movimiento lateral</td>
+            
+            </tr>
+            <tr>
+            
+                <td>SPACE</td>
+            
+                <td>Salto</td>
+            
+            </tr>
+            
+            <tr>
+            
+                <td>J</td>
+            
+                <td>Ataque en el sitio</td>
+            
+            </tr>
+            
+            <tr>
+            
+                <td>WASD + J  </td>
+            
+                <td>Dash en una de las 8 direcciones, hace daño </td>
+            
+            </tr>
 
-        import Enemy from './Enemy.js';
-        import Rinne from './Rinne.js';
-        import Zoppo from './Zoppo.js';
-        import Reizen from './Reizen.js';
+            <tr>
+            
+                <td>K</td>
+            
+                <td>Cambiar de pantalla</td>
+            
+            </tr>
 
-        import Menu from './Menu.js';
-        import Pause from './Pause.js';
-        var config = {
-            type: Phaser.AUTO,
-            width: 1500,
-            height: 600,
-            //height: 3200,
+            <tr>
+            
+                <td>ESC</td>
+            
+                <td>Activar / desactivar menú de pausa</td>
+            
+            </tr>
+        
+        
+        </table>
+        <script type="module">
+            import Game from './game.js';
+            import Personaje from './Personaje.js';
+            import Prota from './Prota.js';
+            
+            import PickMe from './PickMe.js';
+            import Spring from './Spring.js';
+            import Coin from './Coin.js';
+            import BateriaDash from './BateriaDash.js';
 
-            pixelArt: true,
-            input: {
-                gamepad: true
-            },
-            scale: {
-                mode: Phaser.Scale.FIT,
-                autoCenter: Phaser.Scale.CENTER_BOTH
-            },
-            scene: [ Menu,Pause,Game ],
-            physics: { default: 'arcade', arcade: { gravity: { y: 600 }, debug: false } }
-        };
-        new Phaser.Game(config);
+            import Enemy from './Enemy.js';
+            import Rinne from './Rinne.js';
+            import Zoppo from './Zoppo.js';
+            import Reizen from './Reizen.js';
 
-    </script>
+            import Menu from './Menu.js';
+            import Pause from './Pause.js';
+            var config = {
+                type: Phaser.AUTO,
+                width: 1500,
+                height: 600,
+                //height: 3200,
+
+                pixelArt: true,
+                input: {
+                    gamepad: true
+                },
+                scale: {
+                    mode: Phaser.Scale.FIT,
+                    autoCenter: Phaser.Scale.CENTER_BOTH
+                },
+                scene: [ Menu,Pause,Game ],
+                physics: { default: 'arcade', arcade: { gravity: { y: 600 }, debug: false } }
+            };
+            new Phaser.Game(config);
+
+        </script>
 
 
-</body>
+    </body>
 
 </html>

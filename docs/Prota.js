@@ -6,12 +6,13 @@ export default class Prota extends Phaser.GameObjects.Container  {
         this.espada= this.scene.add.sprite(20,0,espada);
         this.espadaAtacando= this.scene.add.sprite(20,0,espadaAtacando);
 
-        super.setSize(this.yoMismo.width,this.yoMismo.height);
+        super.setSize(this.yoMismo.width-5,this.yoMismo.height);
         //console.log(this.yoMismo.width);
 
         this.scene.add.existing(this);
         
         this.shield= this.scene.add.sprite(0,0,shield);
+        this.shield.setAlpha(0.8);
         this.add(this.yoMismo);
         this.add(this.espada);
         this.add(this.espadaAtacando);

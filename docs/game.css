@@ -5,9 +5,11 @@ h1 {
   text-align: center;
 }
 .footer{
+font-family: 'Anton', sans-serif;
     font-size: 15px;
-    background-color: #fff;
-    bottom:0;
-    position:fixed;
+    //background-color: #fff;
+    //bottom:0;
+    //position:fixed;
     text-align: center
 }
+
