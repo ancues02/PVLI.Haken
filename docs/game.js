@@ -26,11 +26,13 @@ export default class Game extends Phaser.Scene {
   this.load.image('personaje','./favicon.png');
   this.load.image('shield','./shield.png');
   this.load.image('pickUp', './coin.png');
-     this.load.image('espada', './espada.png');
+     this.load.image('espada', './sword2.png');
+     this.load.image('espadaAtacando', './sword1.png');
      this.load.image('enemigo', './Enemy.png');
      this.load.image('enemigo2', './enemy2.png');
      this.load.image('muelle', './muelle.png');
      this.load.image('zumito', './zumito.png');
+     this.load.image('bubble','./bubble.png')
 
      //var platforms =this.physics.add.staticGroup();;
      this.load.image ('tile','./Sprute.png')
@@ -52,7 +54,7 @@ export default class Game extends Phaser.Scene {
     //this.escape2=this.input.keyboard.addKey("Q"); //tecla del dash
 //this.player=new Contenerdor(this,400,200,"personaje","espada","shield");
     this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
-    this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","shield");
+    this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1,"enemigo2");
 
