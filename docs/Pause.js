@@ -2,16 +2,22 @@
 export default class Pause extends Phaser.Scene {
     constructor() {
         super('Pause');
-        
+        //this.depth(1);
 
       }
 
       create(){
         this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
         
-        let pauseButton = this.add.text(300, 300, 'Pause!', {font:'100px', fill: '#fff'});
-        pauseButton.setInteractive();
-        pauseButton.on('pointerdown', ()=> { this.scene.stop('Pause'),this.scene.resume('Game')})
+        let resumeButton = this.add.text(600, 300, 'Resume!', {font:'100px', fill: '#fff'});
+        resumeButton.setInteractive();
+        resumeButton.on('pointerdown', ()=> { this.scene.stop('Pause'),this.scene.resume('Game')});
+        
+        
+        let menuButton = this.add.text(600, 400, 'Menu!', {font:'100px', fill: '#fff'});
+        menuButton.setInteractive();
+        menuButton.on('pointerdown', ()=> { this.scene.stop('Pause'),this.scene.stop('Game')
+        ,this.scene.start('Menu')});
       }
       //si se pulsa otra vez escape podemos volver a jugar
       update(){

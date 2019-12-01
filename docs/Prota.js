@@ -3,8 +3,8 @@ export default class Prota extends Phaser.GameObjects.Container  {
     constructor(scene, x,y, speed, dir, points, jumpImpulse,lives, sprite,espada,espadaAtacando,shield){
         super(scene,x,y);
         this.yoMismo= this.scene.add.sprite(0,0,sprite);
-        this.espada= this.scene.add.sprite(10,0,espada);
-        this.espadaAtacando= this.scene.add.sprite(10,0,espadaAtacando);
+        this.espada= this.scene.add.sprite(20,0,espada);
+        this.espadaAtacando= this.scene.add.sprite(20,0,espadaAtacando);
 
         super.setSize(this.yoMismo.width,this.yoMismo.height);
         //console.log(this.yoMismo.width);
@@ -108,7 +108,7 @@ export default class Prota extends Phaser.GameObjects.Container  {
         }
         if(!this.espada.visible){
             if(this.attackTime===0){
-               this.attackTime=time+100;
+               this.attackTime=time+250;
 
             }
             else if(this.attackTime<=time){
@@ -140,6 +140,8 @@ export default class Prota extends Phaser.GameObjects.Container  {
                 this.dashing = false;
                 this.dashingStartTime = 0;
                 this.body.setVelocityY(0);
+                this.espada.setRotation(0);
+                this.espadaAtacando.setRotation(0);
             }
         }
         else{
@@ -178,14 +180,42 @@ export default class Prota extends Phaser.GameObjects.Container  {
                 }
             }
             //Dash
+            //dinstinguimos diferentes casos para colocar la espada
             if(this.dashAvailable && (this.direction.x != 0 || this.direction.y != 0) && Phaser.Input.Keyboard.JustDown(this.j)){
+                if(this.direction.y===0) {//lados
+                    this.espada.setVisible(false);
+                    this.espadaAtacando.setVisible(true);
+                }
+                else if(this.direction.y===1){
+                    if(this.direction.x===1){//abajo a la derecha
+                        this.espada.setRotation(1.5);
+                    }
+                    else if(this.direction.x===-1){//abajo a la izquierda
+                        this.espada.setRotation(4.7);
+
+                    }
+                    else{//abajo
+                        
+                        this.espada.setVisible(false);
+                        this.espadaAtacando.setVisible(true);
+                        if(this.espadaAtacando.flipX)  this.espadaAtacando.setRotation(-1.5);
+                        else this.espadaAtacando.setRotation(1.5);
+                    }
+                }
+                else if(this.direction.y===-1 && this.direction.x===0){//arriba
+                    
+                    if(this.espada.flipX)   this.espada.setRotation(0.78)
+                    else this.espada.setRotation(-0.78)
+
+                }
+                
                 this.body.setVelocityX(this.direction.x * this.dashSpeed);
                 this.body.setVelocityY(this.direction.y * this.dashSpeed);
                 this.dashAvailable = false;
                 this.dashing = true;
                 
             }
-            else if (this.direction.x == 0 && this.direction.y == 0 && Phaser.Input.Keyboard.JustDown(this.j)){
+            else if (!this.attacking && this.direction.x == 0 && this.direction.y == 0 && Phaser.Input.Keyboard.JustDown(this.j)){
                 this.espada.setVisible(false);
                 this.espadaAtacando.setVisible(true);
                 this.attacking=true;
@@ -213,11 +243,26 @@ export default class Prota extends Phaser.GameObjects.Container  {
         this.lives--;
     }
     changeDirectionX(nx){
+        if(nx===-1){
+            this.espada.x=-20;
+            this.espada.setFlipX(true); 
+            this.espadaAtacando.x=-20;
+            this.espadaAtacando.setFlipX(true);
+            this.yoMismo.setFlipX(true);
+        }
+        else if(nx===1){
+            this.espada.setFlipX(false);
+            this.espada.x=20;
+            this.espadaAtacando.x=20;
+            this.espadaAtacando.setFlipX(false);
+            this.yoMismo.setFlipX(false);
+        }
         this.direction.x = nx;
         // this.direction.x = nx;
         // this.direction.y = ny;
     }
     changeDirectionY(ny){
+        
         this.direction.y = ny;
     }
     stop(){
@@ -229,10 +274,6 @@ export default class Prota extends Phaser.GameObjects.Container  {
     verticalMove(){
         this.body.setVelocityY(this.direction.y * this.speed);
     }
-
-    // dies(){
-    //     this.destroy();
-    // }
 
     //getters
     getPoints(){

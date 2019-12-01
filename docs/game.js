@@ -121,11 +121,11 @@ managePause() {
   //console.log(this.scene.isActive('Game'));
     
    
-    
   this.scene.pause();
   //console.log(this.scene.isPaused('Game'));
-
   this.scene.run('Pause');
+
+  
   this.escape.isDown=false;
 
 }
