@@ -123,7 +123,8 @@ managePause() {
   this.scene.pause();
   //console.log(this.scene.isPaused('Game'));
 
-  this.scene.resume('Pause');
+  this.scene.run('Pause');
+  this.escape.isDown=false;
 
 }
 
@@ -135,42 +136,14 @@ changeScene(nameScene){
 }
 
   update(time, delta) { 
-     this.time += Math.round(delta); 
-    //console.log(this.scene.isPaused());
-
-    /*this.q.on('up',function (event){
-      console.log("pulsa q");
-
-        this.paused = true;
-        //this.scene.add.text(300, 300, 'Start!', { fill: '#0f0' });
-        //this.pausedText = this.add.text(100, 250, "Game paused.\nTap anywhere to continue.", { fill: '#0f0' });
-        this.input.onDown.add(function(){
-        //this.pausedText.destroy();
-        this.game.paused = false;
-  }, this);
-    // });*/
-   
-   
-      this.cameras.main.centerOnY( this.player.getY() + 100);
-      //console.log(this.player.y+" playern");
   
-      //console.log(this.cameras.main.height);
-      this.cameras.main.setSize(1500,600);
-  
-      //this.cameras.main.setBounds(0,0,10,10);
-      //this.contenedor.x = this.player.getX();
-      //this.contenedor.y = this.player.getY();
-      /*console.log(this.player.x);
-      console.log(this.contenedor.x+"contenedor");
-      console.log(this.b.x);*/
-  
-  
-  
-      this.updateScore();
+    this.time += Math.round(delta); 
+    this.cameras.main.centerOnY( this.player.getY() + 100);  
+    this.cameras.main.setSize(1500,600);
+    this.updateScore();
     
     
     if(this.escape.isDown){
-      //console.log("hols");
       this.managePause();
 
     }

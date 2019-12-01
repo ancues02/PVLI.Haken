@@ -100,7 +100,7 @@ export default class Prota extends Phaser.GameObjects.Container  {
         this.dimValue *= -1;
     }
     preUpdate(time, delta){
-        console.log(this.x)
+        //console.log(this.x)
     if(this.y >= 3100){//esto es por si se cae, luego no será necesario
         this.scene.changeScene('Game')
         
