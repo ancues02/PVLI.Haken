@@ -10,7 +10,7 @@ export default class Enemy extends Personaje  {
 
     colisionPlayer(){
         if ( this.scene.physics.overlap(this.scene.player, this)){
-            if(!this.scene.player.isDashing()){
+            if(!this.scene.player.isDashing() && !this.scene.player.isAttacking()){
                 this.scene.player.decreaseHealth();
             }
             else{

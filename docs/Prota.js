@@ -4,6 +4,7 @@ export default class Prota extends Phaser.GameObjects.Container  {
         super(scene,x,y);
         this.yoMismo= this.scene.add.sprite(0,0,sprite);
         this.espada= this.scene.add.sprite(10,0,espada);
+        this.espadaAtacando= this.scene.add.sprite(10,0,espadaAtacando);
 
         super.setSize(this.yoMismo.width,this.yoMismo.height);
         //console.log(this.yoMismo.width);
@@ -13,8 +14,9 @@ export default class Prota extends Phaser.GameObjects.Container  {
         this.shield= this.scene.add.sprite(0,0,shield);
         this.add(this.yoMismo);
         this.add(this.espada);
-
+        this.add(this.espadaAtacando);
         this.add(this.shield);
+        this.espadaAtacando.setVisible(false);
         this.shield.setVisible(false);
         this.scene.physics.add.existing(this);
         this.lives = lives;
@@ -28,6 +30,8 @@ export default class Prota extends Phaser.GameObjects.Container  {
         
         this.damageCD = true;//es para controlar que los enemigos no hagan daño todo el rato       
         
+        this.attackTime=0;
+        this.attacking=false;
         //variables para el dash
         this.dashingTime = 10;
         this.dashingStartTime = 0;
@@ -52,6 +56,9 @@ export default class Prota extends Phaser.GameObjects.Container  {
     }
     isDashing(){
         return this.dashing;
+    }
+    isAttacking(){
+        return this.attacking;
     }
     
     addPoint(points){
@@ -94,9 +101,22 @@ export default class Prota extends Phaser.GameObjects.Container  {
         this.dimValue *= -1;
     }
     preUpdate(time, delta){
+
         if(this.y >= 3100){//esto es por si se cae, luego no será necesario
             this.scene.changeScene('Game')
             
+        }
+        if(!this.espada.visible){
+            if(this.attackTime===0){
+               this.attackTime=time+100;
+
+            }
+            else if(this.attackTime<=time){
+                this.espada.setVisible(true);
+                this.espadaAtacando.setVisible(false);
+                this.attackTime=0;
+                this.attacking=false;
+            }
         }
         if(!this.dashAvailable ){
             if(this.dashing){
@@ -164,6 +184,12 @@ export default class Prota extends Phaser.GameObjects.Container  {
                 this.dashAvailable = false;
                 this.dashing = true;
                 
+            }
+            else if (this.direction.x == 0 && this.direction.y == 0 && Phaser.Input.Keyboard.JustDown(this.j)){
+                this.espada.setVisible(false);
+                this.espadaAtacando.setVisible(true);
+                this.attacking=true;
+
             }
         }
         
