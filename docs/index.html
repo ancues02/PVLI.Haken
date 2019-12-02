@@ -11,6 +11,43 @@
 </head>
 
     <body style="background-color:rgba(59, 129, 177, 0.349);">
+        <script type="module">
+            import Game from './game.js';
+            import Personaje from './Personaje.js';
+            import Prota from './Prota.js';
+            
+            import PickMe from './PickMe.js';
+            import Spring from './Spring.js';
+            import Coin from './Coin.js';
+            import BateriaDash from './BateriaDash.js';
+
+            import Enemy from './Enemy.js';
+            import Rinne from './Rinne.js';
+            import Zoppo from './Zoppo.js';
+            import Reizen from './Reizen.js';
+
+            import Menu from './Menu.js';
+            import Pause from './Pause.js';
+            var config = {
+                type: Phaser.AUTO,
+                width: 1500,
+                height: 600,
+                //height: 3200,
+
+                pixelArt: true,
+                input: {
+                    gamepad: true
+                },
+                scale: {
+                    mode: Phaser.Scale.FIT,
+                    autoCenter: Phaser.Scale.CENTER_BOTH
+                },
+                scene: [ Menu,Pause,Game ],
+                physics: { default: 'arcade', arcade: { gravity: { y: 600 }, debug: false } }
+            };
+            new Phaser.Game(config);
+
+        </script>
         <h1>HAKEN</h1>
         <p class = "footer">Developed by <a href=https://github.com/ancues02>Andrés de la Cuesta</a> & <a href=https://github.com/PabloRBGM>Pablo Rodríguez-Bobada</a></p>
 
@@ -76,43 +113,7 @@
         
         
         </table>
-        <script type="module">
-            import Game from './game.js';
-            import Personaje from './Personaje.js';
-            import Prota from './Prota.js';
-            
-            import PickMe from './PickMe.js';
-            import Spring from './Spring.js';
-            import Coin from './Coin.js';
-            import BateriaDash from './BateriaDash.js';
-
-            import Enemy from './Enemy.js';
-            import Rinne from './Rinne.js';
-            import Zoppo from './Zoppo.js';
-            import Reizen from './Reizen.js';
-
-            import Menu from './Menu.js';
-            import Pause from './Pause.js';
-            var config = {
-                type: Phaser.AUTO,
-                width: 1500,
-                height: 600,
-                //height: 3200,
-
-                pixelArt: true,
-                input: {
-                    gamepad: true
-                },
-                scale: {
-                    mode: Phaser.Scale.FIT,
-                    autoCenter: Phaser.Scale.CENTER_BOTH
-                },
-                scene: [ Menu,Pause,Game ],
-                physics: { default: 'arcade', arcade: { gravity: { y: 600 }, debug: false } }
-            };
-            new Phaser.Game(config);
-
-        </script>
+       
 
 
     </body>

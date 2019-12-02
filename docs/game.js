@@ -50,7 +50,8 @@ export default class Game extends Phaser.Scene {
       
     });
     this.map.addTilesetImage('TileMap','tile');
-    this.layer=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
+    this.layerPlatform=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
+    this.layerBackground=this.map.createDynamicLayer('Background','TileMap',0,0);
     //this.escape2=this.input.keyboard.addKey("Q"); //tecla del dash
 //this.player=new Contenerdor(this,400,200,"personaje","espada","shield");
     this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
@@ -65,11 +66,11 @@ export default class Game extends Phaser.Scene {
     this.bateriaDash = new BateriaDash(this, 500, 960, "zumito");
 
     
-    this.layer.setCollisionByProperty({ colision: true });
-    this.physics.add.collider(this.player,this.layer);
-    this.physics.add.collider(this.enemigo,this.layer);
-    this.physics.add.collider(this.enemigo2,this.layer);
-    this.physics.add.collider(this.enemigo1,this.layer);
+    this.layerPlatform.setCollisionByProperty({ colision: true });
+    this.physics.add.collider(this.player,this.layerPlatform);
+    this.physics.add.collider(this.enemigo,this.layerPlatform);
+    this.physics.add.collider(this.enemigo2,this.layerPlatform);
+    this.physics.add.collider(this.enemigo1,this.layerPlatform);
     this.time = 0;
 
 
@@ -115,11 +116,12 @@ managePause() {
     
    
   this.scene.pause();
+  this.scene.sendToBack();
   //console.log(this.scene.isPaused('Game'));
   this.scene.run('Pause');
 
   
-  this.escape.isDown=false;
+  this.escape.isDown=false;//para que no detecte que estas pulsando escape
 
 }
 
@@ -131,9 +133,9 @@ changeScene(nameScene){
 }
 
   update(time, delta) { 
-    console.log(this.player.getX())
+    //console.log("pos X "+this.player.getX() + "pos Y "+Math.round(this.player.getY()))
     this.cameras.main.centerOnY( this.player.getY() + 100);  
-    this.cameras.main.setSize(1900,600);
+    this.cameras.main.setSize(1500,600);
     this.time += Math.round(delta); 
     
     this.updateScore();

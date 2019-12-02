@@ -31,6 +31,8 @@ export default class Prota extends Phaser.GameObjects.Container  {
         
         this.damageCD = true;//es para controlar que los enemigos no hagan daño todo el rato       
         
+        //this.wait=false;
+
         this.attackTime=0;
         this.attacking=false;
         //variables para el dash
@@ -102,7 +104,7 @@ export default class Prota extends Phaser.GameObjects.Container  {
         this.dimValue *= -1;
     }
     preUpdate(time, delta){
-
+        //console.log(delta);
         if(this.y >= 3100){//esto es por si se cae, luego no será necesario
             this.scene.changeScene('Game')
             
@@ -227,18 +229,28 @@ export default class Prota extends Phaser.GameObjects.Container  {
         //Cambio de dimension
         if(Phaser.Input.Keyboard.JustDown(this.k)){
             
-            console.log(this.x);
-            this.changeDimValue();//658
+           // console.log(this.x);
+            this.changeDimValue();
             if(this.x<=710 && this.x>=0){
                 this.x += 752;
 
             }
-            else{//658
-               // if(this.x>=1300) this.x -=750;
+            else{
                  this.x -=752;
+                 //this.wait=time+1;
             }
-            
+            /*this.wait=true;
+            //this.body.onCollide===false
+           if ( this.wait && this.body.onWall()overlap(this.scene.layerPlatform, this)){
+                console.log(this.x+"   "+this.y)
+                this.y-=30;
+                this.wait=false;
+    
+            }
+            else this.wait=false;*/
+     
         }
+        
         
     }
     decreaseHealthProta(){
