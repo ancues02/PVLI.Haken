@@ -228,13 +228,14 @@ export default class Prota extends Phaser.GameObjects.Container  {
         if(Phaser.Input.Keyboard.JustDown(this.k)){
             
             console.log(this.x);
-            this.changeDimValue();
-            if(this.x<=750 && this.x>=0){
-                this.x += 750;
+            this.changeDimValue();//658
+            if(this.x<=710 && this.x>=0){
+                this.x += 752;
 
             }
-            else{
-            this.x -=750;
+            else{//658
+               // if(this.x>=1300) this.x -=750;
+                 this.x -=752;
             }
             
         }

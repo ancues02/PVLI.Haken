@@ -131,10 +131,11 @@ changeScene(nameScene){
 }
 
   update(time, delta) { 
-  
-    this.time += Math.round(delta); 
+    console.log(this.player.getX())
     this.cameras.main.centerOnY( this.player.getY() + 100);  
-    this.cameras.main.setSize(1500,600);
+    this.cameras.main.setSize(1900,600);
+    this.time += Math.round(delta); 
+    
     this.updateScore();
     
     
