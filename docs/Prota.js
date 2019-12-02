@@ -286,5 +286,9 @@ export default class Prota extends Phaser.GameObjects.Container  {
     getY(){
         return this.y;
     }
+    //para saber si estas mirando al enemigo o no
+    getFlipped(){
+        return this.yoMismo.flipX;
+    }
 
 }

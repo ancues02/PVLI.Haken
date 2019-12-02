@@ -57,6 +57,8 @@ export default class Game extends Phaser.Scene {
     this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1,"enemigo2");
+    this.enemigo2 = new Zoppo (this, 1400, 400, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
+
 
     this.shield = new Shield (this, 300, 600, "shield");
     this.spring = new Spring(this, 1300, 650, "muelle");
@@ -66,23 +68,14 @@ export default class Game extends Phaser.Scene {
     this.layer.setCollisionByProperty({ colision: true });
     this.physics.add.collider(this.player,this.layer);
     this.physics.add.collider(this.enemigo,this.layer);
+    this.physics.add.collider(this.enemigo2,this.layer);
     this.physics.add.collider(this.enemigo1,this.layer);
     this.time = 0;
 
 
     
     
-    /*this.contenedor = new Phaser.GameObjects.Container(this, 500, 200); // Martian es un Sprite
-    this.b = this.add.sprite(50, 0,"pickUp");
-    this.add.existing(this.b);
-    //this.physics.add.existing(this.contenedor);
-
-  //this.contenedor.body.collideWorldBounds=true;
-    this.contenedor.add(this.b); // hacemos que `b` sea hijo de `a`
-   // this.b.y = 10; // relativo a `a`
-    this.add.existing(this.contenedor);*/
-
-    //this.contenedor.add(this.player);
+    
     
 
     this.textScore = this.add.text(this.cameras.main.left, this.player.getY());

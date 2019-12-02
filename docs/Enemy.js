@@ -7,18 +7,33 @@ export default class Enemy extends Personaje  {
         //this.scene.add.existing(this);
         //this.scene.physics.add.existing(this,true);
     }
-
+    hurt(){
+        this.lives--;
+        if(this.lives<=0){
+        this.scene.player.addPoint(this.points);
+        this.destroy();
+        }
+    }
+    //si el getFlipped = true signigica que el jugador mira a la izquierda
     colisionPlayer(){
         if ( this.scene.physics.overlap(this.scene.player, this)){
-            if(!this.scene.player.isDashing() && !this.scene.player.isAttacking()){
-                this.scene.player.decreaseHealth();
+            if(!this.scene.player.isDashing() ){
+                if( this.scene.player.isAttacking()){
+                    if(this.getX()<this.scene.player.getX() ){
+                        if( this.scene.player.getFlipped())    this.hurt();
+                        else this.scene.player.decreaseHealth();
+                        
+                    }
+                    else{
+                        if( !this.scene.player.getFlipped())    this.hurt();
+                        else this.scene.player.decreaseHealth();
+                        
+                    }
+                }
+                else this.scene.player.decreaseHealth();
             }
             else{
-                this.lives--;
-                if(this.lives<=0){
-                this.scene.player.addPoint(this.points);
-                this.destroy();
-                }
+                this.hurt();
             }
             
         }
