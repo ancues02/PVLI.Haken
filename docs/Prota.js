@@ -6,7 +6,7 @@ export default class Prota extends Personaje {
         this.espada= this.scene.add.sprite(20,0,espada);
         this.espadaAtacando= this.scene.add.sprite(20,0,espadaAtacando);
 
-        super.setSize(this.yoMismo.width-5,this.yoMismo.height); //ajustar
+        //super.setSize(this.yoMismo.width-5,this.yoMismo.height); //ajustar
         //console.log(this.yoMismo.width);  //quitar 
 
        //this.scene.add.existing(this);    //quitar

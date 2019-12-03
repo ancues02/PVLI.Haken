@@ -3,6 +3,7 @@ export default class Personaje extends Phaser.GameObjects.Container{
         super(scene, x, y);   
         this.yoMismo= this.scene.add.sprite(0,0,sprite);
         this.add(this.yoMismo)
+        this.setSize(this.yoMismo.width-5,this.yoMismo.height); //ajusta
         //this.add(this.epada)
         scene.add.existing(this);
         this.scene.physics.add.existing(this);
@@ -17,9 +18,10 @@ export default class Personaje extends Phaser.GameObjects.Container{
         this.lives--;
     }
     changeDirectionX(nx){
-        this.direction.x = nx;
         // this.direction.x = nx;
         // this.direction.y = ny;
+       
+        this.direction.x = nx;
     }
     changeDirectionY(ny){
         this.direction.y = ny;
