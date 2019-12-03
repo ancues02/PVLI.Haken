@@ -61,7 +61,7 @@ export default class Game extends Phaser.Scene {
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1,"enemigo2");
     this.enemigo2 = new Zoppo (this, 1400, 400, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
-    this.enemigo3 = new Rinne (this, 230, 600, 200, {x:1, y:0}, 2, 1, 1,"enemigo3");
+    this.enemigo3 = new Rinne (this, 1230, 600, 200, {x:1, y:0}, 2, 1, 1,"enemigo3");
 
 
 
