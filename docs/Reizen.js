@@ -3,6 +3,7 @@ export default class Reizen extends Enemy  {
     constructor(scene, x,y, speed, dir, points, damage, lives,  sprite){
         super(scene,x,y, speed, dir, points, damage,lives, sprite);
         this.startMove=false;
+        //this.yoMismo=sprite;
       }
 
     preUpdate(){
@@ -18,10 +19,15 @@ export default class Reizen extends Enemy  {
             if(this.direction.x===1){
                 this.x-=30;
                 this.changeDirectionX(-1);
+                this.yoMismo.setFlipX(true);
+
             }
             else{
                 this.x+=30;
+
                 this.changeDirectionX(1);
+                super.yoMismo.setFlipX(false);
+
             }
         }
         super.colisionPlayer();   

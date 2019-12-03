@@ -54,7 +54,7 @@ export default class Prota extends Personaje {
         this.j=scene.input.keyboard.addKey("J"); //  dash
 
         //ponemos un maximo de velocidades
-        this.body.setMaxVelocity(500,800)
+        this.body.setMaxVelocity(500,800);
 
 
     }
@@ -272,33 +272,9 @@ export default class Prota extends Personaje {
             this.yoMismo.setFlipX(false);
         }
         this.direction.x = nx;
-        // this.direction.x = nx;
-        // this.direction.y = ny;
-    }
-    // changeDirectionY(ny){
         
-    //     this.direction.y = ny;
-    // }
-    // stop(){
-    //     this.body.setVelocityX(0);
-    // }
-    // horizontalMove(){
-    //     this.body.setVelocityX(this.direction.x * this.speed);
-    // }
-    // verticalMove(){
-    //     this.body.setVelocityY(this.direction.y * this.speed);
-    // }
-
-    //getters
-    getPoints(){
-        return this.points;
     }
-    getX(){
-        return this.x;
-    }
-    getY(){
-        return this.y;
-    }
+    
     //para saber si estas mirando al enemigo o no
     getFlipped(){
         return this.yoMismo.flipX;

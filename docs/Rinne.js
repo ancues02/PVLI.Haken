@@ -11,6 +11,7 @@ export default class Rinne extends Zoppo  {
         if(this.startMove){
             this.noFloorMove=30;//para desplazarlo un poco y que nocaiga
             super.preUpdate();
+            
         } 
         //para que empiece a moverse hacia donde está el jugador
         else if(!this.startMove && this.y-this.scene.player.y<=50){
