@@ -97,7 +97,7 @@ export default class Prota extends Personaje {
         if(!this.espada.visible){
             if(this.attackTime===0){
                this.attackTime=time+250;
-                console.log(this.attackTime);
+                //console.log(this.attackTime);
             }
             else if(this.attackTime<=time){
                 this.espada.setVisible(true);
@@ -127,7 +127,11 @@ export default class Prota extends Personaje {
             else{
                 this.dashing = false;
                 this.dashingStartTime = 0;
-                this.body.setVelocityY(0);
+                
+                if(this.body.velocity.y<=0)  {
+                    //si se usa dash hacia arriba se para, si es para abajo que siga bajando
+                    this.body.setVelocityY(0);
+                }
                 this.espada.setRotation(0);
                 this.espadaAtacando.setRotation(0);
             }
@@ -197,11 +201,13 @@ export default class Prota extends Personaje {
                     else this.espada.setRotation(-0.78)
 
                 }
-                
+                //console.log("antes:   "+this.body.velocity.y);
                 this.body.setVelocityX(this.direction.x * this.dashSpeed);
                 this.body.setVelocityY(this.direction.y * this.dashSpeed);
                 this.dashAvailable = false;
                 this.dashing = true;
+                //console.log("despues:   "+this.body.velocity.y);
+
                 
             }
             else if (!this.attacking && this.direction.x == 0 && this.direction.y == 0 && Phaser.Input.Keyboard.JustDown(this.j)){
