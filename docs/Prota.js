@@ -133,7 +133,7 @@ export default class Prota extends Personaje {
                     //si se usa dash hacia arriba se para, si es para abajo que siga bajando
                     this.body.setVelocityY(0);
                 }
-                this.body.setAllowGravity(true);
+                this.body.setAllowGravity(true);        //aunque pongas la velocity en 0, sigue afectando la gravedad parece
 
                 this.espada.setRotation(0);
                 this.espadaAtacando.setRotation(0);
@@ -205,8 +205,16 @@ export default class Prota extends Personaje {
 
                 }
                 //console.log("antes:   "+this.body.velocity.y);
-                this.body.setVelocityX(this.direction.x * this.dashSpeed);
-                this.body.setVelocityY(this.direction.y * this.dashSpeed);
+                if(Math.abs(this.direction.y) === Math.abs(this.direction.x)){     //dash diagonal mas razonable
+                    this.body.setVelocityX(0.5* this.direction.x * this.dashSpeed);
+                    this.body.setVelocityY(0.5 * this.direction.y * this.dashSpeed);
+                    console.log("en");
+                }
+                else{
+                    this.body.setVelocityX(this.direction.x * this.dashSpeed);
+                    this.body.setVelocityY(this.direction.y * this.dashSpeed);
+                }
+                
                 this.body.setAllowGravity(false);
                 this.dashAvailable = false;
                 this.dashing = true;
@@ -226,7 +234,6 @@ export default class Prota extends Personaje {
         
         //Cambio de dimension
         if(Phaser.Input.Keyboard.JustDown(this.k)){
-            
            // console.log(this.x);
             this.changeDimValue();
             if(this.x<=710 && this.x>=0){
