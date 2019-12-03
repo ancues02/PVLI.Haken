@@ -8,6 +8,7 @@ import Rinne from './Rinne.js';
 import Reizen from './Reizen.js';
 import Zoppo from './Zoppo.js'
 import Shield from './Shield.js';
+
 //import Contenerdor from './Contenedor.js';
 export default class Game extends Phaser.Scene {
   constructor() {
@@ -30,6 +31,7 @@ export default class Game extends Phaser.Scene {
      this.load.image('espadaAtacando', './sword1.png');
      this.load.image('enemigo', './Enemy.png');
      this.load.image('enemigo2', './enemy2.png');
+     this.load.image('enemigo3', './Enemy3.1.png');
      this.load.image('muelle', './muelle.png');
      this.load.image('zumito', './zumito.png');
      this.load.image('bubble','./bubble.png')
@@ -59,6 +61,8 @@ export default class Game extends Phaser.Scene {
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1,"enemigo2");
     this.enemigo2 = new Zoppo (this, 1400, 400, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
+    this.enemigo3 = new Rinne (this, 230, 600, 200, {x:1, y:0}, 2, 1, 1,"enemigo3");
+
 
 
     this.shield = new Shield (this, 300, 600, "shield");
@@ -71,6 +75,8 @@ export default class Game extends Phaser.Scene {
     this.physics.add.collider(this.enemigo,this.layerPlatform);
     this.physics.add.collider(this.enemigo2,this.layerPlatform);
     this.physics.add.collider(this.enemigo1,this.layerPlatform);
+    this.physics.add.collider(this.enemigo3,this.layerPlatform);
+
     this.time = 0;
 
 
