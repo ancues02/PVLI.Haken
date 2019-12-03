@@ -37,9 +37,9 @@ export default class Prota extends Personaje {
         this.attackTime=0;
         this.attacking=false;
         //variables para el dash
-        this.dashingTime = 10;  //1500
+        this.dashingTime = 0;  //1500
         this.dashingStartTime = 0;
-        this.dashCd=1500;//para poder volver usar el dash(1.5 segundos)
+        this.dashCd=450;//para poder volver usar el dash(1.5 segundos)
         this.dashing = false;//para hacer daño mientras usas el dash
         this.dashSpeed = 600;//la velocidad a la que te mueves
         this.dashAvailable = true;//para poder hacer dash
@@ -68,7 +68,7 @@ export default class Prota extends Personaje {
     addPoint(points){
         this.points+=points;
         //this.updateScore();
-        console.log(this.points);
+        //console.log(this.points);
     }
     changeJumpImpulse(){
         this.springPicked=true;
@@ -92,7 +92,7 @@ export default class Prota extends Personaje {
         //console.log(delta);
         if(this.y >= 3100){//esto es por si se cae, luego no será necesario
             this.scene.changeScene('Game')
-            
+            this.scene.time.advan
         }
         if(!this.espada.visible){
             if(this.attackTime===0){
@@ -106,37 +106,40 @@ export default class Prota extends Personaje {
                 this.attacking=false;
             }
         }
-        if(!this.dashAvailable ){
-            if(this.dashing){
-                this.dashCd=time+1500;//1,5 segundos de cd
+        // if(!this.dashAvailable ){
+        //     if(this.dashing){
+        //         this.dashCd=time+1500;//1,5 segundos de cd
                 
-            }
-            else{
-                if(this.dashCd<=time){
-                    this.dashAvailable=true;
-                }
+        //     }
+        //     else{
+        //         if(this.dashCd<=time){
+        //             this.dashAvailable=true;
+        //         }
             
-            }
-        }
-        if(this.dashing){
-            if(this.dashingStartTime < this.dashingTime){             
-                // this.dashingStartTime += delta;
-                // console.log("TiempoDash = " + this.dashingStartTime);
-                this.dashingStartTime++;
-            }
-            else{
-                this.dashing = false;
-                this.dashingStartTime = 0;
-                
+        //     }
+        // }
+        if(this.dashing){               //Estado dash
+            // if(this.dashingStartTime < this.dashingTime){             
+            //     // this.dashingStartTime += delta;
+            //     // console.log("TiempoDash = " + this.dashingStartTime);
+            //     this.dashingStartTime++;
+            // }
+            //console.log("Tiempo= "+time);
+            if(this.dashingTime <= time){
+               this.dashing = false;
+                this.dashAvailable = true;     
+                this.dashingTime = 0;             
                 if(this.body.velocity.y<=0)  {
                     //si se usa dash hacia arriba se para, si es para abajo que siga bajando
                     this.body.setVelocityY(0);
                 }
+                this.body.setAllowGravity(true);
+
                 this.espada.setRotation(0);
                 this.espadaAtacando.setRotation(0);
             }
         }
-        else{
+        else{                           //Estado normal
             if(this.w.isDown){
                 this.changeDirectionY(-1);
             }
@@ -204,9 +207,12 @@ export default class Prota extends Personaje {
                 //console.log("antes:   "+this.body.velocity.y);
                 this.body.setVelocityX(this.direction.x * this.dashSpeed);
                 this.body.setVelocityY(this.direction.y * this.dashSpeed);
+                this.body.setAllowGravity(false);
                 this.dashAvailable = false;
                 this.dashing = true;
-                //console.log("despues:   "+this.body.velocity.y);
+                this.dashingTime = time + this.dashCd;
+                console.log("Limite= " + this.dashingTime);
+                console.log("despues:   "+this.body.velocity.y);
 
                 
             }

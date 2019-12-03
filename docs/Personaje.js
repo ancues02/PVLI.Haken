@@ -20,14 +20,15 @@ export default class Personaje extends Phaser.GameObjects.Container{
     changeDirectionX(nx){
         // this.direction.x = nx;
         // this.direction.y = ny;
-        if(nx===-1){
+        // if(nx===-1){
            
-            this.yoMismo.setFlipX(true);
-        }
-        else if(nx===1){
+        //     this.yoMismo.setFlipX(true);
+        // }
+        // else if(nx===1){
            
-            this.yoMismo.setFlipX(false);
-        }
+        //     this.yoMismo.setFlipX(false);
+        // }
+        this.yoMismo.setFlipX(nx === -1); //esto hace lo mismo
         this.direction.x = nx;
         //this.direction.x = nx;
     }
