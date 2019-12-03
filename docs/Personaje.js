@@ -1,9 +1,9 @@
-export default class Personaje extends Phaser.GameObjects.Sprite{
-    // export default class Personaje extends Phaser.GameObjects.Container{
+export default class Personaje extends Phaser.GameObjects.Container{
     constructor(scene, x,y, speed, dir, points, lives,sprite){
-        super(scene, x, y, sprite);   
-        // this.yoMismo= scene.add.spriter(...)
-        //this.add(this.yoMismo)
+        super(scene, x, y);   
+        this.yoMismo= this.scene.add.sprite(0,0,sprite);
+        this.add(this.yoMismo)
+        this.setSize(this.yoMismo.width-5,this.yoMismo.height); //ajusta
         //this.add(this.epada)
         scene.add.existing(this);
         this.scene.physics.add.existing(this);
@@ -18,9 +18,18 @@ export default class Personaje extends Phaser.GameObjects.Sprite{
         this.lives--;
     }
     changeDirectionX(nx){
-        this.direction.x = nx;
         // this.direction.x = nx;
         // this.direction.y = ny;
+        if(nx===-1){
+           
+            this.yoMismo.setFlipX(true);
+        }
+        else if(nx===1){
+           
+            this.yoMismo.setFlipX(false);
+        }
+        this.direction.x = nx;
+        //this.direction.x = nx;
     }
     changeDirectionY(ny){
         this.direction.y = ny;
