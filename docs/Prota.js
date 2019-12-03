@@ -31,15 +31,14 @@ export default class Prota extends Personaje {
         
         this.damageCD = true;//es para controlar que los enemigos no hagan daño todo el rato       
         
-        //this.wait=false;
-        // this.attackStartTIme = 0;
-        // this.attackTimeLimit = 1000;
+        
         this.attackTime=0;
         this.attacking=false;
         //variables para el dash
-        this.dashingTime = 0;  //1500
-        this.dashingStartTime = 0;
-        this.dashCd=450;//para poder volver usar el dash(1.5 segundos)
+        this.dashingTime = 0; //el tiempo que esta haciendo dash (dashingStartTime + time) 
+        this.dashingStartTime=250;//tiempo que esta usando el dash
+        this.dashCd = 1500;//es el cd del dash
+        this.noDash=0;//el tiempo que no puede usar el dash(time+dashCd)
         this.dashing = false;//para hacer daño mientras usas el dash
         this.dashSpeed = 600;//la velocidad a la que te mueves
         this.dashAvailable = true;//para poder hacer dash
@@ -67,7 +66,7 @@ export default class Prota extends Personaje {
     
     addPoint(points){
         this.points+=points;
-        //this.updateScore();
+        
         //console.log(this.points);
     }
     changeJumpImpulse(){
@@ -106,40 +105,28 @@ export default class Prota extends Personaje {
                 this.attacking=false;
             }
         }
-        // if(!this.dashAvailable ){
-        //     if(this.dashing){
-        //         this.dashCd=time+1500;//1,5 segundos de cd
-                
-        //     }
-        //     else{
-        //         if(this.dashCd<=time){
-        //             this.dashAvailable=true;
-        //         }
-            
-        //     }
-        // }
         if(this.dashing){               //Estado dash
-            // if(this.dashingStartTime < this.dashingTime){             
-            //     // this.dashingStartTime += delta;
-            //     // console.log("TiempoDash = " + this.dashingStartTime);
-            //     this.dashingStartTime++;
-            // }
-            //console.log("Tiempo= "+time);
+            
             if(this.dashingTime <= time){
-               this.dashing = false;
-                this.dashAvailable = true;     
+                this.dashing = false;
+                this.noDash=this.dashCd+time;
                 this.dashingTime = 0;             
                 if(this.body.velocity.y<=0)  {
                     //si se usa dash hacia arriba se para, si es para abajo que siga bajando
                     this.body.setVelocityY(0);
                 }
-                this.body.setAllowGravity(true);        //aunque pongas la velocity en 0, sigue afectando la gravedad parece
-
+                this.body.setAllowGravity(true);//aunque pongas la velocity en 0, sigue afectando la gravedad parece
                 this.espada.setRotation(0);
                 this.espadaAtacando.setRotation(0);
             }
         }
-        else{                           //Estado normal
+        //estado normal
+        else {  
+            if(!this.dashAvailable){
+                if(this.noDash<=time){
+                    this.dashAvailable=true;
+                }
+            }                         
             if(this.w.isDown){
                 this.changeDirectionY(-1);
             }
@@ -206,9 +193,9 @@ export default class Prota extends Personaje {
                 }
                 //console.log("antes:   "+this.body.velocity.y);
                 if(Math.abs(this.direction.y) === Math.abs(this.direction.x)){     //dash diagonal mas razonable
-                    this.body.setVelocityX(0.5* this.direction.x * this.dashSpeed);
-                    this.body.setVelocityY(0.5 * this.direction.y * this.dashSpeed);
-                    console.log("en");
+                    this.body.setVelocityX(0.7* this.direction.x * this.dashSpeed);
+                    this.body.setVelocityY(0.7 * this.direction.y * this.dashSpeed);
+                    //console.log("en");
                 }
                 else{
                     this.body.setVelocityX(this.direction.x * this.dashSpeed);
@@ -218,9 +205,9 @@ export default class Prota extends Personaje {
                 this.body.setAllowGravity(false);
                 this.dashAvailable = false;
                 this.dashing = true;
-                this.dashingTime = time + this.dashCd;
-                console.log("Limite= " + this.dashingTime);
-                console.log("despues:   "+this.body.velocity.y);
+                this.dashingTime = time + this.dashingStartTime;
+                //console.log("Limite= " + this.dashingTime);
+                //console.log("despues:   "+this.body.velocity.y);
 
                 
             }
@@ -242,17 +229,7 @@ export default class Prota extends Personaje {
             }
             else{
                  this.x -=752;
-                 //this.wait=time+1;
             }
-            /*this.wait=true;
-            //this.body.onCollide===false
-           if ( this.wait && this.body.onWall()overlap(this.scene.layerPlatform, this)){
-                console.log(this.x+"   "+this.y)
-                this.y-=30;
-                this.wait=false;
-    
-            }
-            else this.wait=false;*/
      
         }
         
@@ -275,7 +252,7 @@ export default class Prota extends Personaje {
         }
         
     }
-    changeDirectionX(nx){   //
+    changeDirectionX(nx){   
         if(nx===-1){
             this.espada.x=-20;
             this.espada.setFlipX(true); 
