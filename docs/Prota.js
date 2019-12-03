@@ -1,29 +1,29 @@
-//import Personaje from './Personaje.js';  //esto esta aqui porque funciona
-export default class Prota extends Phaser.GameObjects.Container  {
+import Personaje from './Personaje.js';  //esto esta aqui porque funciona
+export default class Prota extends Personaje {
     constructor(scene, x,y, speed, dir, points, jumpImpulse,lives, sprite,espada,espadaAtacando,shield){
-        super(scene,x,y);
-        this.yoMismo= this.scene.add.sprite(0,0,sprite);
+        super(scene,x,y, speed, dir, points, lives, sprite);
+        //this.yoMismo= this.scene.add.sprite(0,0,sprite); //quitar
         this.espada= this.scene.add.sprite(20,0,espada);
         this.espadaAtacando= this.scene.add.sprite(20,0,espadaAtacando);
 
-        super.setSize(this.yoMismo.width-5,this.yoMismo.height);
-        //console.log(this.yoMismo.width);
+        super.setSize(this.yoMismo.width-5,this.yoMismo.height + 20);
+        //console.log(this.yoMismo.width);  //quitar 
 
-        this.scene.add.existing(this);
+       //this.scene.add.existing(this);    //quitar
         
         this.shield= this.scene.add.sprite(0,0,shield);
         this.shield.setAlpha(0.8);
-        this.add(this.yoMismo);
+        //this.add(this.yoMismo); //quitar
         this.add(this.espada);
         this.add(this.espadaAtacando);
         this.add(this.shield);
         this.espadaAtacando.setVisible(false);
         this.shield.setVisible(false);
-        this.scene.physics.add.existing(this);
-        this.lives = lives;
-        this.direction = dir;
-        this.speed = speed;
-        this.points = points;
+    //    this.scene.physics.add.existing(this); // qui
+    //     this.lives = lives;
+    //     this.direction = dir;
+    //     this.speed = speed;
+    //     this.points = points;             //tar
         this.startPos={x: x, y: y};
         this.jumpImpulse = jumpImpulse;
         this.springPicked=false;//para saltar más cuando pillas un spring
@@ -32,11 +32,12 @@ export default class Prota extends Phaser.GameObjects.Container  {
         this.damageCD = true;//es para controlar que los enemigos no hagan daño todo el rato       
         
         //this.wait=false;
-
+        // this.attackStartTIme = 0;
+        // this.attackTimeLimit = 1000;
         this.attackTime=0;
         this.attacking=false;
         //variables para el dash
-        this.dashingTime = 10;
+        this.dashingTime = 10;  //1500
         this.dashingStartTime = 0;
         this.dashCd=1500;//para poder volver usar el dash(1.5 segundos)
         this.dashing = false;//para hacer daño mientras usas el dash
@@ -69,22 +70,6 @@ export default class Prota extends Phaser.GameObjects.Container  {
         //this.updateScore();
         console.log(this.points);
     }
-    decreaseHealth(){
-        if(this.damageCD)
-        {
-            this.decreaseHealthProta();
-            if(this.lives === 1){
-                this.damageCD = false;
-                this.shield.setVisible(false);
-
-                setTimeout(()=>this.damageCD = true,2000); 
-            }
-            else if(this.lives<=0){
-                this.scene.changeScene('Game')
-            }
-        }
-        
-    }
     changeJumpImpulse(){
         this.springPicked=true;
     }
@@ -112,7 +97,7 @@ export default class Prota extends Phaser.GameObjects.Container  {
         if(!this.espada.visible){
             if(this.attackTime===0){
                this.attackTime=time+250;
-
+                console.log(this.attackTime);
             }
             else if(this.attackTime<=time){
                 this.espada.setVisible(true);
@@ -134,9 +119,9 @@ export default class Prota extends Phaser.GameObjects.Container  {
             }
         }
         if(this.dashing){
-
-            if(this.dashingStartTime < this.dashingTime){
-                
+            if(this.dashingStartTime < this.dashingTime){             
+                // this.dashingStartTime += delta;
+                // console.log("TiempoDash = " + this.dashingStartTime);
                 this.dashingStartTime++;
             }
             else{
@@ -184,6 +169,7 @@ export default class Prota extends Phaser.GameObjects.Container  {
             }
             //Dash
             //dinstinguimos diferentes casos para colocar la espada
+            //creo que podemos poner un script a la espada para que se gire y ahorrarnos comparaciones
             if(this.dashAvailable && (this.direction.x != 0 || this.direction.y != 0) && Phaser.Input.Keyboard.JustDown(this.j)){
                 if(this.direction.y===0) {//lados
                     this.espada.setVisible(false);
@@ -253,10 +239,24 @@ export default class Prota extends Phaser.GameObjects.Container  {
         
         
     }
-    decreaseHealthProta(){
-        this.lives--;
+
+    decreaseHealth(){
+        if(this.damageCD)
+        {
+            this.lives--;
+            if(this.lives === 1){
+                this.damageCD = false;
+                this.shield.setVisible(false);
+
+                setTimeout(()=>this.damageCD = true,2000); //cambiar esto
+            }
+            else if(this.lives<=0){
+                this.scene.changeScene('Game')
+            }
+        }
+        
     }
-    changeDirectionX(nx){
+    changeDirectionX(nx){   //
         if(nx===-1){
             this.espada.x=-20;
             this.espada.setFlipX(true); 
@@ -275,19 +275,19 @@ export default class Prota extends Phaser.GameObjects.Container  {
         // this.direction.x = nx;
         // this.direction.y = ny;
     }
-    changeDirectionY(ny){
+    // changeDirectionY(ny){
         
-        this.direction.y = ny;
-    }
-    stop(){
-        this.body.setVelocityX(0);
-    }
-    horizontalMove(){
-        this.body.setVelocityX(this.direction.x * this.speed);
-    }
-    verticalMove(){
-        this.body.setVelocityY(this.direction.y * this.speed);
-    }
+    //     this.direction.y = ny;
+    // }
+    // stop(){
+    //     this.body.setVelocityX(0);
+    // }
+    // horizontalMove(){
+    //     this.body.setVelocityX(this.direction.x * this.speed);
+    // }
+    // verticalMove(){
+    //     this.body.setVelocityY(this.direction.y * this.speed);
+    // }
 
     //getters
     getPoints(){

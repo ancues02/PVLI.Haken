@@ -2,8 +2,7 @@ import Personaje from './Personaje.js';  //esto esta aqui porque funciona
 export default class Enemy extends Personaje  {
     constructor(scene, x,y, speed, dir, points, damage, lives,  sprite){
         super(scene,x,y, speed, dir, points, lives, sprite);
-        this.damage = damage;
-
+        this.damage = damage;   //no estamos usando
         //this.scene.add.existing(this);
         //this.scene.physics.add.existing(this,true);
     }
