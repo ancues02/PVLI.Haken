@@ -1,8 +1,10 @@
-import Enemy from './Enemy.js';  //esto esta aqui porque funciona
-export default class Reizen extends Enemy  {
+import Enemy from './Enemy.js'; 
+export default class Gezi extends Enemy  {
     constructor(scene, x,y, speed, dir, points, damage, lives,  sprite){
         super(scene,x,y, speed, dir, points, damage,lives, sprite);
         this.startMove=false;
+        //this.yoMismo=sprite;
+        this.body.setGravityY(0);//aunque pongas la velocity en 0, sigue afectando la gravedad parece
       }
 
     preUpdate(){
@@ -18,10 +20,14 @@ export default class Reizen extends Enemy  {
             if(this.direction.x===1){
                 this.x-=30;
                 this.changeDirectionX(-1);
+               // this.yoMismo.setFlipX(false);
+
             }
             else{
                 this.x+=30;
                 this.changeDirectionX(1);
+                //this.yoMismo.setFlipX(true);
+
             }
         }
         super.colisionPlayer();   

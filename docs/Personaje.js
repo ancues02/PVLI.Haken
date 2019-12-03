@@ -14,9 +14,10 @@ export default class Personaje extends Phaser.GameObjects.Sprite{
         this.lives--;
     }
     changeDirectionX(nx){
+       
+        this.yoMismo.setFlipX(nx === -1); //esto hace lo mismo
         this.direction.x = nx;
-        // this.direction.x = nx;
-        // this.direction.y = ny;
+        //this.direction.x = nx;
     }
     changeDirectionY(ny){
         this.direction.y = ny;
