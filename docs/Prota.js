@@ -88,6 +88,7 @@ export default class Prota extends Personaje {
         this.dimValue *= -1;
     }
     preUpdate(time, delta){
+        //if(this.body.onWall())console.log("holaaaaaaaaaaaaaaaaaaaa");
         //console.log(delta);
         if(this.y >= 3100){//esto es por si se cae, luego no será necesario
             this.scene.changeScene('Game')
