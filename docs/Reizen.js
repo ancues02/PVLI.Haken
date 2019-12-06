@@ -19,14 +19,14 @@ export default class Reizen extends Enemy  {
             if(this.direction.x===1){
                 this.x-=30;
                 this.changeDirectionX(-1);
-                this.yoMismo.setFlipX(true);
+                //this.yoMismo.setFlipX(true);
 
             }
             else{
                 this.x+=30;
 
                 this.changeDirectionX(1);
-                super.yoMismo.setFlipX(false);
+                //super.yoMismo.setFlipX(false);
 
             }
         }

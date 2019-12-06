@@ -1,5 +1,5 @@
 import Enemy from './Enemy.js';  //esto esta aqui porque funciona
-export default class Reizen extends Enemy  {
+export default class Gezi extends Enemy  {
     constructor(scene, x,y, speed, dir, points, damage, lives,  sprite){
         super(scene,x,y, speed, dir, points, damage,lives, sprite);
         //this.startMove=false;
@@ -132,7 +132,7 @@ export default class Reizen extends Enemy  {
 
         }
         else{
-            console.log("ELSE")
+            console.log("ELSE")             //No esta sobre nada
             if(!this.goDown){
                 if(this.direction.x===1){//se mueve a la derecha
                     this.x-=10;
