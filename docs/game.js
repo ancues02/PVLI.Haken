@@ -17,16 +17,10 @@ export default class Game extends Phaser.Scene {
 
 
   preload() { 
-  //   this._fontStyle = { 
-  //     font: "40px Arial", 
-  //     fill: "#FFCC00", 
-  //     stroke: "#333", 
-  //     strokeThickness: 5, 
-  //     align: "center"
-  // };
+  
   this.load.image('personaje','./favicon.png');
   this.load.image('shield','./shield.png');
-  this.load.image('pickUp', './coin.png');
+  this.load.image('coin', './1coin.png');
      this.load.image('espada', './sword2.png');
      this.load.image('espadaAtacando', './sword1.png');
      this.load.image('enemigo', './Enemy.png');
@@ -54,8 +48,6 @@ export default class Game extends Phaser.Scene {
     this.map.addTilesetImage('TileMap','tile');
     this.layerPlatform=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
     this.layerBackground=this.map.createDynamicLayer('Background','TileMap',0,0);
-    //this.escape2=this.input.keyboard.addKey("Q"); //tecla del dash
-//this.player=new Contenerdor(this,400,200,"personaje","espada","shield");
     this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
     this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
@@ -82,8 +74,9 @@ export default class Game extends Phaser.Scene {
 
     
     
-    
-    
+    this.textDash=this.add.text(this.cameras.main.left, this.player.getY());
+    this.textDash.setFontSize(25);
+    this.textDash.x=1350;
 
     this.textScore = this.add.text(this.cameras.main.left, this.player.getY());
     this.textScore.setFontSize(25);
@@ -115,6 +108,10 @@ export default class Game extends Phaser.Scene {
     this.textTime.y=(this.player.getY()-this.cameras.main.width/4+230);
     if (this.textTime.y<=60)this.textTime.y=60;
     this.textTime.text = 'Time: ' + Math.round(this.time/1000);
+
+    this.textDash.y=(this.player.getY()-this.cameras.main.width/4+180);
+    if (this.textDash.y<=0)this.textDash.y=0;
+    this.textDash.text = 'Dash: ' + this.player.canDash();
    
 }
 managePause() {

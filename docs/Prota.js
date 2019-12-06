@@ -36,6 +36,7 @@ export default class Prota extends Personaje {
         // this.attackTimeLimit = 1000;
         this.attackTime=0;
         this.attacking=false;
+        this.time=0;
         //variables para el dash
         this.dashingTime = 10;  //1500
         this.dashingStartTime = 0;
@@ -57,6 +58,15 @@ export default class Prota extends Personaje {
         this.body.setMaxVelocity(500,800);
 
 
+    }
+    //es un poco feo pero funciona con javascript, es para el texto que ponemos
+    //durante la aprtida de si puedes usar el dash o lo tienes en cd
+    canDash(){
+        if(!this.dashAvailable){
+            return this.dashCd-this.time;
+
+        }
+        else return "Sí"
     }
     isDashing(){
         return this.dashing;
@@ -89,6 +99,7 @@ export default class Prota extends Personaje {
         this.dimValue *= -1;
     }
     preUpdate(time, delta){
+        this.time=time;
         //console.log(delta);
         if(this.y >= 3100){//esto es por si se cae, luego no será necesario
             this.scene.changeScene('Game')
