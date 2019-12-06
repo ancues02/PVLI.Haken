@@ -7,114 +7,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=2.0">
     <link rel="stylesheet" href="game.css">
     <link href="https://fonts.googleapis.com/css?family=Anton|Open+Sans+Condensed:300&display=swap" rel="stylesheet">    <script src="phaser.min.js"></script>
+  
     <title>¡NAKHEVARI!</title>
 </head>
 
     <body style="background-color:rgba(59, 129, 177, 0.349);">
-        <script type="module">
-            import Game from './game.js';
-            import Personaje from './Personaje.js';
-            import Prota from './Prota.js';
-            
-            import PickMe from './PickMe.js';
-            import Spring from './Spring.js';
-            import Coin from './Coin.js';
-            import BateriaDash from './BateriaDash.js';
-
-            import Enemy from './Enemy.js';
-            import Rinne from './Rinne.js';
-            import Zoppo from './Zoppo.js';
-            import Reizen from './Reizen.js';
-
-            import Menu from './Menu.js';
-            import Pause from './Pause.js';
-            var config = {
-                type: Phaser.AUTO,
-                width: 1500,
-                height: 600,
-                //height: 3200,
-
-                pixelArt: true,
-                input: {
-                    gamepad: true
-                },
-                scale: {
-                    mode: Phaser.Scale.FIT,
-                    autoCenter: Phaser.Scale.CENTER_BOTH
-                },
-                scene: [ Menu,Pause,Game ],
-                physics: { default: 'arcade', arcade: { gravity: { y: 600 }, debug: false } }
-            };
-            new Phaser.Game(config);
-
-        </script>
-        <h1>HAKEN</h1>
-        <p class = "footer">Developed by <a href=https://github.com/ancues02>Andrés de la Cuesta</a> & <a href=https://github.com/PabloRBGM>Pablo Rodríguez-Bobada</a></p>
-
         
+        <h1>HAKEN</h1>
         <table class="egh">
         
         
-            <th colspan="2" scope="rowgroup">-----------------------CONTROLES-----------------------</th>
-            <tr>
+                <th colspan="2" scope="rowgroup">-----------------------CONTROLES-----------------------</th>
+                <tr>
+                
+                    <th>Teclas</th>
+                
+                    <th>Descripción</th>
+                
+                </tr>
+                
+                <tr>
+                
+                    <td>A   D</td>
+                
+                    <td>Movimiento lateral.</td>
+                
+                </tr>
+                <tr>
+                
+                    <td>SPACE</td>
+                
+                    <td>Salto.</td>
+                
+                </tr>
+                
+                <tr>
+                
+                    <td>J</td>
+                
+                    <td>Ataque en el sitio.</td>
+                
+                </tr>
+                
+                <tr>
+                
+                    <td>WASD + J  </td>
+                
+                    <td>Dash en una de las 8 direcciones, hace daño. </td>
+                
+                </tr>
+    
+                <tr>
+                
+                    <td>K</td>
+                
+                    <td>Cambiar de pantalla.</td>
+                
+                </tr>
+    
+                <tr>
+                
+                    <td>ESC</td>
+                
+                    <td>Activar / desactivar menú de pausa.</td>
+                
+                </tr>
             
-                <th>Teclas</th>
             
-                <th>Descripción</th>
-            
-            </tr>
-            
-            <tr>
-            
-                <td>A   D</td>
-            
-                <td>Movimiento lateral</td>
-            
-            </tr>
-            <tr>
-            
-                <td>SPACE</td>
-            
-                <td>Salto</td>
-            
-            </tr>
-            
-            <tr>
-            
-                <td>J</td>
-            
-                <td>Ataque en el sitio</td>
-            
-            </tr>
-            
-            <tr>
-            
-                <td>WASD + J  </td>
-            
-                <td>Dash en una de las 8 direcciones, hace daño </td>
-            
-            </tr>
+            </table>
+        <canvas id="gameCanvas"></canvas>
+        <p class = "footer">Developed by <a href=https://github.com/ancues02>Andrés de la Cuesta</a>
+             & <a href=https://github.com/PabloRBGM>Pablo Rodríguez-Bobada.</a></p>
 
-            <tr>
-            
-                <td>K</td>
-            
-                <td>Cambiar de pantalla</td>
-            
-            </tr>
-
-            <tr>
-            
-                <td>ESC</td>
-            
-                <td>Activar / desactivar menú de pausa</td>
-            
-            </tr>
+        <!--footer class="container">
+            <hr class="footer-divider">
+            <p> Developed by <a href=https://github.com/ancues02>Andrés de la Cuesta</a> & <a href=https://github.com/PabloRBGM>Pablo Rodríguez-Bobada</p>
+        </footer-->
         
         
-        </table>
-       
 
+        <script type="module">
+                import Game from './game.js';
+                import Personaje from './Personaje.js';
+                import Prota from './Prota.js';
+                
+                import PickMe from './PickMe.js';
+                import Spring from './Spring.js';
+                import Coin from './Coin.js';
+                import BateriaDash from './BateriaDash.js';
+    
+                import Enemy from './Enemy.js';
+                import Rinne from './Rinne.js';
+                import Zoppo from './Zoppo.js';
+                import Reizen from './Reizen.js';
+    
+                import Menu from './Menu.js';
+                import Pause from './Pause.js';
+                var config = {
+                    type: Phaser.WEBGL,
+                    width: 1500,
+                    height: 600,
+                    //height: 3200,
+                    canvas: document.getElementById("gameCanvas"),
+                    pixelArt: true,
+                    input: {
+                        gamepad: true
+                    },
+                    scale: {
+                        mode: Phaser.Scale.FIT,
+                        autoCenter: Phaser.Scale.CENTER_BOTH
+                    },
+                    scene: [ Menu,Pause,Game ],
+                    physics: { default: 'arcade', arcade: { gravity: { y: 600 }, debug: false } }
+                };
+                new Phaser.Game(config);
+    
+            </script>
 
     </body>
 
