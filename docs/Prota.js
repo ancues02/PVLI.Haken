@@ -32,17 +32,18 @@ export default class Prota extends Personaje {
         this.damageCD = true;//es para controlar que los enemigos no hagan daño todo el rato       
         
         //variables para el ataque
-        this.attackTime=0;
-        this.attackDuration = 250;
+        //this.attackTime=0;
         this.attacking=false;
+        this.attackDuration = 0;
         //variables para el dash
-        this.dashingTime = 0; //el tiempo que esta haciendo dash (dashDuration + time) 
-        this.dashDuration=250;//tiempo que esta usando el dash
-        this.dashCd = 1500;//es el cd del dash
-        this.noDash=0;//el tiempo que no puede usar el dash(time+dashCd)
         this.dashing = false;//para hacer daño mientras usas el dash
-        this.dashSpeed = 600;//la velocidad a la que te mueves
         this.dashAvailable = true;//para poder hacer dash
+        //this.dashingTime = 0; //el tiempo que esta haciendo dash (dashDuration + time) 
+        this.dashDuration=0;//tiempo que esta usando el dash, si es 0, puedes usar el dash
+        this.dashCd = 0;//es el cd del dash
+        //this.noDash=0;//el tiempo que no puede usar el dash(time+dashCd)
+        this.dashSpeed = 600;//la velocidad a la que te mueves
+        
        
         //teclas para manejo de eventos
         this.a=scene.input.keyboard.addKey("A");//moverte izquierda
@@ -77,18 +78,37 @@ export default class Prota extends Personaje {
         //     }
         // }
         if(this.attacking){                //Estado ataque
-            if(this.attackTime<=time){
-                this.espada.setVisible(true);
-                this.espadaAtacando.setVisible(false);
-                this.attackTime=0;
+            // if(this.attackTime<=time){
+            //     this.espada.setVisible(true);
+            //     this.espadaAtacando.setVisible(false);
+            //     this.attackTime=0;
+            //     this.attacking=false;
+            // }
+            this.attackDuration = Math.max(0, this.attackDuration - delta); //asi los hace el profesor
+            if(this.attackDuration === 0){
                 this.attacking=false;
+                this.espada.setVisible(true);
+                this.espadaAtacando.setVisible(false);            
             }
         }
         else if(this.dashing){               //Estado dash          
-            if(this.dashingTime <= time){
-                this.dashing = false;
+            // if(this.dashingTime <= time){
+            //     this.dashing = false;
                 
-                this.dashingTime = 0;             
+            //     this.dashingTime = 0;             
+            //     if(this.body.velocity.y<=0)  {
+            //         //si se usa dash hacia arriba se para, si es para abajo que siga bajando
+            //         this.body.setVelocityY(0);
+            //     }
+            //     //this.scene.time.addEvent({ delay: 2000, callback: () => {console.log("reseteo el dash");}, callbackScope: this });
+            //     this.body.setAllowGravity(true);//aunque pongas la velocity en 0, sigue afectando la gravedad parece
+            //     this.espada.setRotation(0);
+            //     this.espadaAtacando.setRotation(0);
+            //     this.noDash=this.dashCd+time;
+            // }
+            this.dashDuration = Math.max(0, this.dashDuration - delta);
+            if(this.dashDuration === 0){
+                this.dashing = false;
                 if(this.body.velocity.y<=0)  {
                     //si se usa dash hacia arriba se para, si es para abajo que siga bajando
                     this.body.setVelocityY(0);
@@ -97,14 +117,19 @@ export default class Prota extends Personaje {
                 this.body.setAllowGravity(true);//aunque pongas la velocity en 0, sigue afectando la gravedad parece
                 this.espada.setRotation(0);
                 this.espadaAtacando.setRotation(0);
-                this.noDash=this.dashCd+time;
+                //this.noDash=this.dashCd+time;
+                this.dashCd = 1500;
             }
         }
         //estado normal
         else {  
             if(!this.dashAvailable){    //cd del dash
-                if(this.noDash<=time){
-                    this.dashAvailable=true;
+                // if(this.noDash<=time){
+                //     this.dashAvailable=true;
+                // }
+                this.dashCd = Math.max(0, this.dashCd - delta);
+                if(this.dashCd === 0){
+                    this.dashAvailable = true;
                 }
             }  
             //Movimiento                      
@@ -186,7 +211,8 @@ export default class Prota extends Personaje {
                 this.body.setAllowGravity(false);
                 this.dashAvailable = false;
                 this.dashing = true;
-                this.dashingTime = time + this.dashDuration;
+                //this.dashingTime = time + this.dashDuration;
+                this.dashDuration = 250;
                 //console.log("Limite= " + this.dashingTime);
                 //console.log("despues:   "+this.body.velocity.y);
 
@@ -196,8 +222,8 @@ export default class Prota extends Personaje {
                 this.espada.setVisible(false);
                 this.espadaAtacando.setVisible(true);
                 this.attacking=true;
-                this.attackTime = time + this.attackDuration;
-
+                //this.attackTime = time + this.attackDuration;
+                this.attackDuration = 250;
             }
         }
         
