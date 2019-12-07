@@ -28,8 +28,7 @@ export default class Personaje extends Phaser.GameObjects.Container{
     }
     stop(){
         this.body.setVelocityX(0);  
-        
-
+        this.changeDirectionX(0);
     }
     horizontalMove(){
         this.body.setVelocityX(this.direction.x * this.speed);

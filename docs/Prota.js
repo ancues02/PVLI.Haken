@@ -31,12 +31,13 @@ export default class Prota extends Personaje {
         
         this.damageCD = true;//es para controlar que los enemigos no hagan daño todo el rato       
         
-        
+        //variables para el ataque
         this.attackTime=0;
+        this.attackDuration = 250;
         this.attacking=false;
         //variables para el dash
-        this.dashingTime = 0; //el tiempo que esta haciendo dash (dashingStartTime + time) 
-        this.dashingStartTime=250;//tiempo que esta usando el dash
+        this.dashingTime = 0; //el tiempo que esta haciendo dash (dashDuration + time) 
+        this.dashDuration=250;//tiempo que esta usando el dash
         this.dashCd = 1500;//es el cd del dash
         this.noDash=0;//el tiempo que no puede usar el dash(time+dashCd)
         this.dashing = false;//para hacer daño mientras usas el dash
@@ -57,77 +58,56 @@ export default class Prota extends Personaje {
 
 
     }
-    isDashing(){
-        return this.dashing;
-    }
-    isAttacking(){
-        return this.attacking;
-    }
-    
-    addPoint(points){
-        this.points+=points;
-        
-        //console.log(this.points);
-    }
-    changeJumpImpulse(){
-        this.springPicked=true;
-    }
-    resetDash(){
-        this.dashAvailable = true;
-    }
-    //cuando cogemos un escudo, ponemos como
-    // maximo una vida mas y se ve el escudo
-    shielded(){
-        if(this.lives === 1){
-            this.lives++;
-            this.shield.setVisible(true);
-
-        }
-    }
-    changeDimValue(){
-        this.dimValue *= -1;
-    }
     preUpdate(time, delta){
         //if(this.body.onWall())console.log("holaaaaaaaaaaaaaaaaaaaa");
         //console.log(delta);
         if(this.y >= 3100){//esto es por si se cae, luego no será necesario
             this.scene.changeScene('Game')
-            this.scene.time.advan
         }
-        if(!this.espada.visible){
-            if(this.attackTime===0){
-               this.attackTime=time+250;
-                //console.log(this.attackTime);
-            }
-            else if(this.attackTime<=time){
+        // if(!this.espada.visible){
+        //     if(this.attackTime===0){
+        //        this.attackTime=time+250;
+        //         //console.log(this.attackTime);
+        //     }
+        //     else if(this.attackTime<=time){
+        //         this.espada.setVisible(true);
+        //         this.espadaAtacando.setVisible(false);
+        //         this.attackTime=0;
+        //         this.attacking=false;
+        //     }
+        // }
+        if(this.attacking){                //Estado ataque
+            if(this.attackTime<=time){
                 this.espada.setVisible(true);
                 this.espadaAtacando.setVisible(false);
                 this.attackTime=0;
                 this.attacking=false;
             }
         }
-        if(this.dashing){               //Estado dash
-            
+        else if(this.dashing){               //Estado dash          
             if(this.dashingTime <= time){
                 this.dashing = false;
-                this.noDash=this.dashCd+time;
+                
                 this.dashingTime = 0;             
                 if(this.body.velocity.y<=0)  {
                     //si se usa dash hacia arriba se para, si es para abajo que siga bajando
                     this.body.setVelocityY(0);
                 }
+                //this.scene.time.addEvent({ delay: 2000, callback: () => {console.log("reseteo el dash");}, callbackScope: this });
                 this.body.setAllowGravity(true);//aunque pongas la velocity en 0, sigue afectando la gravedad parece
                 this.espada.setRotation(0);
                 this.espadaAtacando.setRotation(0);
+                this.noDash=this.dashCd+time;
             }
         }
         //estado normal
         else {  
-            if(!this.dashAvailable){
+            if(!this.dashAvailable){    //cd del dash
                 if(this.noDash<=time){
                     this.dashAvailable=true;
                 }
-            }                         
+            }  
+            //Movimiento                      
             if(this.w.isDown){
                 this.changeDirectionY(-1);
             }
@@ -148,13 +128,13 @@ export default class Prota extends Personaje {
                 this.horizontalMove();    
             }
             else{
-                this.changeDirectionX(0);
+                //this.changeDirectionX(0);
                 this.stop();
             }
             
             //jump
             if(this.space.isDown && this.body.onFloor()){
-                if(this.springPicked){
+                if(this.springPicked){      //en vez de esto, cuando pulsas, hace un callback a una funcion que reseta jumpimpulse, na
                     this.body.setVelocityY(1.5*this.jumpImpulse);
                     this.springPicked=false;
                 }
@@ -206,7 +186,7 @@ export default class Prota extends Personaje {
                 this.body.setAllowGravity(false);
                 this.dashAvailable = false;
                 this.dashing = true;
-                this.dashingTime = time + this.dashingStartTime;
+                this.dashingTime = time + this.dashDuration;
                 //console.log("Limite= " + this.dashingTime);
                 //console.log("despues:   "+this.body.velocity.y);
 
@@ -216,6 +196,7 @@ export default class Prota extends Personaje {
                 this.espada.setVisible(false);
                 this.espadaAtacando.setVisible(true);
                 this.attacking=true;
+                this.attackTime = time + this.attackDuration;
 
             }
         }
@@ -236,7 +217,39 @@ export default class Prota extends Personaje {
         
         
     }
+    isDashing(){
+        return this.dashing;
+    }
+    isAttacking(){
+        return this.attacking;
+    }
+    //para saber si estas mirando al enemigo o no
+    getFlipped(){
+        return this.yoMismo.flipX;
+    }
+    addPoint(points){
+        this.points+=points;
+        
+        //console.log(this.points);
+    }
+    changeJumpImpulse(){
+        this.springPicked=true;
+    }
+    resetDash(){
+        this.dashAvailable = true;
+    }
+    //cuando cogemos un escudo, ponemos como
+    // maximo una vida mas y se ve el escudo
+    shielded(){
+        if(this.lives === 1){
+            this.lives++;
+            this.shield.setVisible(true);
 
+        }
+    }
+    changeDimValue(){
+        this.dimValue *= -1;
+    }
     decreaseHealth(){
         if(this.damageCD)
         {
@@ -254,27 +267,30 @@ export default class Prota extends Personaje {
         
     }
     changeDirectionX(nx){   
-        if(nx===-1){
-            this.espada.x=-20;
-            this.espada.setFlipX(true); 
-            this.espadaAtacando.x=-20;
-            this.espadaAtacando.setFlipX(true);
-            this.yoMismo.setFlipX(true);
-        }
-        else if(nx===1){
-            this.espada.setFlipX(false);
-            this.espada.x=20;
-            this.espadaAtacando.x=20;
-            this.espadaAtacando.setFlipX(false);
-            this.yoMismo.setFlipX(false);
-        }
+        // if(nx===-1){
+        //     this.espada.x=-20;
+        //     this.espada.setFlipX(true); 
+        //     this.espadaAtacando.x=-20;
+        //     this.espadaAtacando.setFlipX(true);
+        //     this.yoMismo.setFlipX(true);
+        // }
+        // else if(nx===1){
+        //     this.espada.setFlipX(false);
+        //     this.espada.x=20;
+        //     this.espadaAtacando.x=20;
+        //     this.espadaAtacando.setFlipX(false);
+        //     this.yoMismo.setFlipX(false);
+        // }
+        //lo de arriba me fallaba cuando se le pasaba 0 como parametro
+        //sii ponemos esto, se pone la espada en el centro cuando la direccion en x es 0
+        this.espada.x=nx * 20;
+        this.espada.setFlipX(nx === -1); 
+        this.espadaAtacando.x= nx* 20;
+        this.espadaAtacando.setFlipX(nx === -1);
+        this.yoMismo.setFlipX(nx === -1);
         this.direction.x = nx;
         
     }
     
-    //para saber si estas mirando al enemigo o no
-    getFlipped(){
-        return this.yoMismo.flipX;
-    }
 
 }

@@ -97,16 +97,16 @@ export default class Gezi extends Enemy  {
         }
        
         if(this.body.onCeiling()){//y tiene que ser -1
-            console.log("Entro en techo")
+            //console.log("Entro en techo")
             this.body.angle=180;
             this.angle=180;
             if(this.body.onWall()){
                 if(!this.pared){//estabas yendo por el techo hasta tocar el muro
-                    console.log("de techo paso a pared")
+                    //console.log("de techo paso a pared")
                     this.changeDirectionY(1)
                 }
                 else{
-                    console.log("de pared paso a techo")
+                    //console.log("de pared paso a techo")
                     if(this.direction.x===1){//se mueve a la derecha
                         this.x-=10;
                        
@@ -119,7 +119,7 @@ export default class Gezi extends Enemy  {
                     this.changeDirectionX(-this.direction.x);
 
                 }
-                console.log("hola");
+                //console.log("hola");
                 //this.techo=false;
                 //this.changeDirectionY(1);
 
@@ -133,16 +133,16 @@ export default class Gezi extends Enemy  {
         else if(this.body.onFloor()){//y tiene que ser 1
             this.body.angle=0;
             this.angle=0;
-            console.log("ENTRO EN FLOOR")
+            //console.log("ENTRO EN FLOOR")
             if(this.body.onWall()){
                 //this.suelo=false;
                 if(this.body.onWall()){
                     if(!this.pared){//estabas yendo por el suelo hasta tocar el muro
-                        console.log("de suelo paso a pared")
+                        //console.log("de suelo paso a pared")
                         this.changeDirectionY(-1)
                     }
                     else{
-                        console.log("de pared paso a suelo")
+                        //console.log("de pared paso a suelo")
                         if(this.direction.x===1){//se mueve a la derecha
                             this.x-=10;
                            
@@ -164,7 +164,7 @@ export default class Gezi extends Enemy  {
             
         }
         else if(this.body.onWall() ){//x tiene que ser -1 o 1
-            console.log ("estoy en wall")
+            //console.log ("estoy en wall")
             /*if (this.body.onCeiling()) this.techo=true;
             else if (this.body.onFloor()){
                 this.suelo=true;
@@ -184,7 +184,7 @@ export default class Gezi extends Enemy  {
 
         }
         else{
-            console.log("ELSE")             //No esta sobre nada
+            //console.log("ELSE")             //No esta sobre nada
             if(!this.goDown){
                 if(this.direction.x===1){//se mueve a la derecha
                     this.x-=10;               
@@ -198,7 +198,7 @@ export default class Gezi extends Enemy  {
             }
             //this.changeDirectionY(0)
         }
-        console.log(this.suelo+" "+this.techo+" "+this.pared+" ");
+        //console.log(this.suelo+" "+this.techo+" "+this.pared+" ");
 
         super.colisionPlayer();    
 
