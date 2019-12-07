@@ -257,10 +257,10 @@ export default class Prota extends Personaje {
         
     }
 
-    decreaseHealth(){
+    decreaseHealth(damage){
         if(this.damageCD)
         {
-            this.lives--;
+            this.lives-=damage;
             if(this.lives === 1){
                 this.damageCD = false;
                 this.shield.setVisible(false);

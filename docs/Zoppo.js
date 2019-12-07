@@ -1,7 +1,7 @@
 import Enemy from './Enemy.js';  //esto esta aqui porque funciona
 export default class Zoppo extends Enemy  {
-    constructor(scene, x,y, speed, dir, points, damage, lives,  sprite){
-        super(scene,x,y, speed, dir, points, damage,lives, sprite);
+    constructor(scene, x,y, speed, dir, points, damage, lives, group, sprite){
+        super(scene,x,y, speed, dir, points, damage,lives, group, sprite);
         this.noFloorMove=10;//para que cambie de direccion cuando no hay suelo
     }
 

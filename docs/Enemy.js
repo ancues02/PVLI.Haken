@@ -1,8 +1,9 @@
 import Personaje from './Personaje.js';  //esto esta aqui porque funciona
 export default class Enemy extends Personaje  {
-    constructor(scene, x,y, speed, dir, points, damage, lives,  sprite){
+    constructor(scene, x,y, speed, dir, points, damage, lives, group, sprite){
         super(scene,x,y, speed, dir, points, lives, sprite);
         this.damage = damage;   //no estamos usando
+        group.add(this);
         //super.setSize(this.width,this.height); //ajusta
         //this.scene.add.existing(this);
         //this.scene.physics.add.existing(this,true);
@@ -30,7 +31,7 @@ export default class Enemy extends Personaje  {
                         
                     }
                 }
-                else this.scene.player.decreaseHealth();
+                else this.scene.player.decreaseHealth(this.damage);
             }
             else{
                 this.hurt();

@@ -2,8 +2,8 @@
 
 import Zoppo from './Zoppo.js';  //esto esta aqui porque funciona
 export default class Rinne extends Zoppo  {
-    constructor(scene, x,y, speed, dir, points, damage, lives,  sprite){
-        super(scene,x,y, speed, dir, points, damage,lives, sprite);
+    constructor(scene, x,y, speed, dir, points, damage, lives, group, sprite){
+        super(scene,x,y, speed, dir, points, damage,lives,group, sprite);
         this.startMove=false;
     }
 
