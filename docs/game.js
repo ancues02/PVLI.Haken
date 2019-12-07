@@ -63,27 +63,22 @@ export default class Game extends Phaser.Scene {
     this.enemigo2 = new Zoppo (this, 1400, 400, 200, {x:1, y:0}, 2, 1, 1,"enemigo");
     this.enemigo3 = new Gezi (this, 1260, 650, 200, {x:1, y:0}, 2, 1, 1,"enemigo3");
 
-
-
     this.shield = new Shield (this, 300, 600, "shield");
     this.spring = new Spring(this, 1300, 650, "muelle");
     this.bateriaDash = new BateriaDash(this, 500, 960, "zumito");
 
     
     this.layerPlatform.setCollisionByProperty({ colision: true });
+   
     this.physics.add.collider(this.player,this.layerPlatform);
     this.physics.add.collider(this.enemigo,this.layerPlatform);
     this.physics.add.collider(this.enemigo2,this.layerPlatform);
     this.physics.add.collider(this.enemigo1,this.layerPlatform);
     this.physics.add.collider(this.enemigo3,this.layerPlatform);
+    
+
 
     this.time = 0;
-
-
-    
-    
-    
-    
 
     this.textScore = this.add.text(this.cameras.main.left, this.player.getY());
     this.textScore.setFontSize(25);
@@ -117,6 +112,7 @@ export default class Game extends Phaser.Scene {
     this.textTime.text = 'Time: ' + Math.round(this.time/1000);
    
 }
+
 managePause() {
   //console.log(this.scene.isActive('Game'));
     

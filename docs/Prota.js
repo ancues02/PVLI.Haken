@@ -158,7 +158,7 @@ export default class Prota extends Personaje {
             
             //jump
             if(this.space.isDown && this.body.onFloor()){
-                if(this.springPicked){      //en vez de esto, cuando pulsas, hace un callback a una funcion que reseta jumpimpulse, na
+                if(this.springPicked){      
                     this.body.setVelocityY(1.5*this.jumpImpulse);
                     this.springPicked=false;
                 }
@@ -166,7 +166,7 @@ export default class Prota extends Personaje {
                     this.body.setVelocityY(this.jumpImpulse);
                 }
             }
-            //Dash
+            //Dash y ataque
             if(Phaser.Input.Keyboard.JustDown(this.j)){
                 if(this.isStill()){ //si estoy quieto, ataco
                     this.espada.setVisible(false);
@@ -263,7 +263,6 @@ export default class Prota extends Personaje {
             else{
                  this.x -=752;
             }
-     
         }
         
         
