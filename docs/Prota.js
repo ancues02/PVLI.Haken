@@ -30,7 +30,6 @@ export default class Prota extends Personaje {
         this.dimValue = 1; //1 == lado izq, -1 == lado derecho
         
         this.damageCD = true;//es para controlar que los enemigos no hagan daño todo el rato       
-        
         //variables para el ataque
         //this.attackTime=0;
         this.attacking=false;
@@ -168,63 +167,89 @@ export default class Prota extends Personaje {
                 }
             }
             //Dash
-            //dinstinguimos diferentes casos para colocar la espada
-            //creo que podemos poner un script a la espada para que se gire y ahorrarnos comparaciones
-            if(this.dashAvailable && (this.direction.x != 0 || this.direction.y != 0) && Phaser.Input.Keyboard.JustDown(this.j)){
-                if(this.direction.y===0) {//lados
+            if(Phaser.Input.Keyboard.JustDown(this.j)){
+                if(this.isStill()){ //si estoy quieto, ataco
                     this.espada.setVisible(false);
                     this.espadaAtacando.setVisible(true);
+                    this.attacking=true;
+                    //this.attackTime = time + this.attackDuration;
+                    this.attackDuration = 250;
                 }
-                else if(this.direction.y===1){
-                    if(this.direction.x===1){//abajo a la derecha
-                        this.espada.setRotation(1.5);
+                else if(this.dashAvailable){   //si me estoy moviendo, hago el dash
+                    this.placeSword();
+                    if(Math.abs(this.direction.y) === Math.abs(this.direction.x)){     //dash diagonal mas razonable
+                        this.body.setVelocityX(0.7* this.direction.x * this.dashSpeed);
+                        this.body.setVelocityY(0.7 * this.direction.y * this.dashSpeed);
+                        //console.log("en");
                     }
-                    else if(this.direction.x===-1){//abajo a la izquierda
-                        this.espada.setRotation(4.7);
+                    else{
+                        this.body.setVelocityX(this.direction.x * this.dashSpeed);
+                        this.body.setVelocityY(this.direction.y * this.dashSpeed);
+                    }
+                    this.body.setAllowGravity(false);
+                    this.dashAvailable = false;
+                    this.dashing = true;
+                    this.dashDuration = 250;
+                }
+            }
+            //Dash
+            //dinstinguimos diferentes casos para colocar la espada
+            //creo que podemos poner un script a la espada para que se gire y ahorrarnos comparaciones
+            // if(this.dashAvailable && (this.direction.x != 0 || this.direction.y != 0) && Phaser.Input.Keyboard.JustDown(this.j)){
+            //     if(this.direction.y===0) {//lados
+            //         this.espada.setVisible(false);
+            //         this.espadaAtacando.setVisible(true);
+            //     }
+            //     else if(this.direction.y===1){
+            //         if(this.direction.x===1){//abajo a la derecha
+            //             this.espada.setRotation(1.5);
+            //         }
+            //         else if(this.direction.x===-1){//abajo a la izquierda
+            //             this.espada.setRotation(4.7);
 
-                    }
-                    else{//abajo
+            //         }
+            //         else{//abajo
                         
-                        this.espada.setVisible(false);
-                        this.espadaAtacando.setVisible(true);
-                        if(this.espadaAtacando.flipX)  this.espadaAtacando.setRotation(-1.5);
-                        else this.espadaAtacando.setRotation(1.5);
-                    }
-                }
-                else if(this.direction.y===-1 && this.direction.x===0){//arriba
+            //             this.espada.setVisible(false);
+            //             this.espadaAtacando.setVisible(true);
+            //             if(this.espadaAtacando.flipX)  this.espadaAtacando.setRotation(-1.5);
+            //             else this.espadaAtacando.setRotation(1.5);
+            //         }
+            //     }
+            //     else if(this.direction.y===-1 && this.direction.x===0){//arriba
                     
-                    if(this.espada.flipX)   this.espada.setRotation(0.78)
-                    else this.espada.setRotation(-0.78)
+            //         if(this.espada.flipX)   this.espada.setRotation(0.78)
+            //         else this.espada.setRotation(-0.78)
 
-                }
-                //console.log("antes:   "+this.body.velocity.y);
-                if(Math.abs(this.direction.y) === Math.abs(this.direction.x)){     //dash diagonal mas razonable
-                    this.body.setVelocityX(0.7* this.direction.x * this.dashSpeed);
-                    this.body.setVelocityY(0.7 * this.direction.y * this.dashSpeed);
-                    //console.log("en");
-                }
-                else{
-                    this.body.setVelocityX(this.direction.x * this.dashSpeed);
-                    this.body.setVelocityY(this.direction.y * this.dashSpeed);
-                }
+            //     }
+            //     //console.log("antes:   "+this.body.velocity.y);
+            //     if(Math.abs(this.direction.y) === Math.abs(this.direction.x)){     //dash diagonal mas razonable
+            //         this.body.setVelocityX(0.7* this.direction.x * this.dashSpeed);
+            //         this.body.setVelocityY(0.7 * this.direction.y * this.dashSpeed);
+            //         //console.log("en");
+            //     }
+            //     else{
+            //         this.body.setVelocityX(this.direction.x * this.dashSpeed);
+            //         this.body.setVelocityY(this.direction.y * this.dashSpeed);
+            //     }
                 
-                this.body.setAllowGravity(false);
-                this.dashAvailable = false;
-                this.dashing = true;
-                //this.dashingTime = time + this.dashDuration;
-                this.dashDuration = 250;
-                //console.log("Limite= " + this.dashingTime);
-                //console.log("despues:   "+this.body.velocity.y);
+            //     this.body.setAllowGravity(false);
+            //     this.dashAvailable = false;
+            //     this.dashing = true;
+            //     //this.dashingTime = time + this.dashDuration;
+            //     this.dashDuration = 250;
+            //     //console.log("Limite= " + this.dashingTime);
+            //     //console.log("despues:   "+this.body.velocity.y);
 
                 
-            }
-            else if (!this.attacking && this.direction.x == 0 && this.direction.y == 0 && Phaser.Input.Keyboard.JustDown(this.j)){
-                this.espada.setVisible(false);
-                this.espadaAtacando.setVisible(true);
-                this.attacking=true;
-                //this.attackTime = time + this.attackDuration;
-                this.attackDuration = 250;
-            }
+            // }
+            // else if (!this.attacking && this.direction.x == 0 && this.direction.y == 0 && Phaser.Input.Keyboard.JustDown(this.j)){
+            //     this.espada.setVisible(false);
+            //     this.espadaAtacando.setVisible(true);
+            //     this.attacking=true;
+            //     //this.attackTime = time + this.attackDuration;
+            //     this.attackDuration = 250;
+            // }
         }
         
         //Cambio de dimension
@@ -243,11 +268,36 @@ export default class Prota extends Personaje {
         
         
     }
+    isStill(){
+        return (this.direction.x == 0 && this.direction.y == 0);
+    }
     isDashing(){
         return this.dashing;
     }
     isAttacking(){
         return this.attacking;
+    }
+    placeSword(){
+        if(this.direction.y===0) {//lados
+            this.espada.setVisible(false);
+            this.espadaAtacando.setVisible(true);
+        }
+        else if(this.direction.y===1){
+            if(this.direction.x===1){//abajo a la derecha
+                this.espada.setRotation(1.5);
+            }
+            else if(this.direction.x===-1){//abajo a la izquierda
+                this.espada.setRotation(4.7);
+
+            }
+            else{//abajo
+                
+                this.espada.setVisible(false);
+                this.espadaAtacando.setVisible(true);
+                if(this.espadaAtacando.flipX)  this.espadaAtacando.setRotation(-1.5);
+                else this.espadaAtacando.setRotation(1.5);
+            }
+        }
     }
     //para saber si estas mirando al enemigo o no
     getFlipped(){
