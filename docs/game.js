@@ -8,7 +8,8 @@ import Rinne from './Rinne.js';
 import Reizen from './Reizen.js';
 import Zoppo from './Zoppo.js'
 import Shield from './Shield.js';
-
+import Spike from './Spike.js';
+import changeMov from './changeMov.js'
 //import Contenerdor from './Contenedor.js';
 export default class Game extends Phaser.Scene {
   constructor() {
@@ -29,28 +30,36 @@ export default class Game extends Phaser.Scene {
      this.load.image('muelle', './muelle.png');
      this.load.image('zumito', './zumito.png');
      this.load.image('bubble','./bubble.png')
+     this.load.image('spike','./Spike.png')
 
      //var platforms =this.physics.add.staticGroup();;
      this.load.image ('tile','./Sprute.png')
 
-     this.load.tilemapTiledJSON("tilemap","./Mapa.json")
+     this.load.tilemapTiledJSON("tilemapp","./Mapa.json")
+     //this.load.tilemapTiledJSON("pinchos","./Mapa.json")
+
 
   }
 
   create() {
     this.map = this.make.tilemap(
       {
-      key:'tilemap',
+      key:'tilemapp',
       tileWidth:32,
       tileHeight:32,
       
     });
     this.map.addTilesetImage('TileMap','tile');
-    this.layerPlatform=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
+    //this.map.addTilesetImage('Spike','spike');
     this.layerBackground=this.map.createDynamicLayer('Background','TileMap',0,0);
+    this.layerPlatform=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
+    this.layerSpike=this.map.createDynamicLayer('Pinchos','TileMap',0,0);
+
     this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
     this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
     this.enemiesGroup = this.add.group();
+    //this.spikeGroup=this.add.group();
+    
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo2");
     this.enemigo2 = new Zoppo (this, 1400, 400, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroup,"enemigo");
@@ -62,10 +71,12 @@ export default class Game extends Phaser.Scene {
     this.spring = new Spring(this, 1300, 650, "muelle");
     this.bateriaDash = new BateriaDash(this, 500, 960, "zumito");
 
+    //this.spike=new Spike(this,300,600,"spike");
     
     this.layerPlatform.setCollisionByProperty({ colision: true });
     this.physics.add.collider(this.player,this.layerPlatform);
     this.physics.add.collider(this.enemiesGroup, this.layerPlatform);
+    //this.physics.add.collider(this.spike, this.player);
     // this.physics.add.collider(this.enemigo,this.layerPlatform);
     // this.physics.add.collider(this.enemigo2,this.layerPlatform);
     // this.physics.add.collider(this.enemigo1,this.layerPlatform);

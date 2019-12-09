@@ -28,7 +28,9 @@ export default class Prota extends Personaje {
         this.jumpImpulse = jumpImpulse;
         this.springPicked=false;//para saltar más cuando pillas un spring
         this.dimValue = 1; //1 == lado izq, -1 == lado derecho
-        
+        this.changeMov=false;
+        this.changeMovTime=10000//10 segundos con los controles invertidos
+
         this.damageCD = true;//es para controlar que los enemigos no hagan daño todo el rato       
         
         //this.wait=false;
@@ -58,6 +60,11 @@ export default class Prota extends Personaje {
         this.body.setMaxVelocity(500,800);
 
 
+    }
+    invertMov(){
+        this.changeMov=true;
+        //this.changeMovEndtTime=this.time;
+        this.changeMovEndTime=this.time+this.changeMovTime;
     }
     //es un poco feo pero funciona con javascript, es para el texto que ponemos
     //durante la aprtida de si puedes usar el dash o lo tienes en cd
@@ -100,6 +107,10 @@ export default class Prota extends Personaje {
     }
     preUpdate(time, delta){
         this.time=time;
+        if(this.changeMov){
+            console.log("hola")
+            if(this.time>this.changeMovEndTime) this.changeMov=false;
+        }
         //console.log(delta);
         if(this.y >= 3100){//esto es por si se cae, luego no será necesario
             this.scene.changeScene('Game')
@@ -149,6 +160,7 @@ export default class Prota extends Personaje {
         }
         else{
             if(this.w.isDown){
+                
                 this.changeDirectionY(-1);
             }
             else if(this.s.isDown){
@@ -159,12 +171,20 @@ export default class Prota extends Personaje {
                 this.changeDirectionY(0);
             }
             if(this.a.isDown){
-                
-                this.changeDirectionX(-1 * this.dimValue);
+                if(this.changeMov){
+                    this.changeDirectionX(1 * this.dimValue);
+
+                }
+                else  this.changeDirectionX(-1 * this.dimValue);
+
                 this.horizontalMove();
             }else if(this.d.isDown){
                 
-                this.changeDirectionX(1 * this.dimValue);
+                if(this.changeMov){
+                    this.changeDirectionX(-1 * this.dimValue);
+
+                }
+                else  this.changeDirectionX(1 * this.dimValue);          
                 this.horizontalMove();    
             }
             else{
@@ -242,15 +262,7 @@ export default class Prota extends Personaje {
                  this.x -=752;
                  //this.wait=time+1;
             }
-            /*this.wait=true;
-            //this.body.onCollide===false
-           if ( this.wait && this.body.onWall()overlap(this.scene.layerPlatform, this)){
-                console.log(this.x+"   "+this.y)
-                this.y-=30;
-                this.wait=false;
-    
-            }
-            else this.wait=false;*/
+            
      
         }
         

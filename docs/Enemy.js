@@ -22,16 +22,24 @@ export default class Enemy extends Personaje  {
                 if( this.scene.player.isAttacking()){
                     if(this.getX()<this.scene.player.getX() ){
                         if( this.scene.player.getFlipped())    this.hurt();
-                        else this.scene.player.decreaseHealth();
+                        else{
+                            //this.changeDirectionX(-this.direction.x);
+                            this.scene.player.decreaseHealth();
+                        } 
                         
                     }
                     else{
                         if( !this.scene.player.getFlipped())    this.hurt();
-                        else this.scene.player.decreaseHealth();
-                        
+                        else{
+                            //this.changeDirectionX(-this.direction.x);
+                            this.scene.player.decreaseHealth();
+                        }                         
                     }
                 }
-                else this.scene.player.decreaseHealth(this.damage);
+                else{
+                    //this.changeDirectionX(-this.direction.x);
+                    this.scene.player.decreaseHealth(this.damage);
+                } 
             }
             else{
                 this.hurt();
