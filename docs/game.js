@@ -37,7 +37,7 @@ export default class Game extends Phaser.Scene {
 
      this.load.tilemapTiledJSON("tilemapp","./Mapa.json")
      //this.load.tilemapTiledJSON("pinchos","./Mapa.json")
-     this.load.spritesheet('coinAnim','coin.png', { frameWidth: 64, frameHeight: 64 });
+     this.load.spritesheet('coinAnim','coin.png', { frameWidth: 50, frameHeight: 50 });
 
   }
 
