@@ -37,7 +37,7 @@ export default class Game extends Phaser.Scene {
 
      this.load.tilemapTiledJSON("tilemapp","./Mapa.json")
      //this.load.tilemapTiledJSON("pinchos","./Mapa.json")
-
+     this.load.spritesheet('coinAnim','coin.png', { frameWidth: 64, frameHeight: 64 });
 
   }
 
@@ -59,13 +59,16 @@ export default class Game extends Phaser.Scene {
     this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
     this.enemiesGroup = this.add.group();
     //this.spikeGroup=this.add.group();
+    //this.add.sprite(200, 360, 'coinAnim');
     
+
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo2");
     this.enemigo2 = new Zoppo (this, 1400, 400, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroup,"enemigo");
     this.enemigo3 = new Rinne (this, 1230, 600, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroup,"enemigo3");
 
 
+    this.coin = new Coin (this, 600, 300, "coinAnim");
 
     this.shield = new Shield (this, 300, 600, "shield");
     this.spring = new Spring(this, 1300, 650, "muelle");

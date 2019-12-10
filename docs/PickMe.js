@@ -7,7 +7,8 @@ export default class PickMe extends Phaser.GameObjects.Sprite{
         //this.child = null;  //siempre tienes que tener algo que herede de ti, al ser una clase abstracta
     }
     //Esto es mas comodo creo hacerlo con componentes, o de otra forma xd
-    preUpdate(){
+    preUpdate(time,delta){
+        super.preUpdate(time,delta);
         if (this.scene.physics.overlap(this.scene.player, this)){
            // this.scene.player.addPoint(2);
             this.activePower=true;
