@@ -5,7 +5,7 @@ import Coin from './Coin.js';
 import Spring from './Spring.js';
 import BateriaDash from './BateriaDash.js';
 import Rinne from './Rinne.js';
-import Reizen from './Reizen.js';
+import Gezi from './Gezi.js';
 import Zoppo from './Zoppo.js'
 import Shield from './Shield.js';
 import Spike from './Spike.js';//pinchos
@@ -18,8 +18,9 @@ export default class Game extends Phaser.Scene {
 
 
   preload() { 
-  
-  this.load.image('personaje','./favicon.png');
+    //this.load.image('personaje','./favicon.png');
+
+  this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 30, frameHeight: 30});
   this.load.image('shield','./shield.png');
   this.load.image('coin', './1coin.png');
      this.load.image('espada', './sword2.png');
@@ -72,7 +73,7 @@ export default class Game extends Phaser.Scene {
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo2");
     this.enemigo2 = new Zoppo (this, 1400, 400, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroup,"enemigo");
-    this.enemigo3 = new Rinne (this, 1230, 600, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroup,"enemigo3");
+    this.enemigo3 = new Gezi (this, 1230, 600, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroup,"enemigo3");
 
 
     this.coin = new Coin (this, 600, 300, "coinAnim");
@@ -138,6 +139,7 @@ export default class Game extends Phaser.Scene {
     this.textDash.text = 'Dash: ' + this.player.canDash();
    
 }
+
 managePause() {
   //console.log(this.scene.isActive('Game'));
     

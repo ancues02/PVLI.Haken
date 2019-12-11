@@ -18,16 +18,8 @@ export default class Personaje extends Phaser.GameObjects.Container{
         this.lives--;
     }
     changeDirectionX(nx){
-        // this.direction.x = nx;
-        // this.direction.y = ny;
-        if(nx===-1){
-           
-            this.yoMismo.setFlipX(true);
-        }
-        else if(nx===1){
-           
-            this.yoMismo.setFlipX(false);
-        }
+        
+        this.yoMismo.setFlipX(nx === -1); //esto hace lo mismo
         this.direction.x = nx;
         //this.direction.x = nx;
     }
@@ -36,15 +28,14 @@ export default class Personaje extends Phaser.GameObjects.Container{
     }
     stop(){
         this.body.setVelocityX(0);  
-        
-
+        this.changeDirectionX(0);
     }
     horizontalMove(){
         this.body.setVelocityX(this.direction.x * this.speed);
     }
-    /*verticalMove(){
+    verticalMove(){
         this.body.setVelocityY(this.direction.y * this.speed);
-    }*/
+    }
     //no lo uso
     // horizontalMove(inv){
     //     this.body.setVelocityX(inv * this.direction.x * this.speed);

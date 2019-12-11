@@ -24,7 +24,7 @@ export default class Enemy extends Personaje  {
                         if( this.scene.player.getFlipped())    this.hurt();
                         else{
                             //this.changeDirectionX(-this.direction.x);
-                            this.scene.player.decreaseHealth();
+                            this.scene.player.decreaseHealth(this.damage);
                         } 
                         
                     }
@@ -32,7 +32,7 @@ export default class Enemy extends Personaje  {
                         if( !this.scene.player.getFlipped())    this.hurt();
                         else{
                             //this.changeDirectionX(-this.direction.x);
-                            this.scene.player.decreaseHealth();
+                            this.scene.player.decreaseHealth(this.damage);
                         }                         
                     }
                 }
