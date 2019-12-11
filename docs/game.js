@@ -8,8 +8,8 @@ import Rinne from './Rinne.js';
 import Reizen from './Reizen.js';
 import Zoppo from './Zoppo.js'
 import Shield from './Shield.js';
-import Spike from './Spike.js';
-import changeMov from './changeMov.js'
+import Spike from './Spike.js';//pinchos
+import changeMov from './changeMov.js'//invierte los controles
 //import Contenerdor from './Contenedor.js';
 export default class Game extends Phaser.Scene {
   constructor() {
@@ -34,6 +34,7 @@ export default class Game extends Phaser.Scene {
 
      //var platforms =this.physics.add.staticGroup();;
      this.load.image ('tile','./Sprute.png')
+     this.load.image ('tile2','./atlas2.png')
 
      this.load.tilemapTiledJSON("tilemapp","./Mapa.json")
      //this.load.tilemapTiledJSON("pinchos","./Mapa.json")
@@ -50,10 +51,16 @@ export default class Game extends Phaser.Scene {
       
     });
     this.map.addTilesetImage('TileMap','tile');
-    //this.map.addTilesetImage('Spike','spike');
+    this.map.addTilesetImage('TileMap2','tile2');
+    this.map.addTilesetImage('Pinchos','spike');
+
+    //this.spikeGroup=this.add.group();
+
     this.layerBackground=this.map.createDynamicLayer('Background','TileMap',0,0);
     this.layerPlatform=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
-    this.layerSpike=this.map.createDynamicLayer('Pinchos','TileMap',0,0);
+    this.layerNoChange=this.map.createDynamicLayer('NoChange','TileMap2',0,0);
+    this.layerSpike=this.map.createDynamicLayer('PinchosLayer','Pinchos',0,0);
+    //this.map.createFromObjects('Pinchos', 0,true, this.spikeGroup);
 
     this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
     this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
@@ -77,6 +84,7 @@ export default class Game extends Phaser.Scene {
     //this.spike=new Spike(this,300,600,"spike");
     
     this.layerPlatform.setCollisionByProperty({ colision: true });
+    //console.log(this.map.getTileProperties);
     this.physics.add.collider(this.player,this.layerPlatform);
     this.physics.add.collider(this.enemiesGroup, this.layerPlatform);
     //this.physics.add.collider(this.spike, this.player);
