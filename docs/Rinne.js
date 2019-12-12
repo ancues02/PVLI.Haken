@@ -15,9 +15,13 @@ export default class Rinne extends Zoppo  {
         } 
         //para que empiece a moverse hacia donde está el jugador
         else if(!this.startMove && this.y-this.scene.player.y<=50){
-            this.startMove=true;
-            if(this.x<=this.scene.player.x)this.direction.x=1;
-            else this.direction.x=-1;
+            if(this.x<750 && this.scene.player.getDimValue()===1 ||this.x>750 && this.scene.player.getDimValue()===-1 ){
+                console.log(this.scene.player.getDimValue());
+                this.startMove=true;
+                if(this.x<=this.scene.player.x)this.direction.x=1;
+                else this.direction.x=-1;
+            }
+            
         } 
 
        

@@ -373,6 +373,10 @@ export default class Prota extends Personaje {
     changeDimValue(){
         this.dimValue *= -1;
     }
+    //para que algunos enemigos sepas en que lado está
+    getDimValue(){//1 lado izquierdo
+        return this.dimValue;
+    }
     decreaseHealth(damage){
         if(this.damageCD)
         {
