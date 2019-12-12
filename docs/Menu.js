@@ -7,9 +7,13 @@ export default class Menu extends Phaser.Scene {
         console.log("Escena")
 
       }
+      preload(){
+        this.load.image('fondo', './fondoMenu.png');
 
+      }
       create(){
-        let playButton = this.add.text(300, 300, 'Start!', {font:'100px', fill: '#fff'});
+        this.add.sprite(750,300,'fondo')
+        let playButton = this.add.text(550, 300, 'Start!', {font:'100px', fill: '#000'});
         playButton.setInteractive();
         playButton.on('pointerdown', ()=> {this.scene.start('Game')})
       }
