@@ -210,7 +210,7 @@ export default class Prota extends Personaje {
             }
             //Dash y ataque
             if(Phaser.Input.Keyboard.JustDown(this.j)){
-                if(this.isStill()){ //si estoy quieto, ataco
+                if(this.isStill() || !this.dashAvailable){ //si estoy quieto o no puedo dashear, ataco
                     this.espada.setVisible(false);
                     this.espadaAtacando.setVisible(true);
                     this.attacking=true;
