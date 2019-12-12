@@ -7,6 +7,7 @@ export default class Reizen extends Personaje{
         //this.startMove=false;
         this.damage=damage;
         this.followPlayer=false;
+        this.distance=200;
         //this.vel=speed;//necesario porque cuando sigue al jugador vamos a disminuir su velocidad
         //this.yoMismo=sprite;
         this.changeDirectionX(-1);
@@ -20,16 +21,16 @@ export default class Reizen extends Personaje{
             this.horizontalMove();
             if(this.x<=30)this.changeDirectionX(1);
             else if(this.x>=1500) this.changeDirectionX(-1);
-            if(Phaser.Math.Distance.Between(this.x,this.y,this.scene.player.getX(),this.scene.player.getY())<300) {
+            if(Phaser.Math.Distance.Between(this.x,this.y,this.scene.player.getX(),this.scene.player.getY())<this.distance) {
                 this.followPlayer=true;
                 //this.speed=this.vel/1.5;
             }
             
         }
-        //aqui está a una distancia pequeña(300) del jugador y le sigue,
+        //aqui está a una distancia pequeña(this.distance) del jugador y le sigue,
         // si se aleja demasiado deja de seguirle
         else{
-            if(Phaser.Math.Distance.Between(this.x,this.y,this.scene.player.getX(),this.scene.player.getY())>300) {
+            if(Phaser.Math.Distance.Between(this.x,this.y,this.scene.player.getX(),this.scene.player.getY())>this.distance) {
                 //this.speed=this.vel;
 
                 this.followPlayer=false;
