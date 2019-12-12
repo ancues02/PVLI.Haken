@@ -117,7 +117,7 @@ export default class Game extends Phaser.Scene {
     this.textTime.x=50;
 
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
-
+    this.cameras.main.setSize(1500,600);
 
   }
   
@@ -165,7 +165,7 @@ changeScene(nameScene){
   update(time, delta) { 
     //console.log("pos X "+this.player.getX() + "pos Y "+Math.round(this.player.getY()))
     this.cameras.main.centerOnY( this.player.getY() + 100);  
-    this.cameras.main.setSize(1500,600);
+
     this.time += Math.round(delta); 
     
     this.updateScore();
