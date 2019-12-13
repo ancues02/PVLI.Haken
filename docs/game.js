@@ -67,7 +67,7 @@ export default class Game extends Phaser.Scene {
     //this.map.createFromObjects('Pinchos', 0,true, this.spikeGroup);
 
     this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
-    this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble",this.layerSpike);
+    this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
     this.enemiesGroup = this.add.group();
     this.enemiesGroupNoCollision= this.add.group();
     //this.spikeGroup=this.add.group();
@@ -124,9 +124,9 @@ export default class Game extends Phaser.Scene {
     this.cameras.main.setSize(1500,600);
 
   }
-   col(){
-    console.log("colisiona conelpincho");
-  }
+
+ 
+  
   updateScore(){
     //console.log(this.textScore.y);
     this.textScore.y=(this.player.getY()-this.cameras.main.width/4+170);
@@ -169,6 +169,7 @@ changeScene(nameScene){
 }
 
   update(time, delta) { 
+    //this.checkSpike();
     //console.log("pos X "+this.player.getX() + "pos Y "+Math.round(this.player.getY()))
     this.cameras.main.centerOnY( this.player.getY() + 100);  
 

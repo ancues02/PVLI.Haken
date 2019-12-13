@@ -74,6 +74,7 @@ export default class Prota extends Personaje {
         //this.noDash=0;//el tiempo que no puede usar el dash(time+dashCd)
         this.dashSpeed = 600;//la velocidad a la que te mueves
         
+        this.noChange=false;//cuando es true no puedes cambiar de lado
        
         //teclas para manejo de eventos
         this.a=scene.input.keyboard.addKey("A");//moverte izquierda
@@ -89,14 +90,9 @@ export default class Prota extends Personaje {
 
 
     }
-    checkSpike(){
-        //this.spikeTile.getTileAtWorldXY(this.x, this.y);
-        if(this.spikeTile.getTileAtWorldXY(this.x, this.y).index === 1){
-            console.log("pincho");
-        }
-    }
+    
     preUpdate(time, delta){
-        this.checkSpike();
+        //this.checkSpike();
         //super.preUpdate(time,delta);
         //if(this.body.onWall())console.log("holaaaaaaaaaaaaaaaaaaaa");
         //console.log(delta);
@@ -303,7 +299,8 @@ export default class Prota extends Personaje {
         }
         
         //Cambio de dimension
-        if(Phaser.Input.Keyboard.JustDown(this.k)){
+        if(Phaser.Input.Keyboard.JustDown(this.k) && !this.noChange){
+            console.log(this.noChange);
            // console.log(this.x);
             this.changeDimValue();
             if(this.x<=710 && this.x>=0){
@@ -315,6 +312,18 @@ export default class Prota extends Personaje {
             }
         }
         
+        this.checkSpike();
+        this.checkNoChange();
+    }
+    checkSpike(){
+        //this.spikeTile.getTileAtWorldXY(this.x, this.y);
+        if(this.scene.layerSpike.getTileAtWorldXY(this.x, this.y) != null){
+            this.decreaseHealth(1);
+
+        }
+    }
+    checkNoChange(){
+        this.noChange=this.scene.layerNoChange.getTileAtWorldXY(this.x, this.y) != null;
         
     }
     isStill(){
