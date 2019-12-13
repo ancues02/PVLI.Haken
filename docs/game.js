@@ -38,7 +38,7 @@ export default class Game extends Phaser.Scene {
      this.load.image ('tile','./Sprute.png')
      this.load.image ('tile2','./atlas2.png')
 
-     this.load.tilemapTiledJSON("tilemapp","./Mapa.json")
+     this.load.tilemapTiledJSON("tilemap","./Mapa.json")
      //this.load.tilemapTiledJSON("pinchos","./Mapa.json")
      this.load.spritesheet('coinAnim','coin.png', { frameWidth: 50, frameHeight: 50 });
 
@@ -47,7 +47,7 @@ export default class Game extends Phaser.Scene {
   create() {
     this.map = this.make.tilemap(
       {
-      key:'tilemapp',
+      key:'tilemap',
       tileWidth:32,
       tileHeight:32,
       
@@ -61,19 +61,23 @@ export default class Game extends Phaser.Scene {
     this.layerBackground=this.map.createDynamicLayer('Background','TileMap',0,0);
     this.layerPlatform=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
     this.layerNoChange=this.map.createDynamicLayer('NoChange','TileMap2',0,0);
+    
     this.layerSpike=this.map.createDynamicLayer('PinchosLayer','Pinchos',0,0);
+    
     //this.map.createFromObjects('Pinchos', 0,true, this.spikeGroup);
 
     this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
-    this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
+    this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble",this.layerSpike);
     this.enemiesGroup = this.add.group();
+    this.enemiesGroupNoCollision= this.add.group();
     //this.spikeGroup=this.add.group();
     //this.add.sprite(200, 360, 'coinAnim');
-    
+    //this.layerSpike.setTileIndexCallback(1,this.col() , this.player);
+
 
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo2");
-    this.enemigo2 = new Reizen (this, 1400, 400, 200, {x:1, y:0}, 2, 1, 1/*,this.enemiesGroup*/,"enemigo");
+    this.enemigo2 = new Reizen (this, 1400, 400, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroupNoCollision,"enemigo");
     this.enemigo3 = new Gezi (this, 1230, 600, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroup,"enemigo3");
 
 
@@ -120,7 +124,9 @@ export default class Game extends Phaser.Scene {
     this.cameras.main.setSize(1500,600);
 
   }
-  
+   col(){
+    console.log("colisiona conelpincho");
+  }
   updateScore(){
     //console.log(this.textScore.y);
     this.textScore.y=(this.player.getY()-this.cameras.main.width/4+170);

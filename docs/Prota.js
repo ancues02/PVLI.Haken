@@ -1,8 +1,9 @@
 import Personaje from './Personaje.js';  //esto esta aqui porque funciona
 export default class Prota extends Personaje {
-    constructor(scene, x,y, speed, dir, points, jumpImpulse,lives, sprite,espada,espadaAtacando,shield){
+    constructor(scene, x,y, speed, dir, points, jumpImpulse,lives, sprite,espada,espadaAtacando,shield,spikeLayer){
         super(scene,x,y, speed, dir, points, lives, sprite);
         //this.yoMismo= this.scene.add.sprite(0,0,sprite); //quitar
+        this.spikeTile=spikeLayer;
         this.espada= this.scene.add.sprite(20,0,espada);
         this.espadaAtacando= this.scene.add.sprite(20,0,espadaAtacando);
         this.scene.anims.create({
@@ -88,7 +89,14 @@ export default class Prota extends Personaje {
 
 
     }
+    checkSpike(){
+        //this.spikeTile.getTileAtWorldXY(this.x, this.y);
+        if(this.spikeTile.getTileAtWorldXY(this.x, this.y).index === 1){
+            console.log("pincho");
+        }
+    }
     preUpdate(time, delta){
+        this.checkSpike();
         //super.preUpdate(time,delta);
         //if(this.body.onWall())console.log("holaaaaaaaaaaaaaaaaaaaa");
         //console.log(delta);

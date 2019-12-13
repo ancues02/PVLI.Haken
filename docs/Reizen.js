@@ -1,15 +1,12 @@
-import Personaje from './Personaje.js';  
-export default class Reizen extends Personaje{
+import Enemy from './Enemy.js';  
+export default class Reizen extends Enemy{
     //enemigo volador, es el unico que no desciende de enemigo porque no queremos
     //que colisione con los muros. 
-    constructor(scene, x,y, speed, dir, points, damage, lives,  sprite){
-        super(scene,x,y, speed, dir, points,lives, sprite);
-        //this.startMove=false;
-        this.damage=damage;
+    constructor(scene, x,y, speed, dir, points, damage, lives,group , sprite){
+        super(scene,x,y, speed, dir, points,damage,lives,group ,sprite);
         this.followPlayer=false;
         this.distance=200;
         //this.vel=speed;//necesario porque cuando sigue al jugador vamos a disminuir su velocidad
-        //this.yoMismo=sprite;
         this.changeDirectionX(-1);
         this.body.setAllowGravity(false);//como vuelas no tienes gravedad
         }
@@ -70,7 +67,7 @@ export default class Reizen extends Personaje{
         this.colisionPlayer();
 
     }
-    hurt(){
+    /*hurt(){
         this.lives--;
         if(this.lives<=0){
         this.scene.player.addPoint(this.points);
@@ -106,5 +103,5 @@ export default class Reizen extends Personaje{
             }
             
        }
-    }
+    }*/
 }
