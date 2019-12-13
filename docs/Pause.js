@@ -18,6 +18,8 @@ export default class Pause extends Phaser.Scene {
         menuButton.setInteractive();
         menuButton.on('pointerdown', ()=> { this.scene.stop('Pause'),this.scene.stop('Game')
         ,this.scene.start('Menu')});
+
+        //this.add.text(10, 400, 'Última puntuación: '+this.player.getY(), {font:'100px', fill: '#000'});
       }
       //si se pulsa otra vez escape podemos volver a jugar
       update(){
@@ -25,6 +27,9 @@ export default class Pause extends Phaser.Scene {
           this.scene.stop('Pause'),this.scene.resume('Game')    
         }
       }
+      /*UpdateScore(point){
+        console.log(point);
+      }*/
     
       
 }

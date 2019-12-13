@@ -149,13 +149,13 @@ export default class Game extends Phaser.Scene {
 
 managePause() {
   //console.log(this.scene.isActive('Game'));
-    
+  /*0.this.pausescene=this.scene.getScene('Pause');
+  this.pausescene.UpdateScore(10);*/
    
   this.scene.pause();
   this.scene.sendToBack();
   //console.log(this.scene.isPaused('Game'));
   this.scene.run('Pause');
-
   
   this.escape.isDown=false;//para que no detecte que estas pulsando escape
 
@@ -163,7 +163,6 @@ managePause() {
 
 changeScene(nameScene){
   this.scene.stop();
-
   this.scene.start(nameScene);
 
 }
