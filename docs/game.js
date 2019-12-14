@@ -21,7 +21,7 @@ export default class Game extends Phaser.Scene {
   preload() { 
     //this.load.image('personaje','./favicon.png');
 
-  this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 30, frameHeight: 30});
+  this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 48, frameHeight: 61});
   this.load.image('shield','./shield.png');
   this.load.image('coin', './1coin.png');
      this.load.image('espada', './sword2.png');
