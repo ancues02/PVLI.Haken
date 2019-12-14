@@ -21,26 +21,24 @@ export default class Game extends Phaser.Scene {
   preload() { 
     //this.load.image('personaje','./favicon.png');
 
-  this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 30, frameHeight: 30});
-  this.load.image('shield','./shield.png');
-  this.load.image('coin', './1coin.png');
-     this.load.image('espada', './sword2.png');
-     this.load.image('espadaAtacando', './sword1.png');
-     this.load.image('enemigo', './Enemy.png');
-     this.load.image('enemigo2', './enemy2.png');
-     this.load.image('enemigo3', './Enemy3.1.png');
-     this.load.image('muelle', './muelle.png');
-     this.load.image('zumito', './zumito.png');
-     this.load.image('bubble','./bubble.png')
-     this.load.image('spike','./Spike.png')
-
-     //var platforms =this.physics.add.staticGroup();;
-     this.load.image ('tile','./Sprute.png')
-     this.load.image ('tile2','./atlas2.png')
-
-     this.load.tilemapTiledJSON("tilemap","./Mapa.json")
-     //this.load.tilemapTiledJSON("pinchos","./Mapa.json")
-     this.load.spritesheet('coinAnim','coin.png', { frameWidth: 50, frameHeight: 50 });
+    this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 48, frameHeight: 61});
+    this.load.image('shield','./shield.png');
+    this.load.image('coin', './1coin.png');
+    this.load.image('espada', './sword2.png');
+    this.load.image('espadaAtacando', './sword1.png');
+    this.load.image('enemigo', './Enemy.png');
+    this.load.image('enemigo2', './enemy2.png');
+    this.load.image('enemigo3', './Enemy3.1.png');
+    this.load.image('muelle', './muelle.png');
+    this.load.image('zumito', './zumito.png');
+    this.load.image('bubble','./bubble.png')
+    this.load.image('spike','./Spike.png')
+    //var platforms =this.physics.add.staticGroup();;
+    this.load.image ('tile','./Sprute.png')
+    this.load.image ('tile2','./atlas2.png')
+    this.load.tilemapTiledJSON("tilemap","./Mapa.json")
+    //this.load.tilemapTiledJSON("pinchos","./Mapa.json")
+    this.load.spritesheet('coinAnim','coin.png', { frameWidth: 50, frameHeight: 50 });
 
   }
 

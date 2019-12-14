@@ -8,8 +8,8 @@ export default class Prota extends Personaje {
         this.espadaAtacando= this.scene.add.sprite(20,0,espadaAtacando);
         this.scene.anims.create({
             key: 'idle',
-            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 18, end: 21 }),
-            frameRate: 1,
+            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 33, end: 36 }),
+            frameRate: 3,
             repeat: -1
         });/*this.scene.anims.create({
             key: 'right',
@@ -18,41 +18,43 @@ export default class Prota extends Personaje {
             repeat: -1
         });*/this.scene.anims.create({
             key: 'walk',
-            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 0, end: 5 }),
-            frameRate: 1,
+            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 17, end: 19 }),
+            frameRate: 3,
             repeat: -1
         });this.scene.anims.create({
             key: 'jump',
-            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 0, end: 5 }),
+            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 30, end: 30 }),
+            frameRate: 2,
+            repeat: 0
+        });this.scene.anims.create({
+            key: 'jumpDown',
+            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 47, end: 47 }),
             frameRate: 1,
-            repeat: -1
+            repeat: 0
         });
         this.scene.anims.create({
             key: 'dash',
-            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 0, end: 5 }),
+            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 77, end: 77 }),
             frameRate: 1,
             repeat: -1
+        });  this.scene.anims.create({
+            key: 'swap',
+            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 80, end: 80 }),
+            frameRate: 8,
+            repeat: 0
         });
         this.yoMismo.anims.play('idle');
 
-        //super.setSize(this.yoMismo.width-5,this.yoMismo.height); //ajustar
-        //console.log(this.yoMismo.width);  //quitar 
-
-       //this.scene.add.existing(this);    //quitar
         
         this.shield= this.scene.add.sprite(0,0,shield);
         this.shield.setAlpha(0.8);
-        //this.add(this.yoMismo); //quitar
+
         this.add(this.espada);
         this.add(this.espadaAtacando);
         this.add(this.shield);
         this.espadaAtacando.setVisible(false);
         this.shield.setVisible(false);
-    //    this.scene.physics.add.existing(this); // qui
-    //     this.lives = lives;
-    //     this.direction = dir;
-    //     this.speed = speed;
-    //     this.points = points;             //tar
+    
         this.startPos={x: x, y: y};
         this.jumpImpulse = jumpImpulse;
         this.springPicked=false;//para saltar más cuando pillas un spring
@@ -125,7 +127,9 @@ export default class Prota extends Personaje {
                 this.espadaAtacando.setVisible(false);            
             }
         }
-        else if(this.dashing){               //Estado dash          
+        else if(this.dashing){               //Estado dash   
+            this.yoMismo.anims.play('dash');
+       
             // if(this.dashingTime <= time){
             //     this.dashing = false;
                 
@@ -181,6 +185,16 @@ export default class Prota extends Personaje {
                 this.changeDirectionY(0);
             }
             if(this.a.isDown){
+                /*if(this.changeAnim){
+                    console.log("walk")
+                    this.yoMismo.anims.play('walk');
+                    this.changeAnim=false;
+
+                }*/
+               if(this.yoMismo.anims.getCurrentKey()!='walk'){
+                    this.yoMismo.anims.play('walk');
+                    //this.changeAnim=false;
+               }
                 if(this.changeMov){
                     this.changeDirectionX(1 * this.dimValue);
 
@@ -189,7 +203,10 @@ export default class Prota extends Personaje {
 
                 this.horizontalMove();
             }else if(this.d.isDown){
-                
+                if(this.yoMismo.anims.getCurrentKey()!='walk'){
+                    this.yoMismo.anims.play('walk');
+                    //this.changeAnim=false;
+               } 
                 if(this.changeMov){
                     this.changeDirectionX(-1 * this.dimValue);
 
@@ -200,10 +217,35 @@ export default class Prota extends Personaje {
             else{
                 //this.changeDirectionX(0);
                 this.stop();
+                if(this.yoMismo.anims.getCurrentKey()!='idle' && this.yoMismo.anims.getCurrentKey()!='jump'&&
+                 this.yoMismo.anims.getCurrentKey()!='jumpDown' && this.yoMismo.anims.getCurrentKey()!='swap'){
+                    console.log("idle")
+                    this.yoMismo.anims.play('idle');
+                    //this.changeAnim=false;
+               }
+                /*if(this.changeAnim){
+                    console.log("idle")
+                    this.yoMismo.anims.play('idle');
+                    this.changeAnim=false;
+
+                }*/
+
             }
-            
+            //para dejar de animar que caes
+            if(this.yoMismo.anims.getCurrentKey()==='jumpDown' && this.body.onFloor() ){
+                this.yoMismo.anims.play('idle');
+            }
+            //para animar que caes
+            if(!this.body.onFloor() && this.yoMismo.anims.getCurrentKey()!='jump'&& this.yoMismo.anims.getCurrentKey()!='swap' && !this.dashing) {
+                console.log("bajando")
+                this.yoMismo.anims.play('jumpDown');
+            }
             //jump
-            if(this.space.isDown && this.body.onFloor()){
+            else if(this.space.isDown && this.body.onFloor()){
+               
+                this.yoMismo.anims.play('jump');
+                this.yoMismo.anims.chain('jumpDown');
+                    
                 if(this.springPicked){      
                     this.body.setVelocityY(1.5*this.jumpImpulse);
                     this.springPicked=false;
@@ -238,79 +280,29 @@ export default class Prota extends Personaje {
                     this.dashDuration = 250;
                 }
             }
-            //Dash
-            //dinstinguimos diferentes casos para colocar la espada
-            //creo que podemos poner un script a la espada para que se gire y ahorrarnos comparaciones
-            // if(this.dashAvailable && (this.direction.x != 0 || this.direction.y != 0) && Phaser.Input.Keyboard.JustDown(this.j)){
-            //     if(this.direction.y===0) {//lados
-            //         this.espada.setVisible(false);
-            //         this.espadaAtacando.setVisible(true);
-            //     }
-            //     else if(this.direction.y===1){
-            //         if(this.direction.x===1){//abajo a la derecha
-            //             this.espada.setRotation(1.5);
-            //         }
-            //         else if(this.direction.x===-1){//abajo a la izquierda
-            //             this.espada.setRotation(4.7);
-
-            //         }
-            //         else{//abajo
-                        
-            //             this.espada.setVisible(false);
-            //             this.espadaAtacando.setVisible(true);
-            //             if(this.espadaAtacando.flipX)  this.espadaAtacando.setRotation(-1.5);
-            //             else this.espadaAtacando.setRotation(1.5);
-            //         }
-            //     }
-            //     else if(this.direction.y===-1 && this.direction.x===0){//arriba
-                    
-            //         if(this.espada.flipX)   this.espada.setRotation(0.78)
-            //         else this.espada.setRotation(-0.78)
-
-            //     }
-            //     //console.log("antes:   "+this.body.velocity.y);
-            //     if(Math.abs(this.direction.y) === Math.abs(this.direction.x)){     //dash diagonal mas razonable
-            //         this.body.setVelocityX(0.7* this.direction.x * this.dashSpeed);
-            //         this.body.setVelocityY(0.7 * this.direction.y * this.dashSpeed);
-            //         //console.log("en");
-            //     }
-            //     else{
-            //         this.body.setVelocityX(this.direction.x * this.dashSpeed);
-            //         this.body.setVelocityY(this.direction.y * this.dashSpeed);
-            //     }
-                
-            //     this.body.setAllowGravity(false);
-            //     this.dashAvailable = false;
-            //     this.dashing = true;
-            //     //this.dashingTime = time + this.dashDuration;
-            //     this.dashDuration = 250;
-            //     //console.log("Limite= " + this.dashingTime);
-            //     //console.log("despues:   "+this.body.velocity.y);
-
-                
-            // }
-            // else if (!this.attacking && this.direction.x == 0 && this.direction.y == 0 && Phaser.Input.Keyboard.JustDown(this.j)){
-            //     this.espada.setVisible(false);
-            //     this.espadaAtacando.setVisible(true);
-            //     this.attacking=true;
-            //     //this.attackTime = time + this.attackDuration;
-            //     this.attackDuration = 250;
-            // }
+            
         }
         
         //Cambio de dimension
-        if(Phaser.Input.Keyboard.JustDown(this.k) && !this.noChange){
+        if(Phaser.Input.Keyboard.JustDown(this.k) && !this.noChange ){
             console.log(this.noChange);
+            this.yoMismo.anims.play('swap');
            // console.log(this.x);
+            
+        }
+        if(!this.yoMismo.anims.isPlaying){
+            this.yoMismo.anims.play('idle');
             this.changeDimValue();
             if(this.x<=710 && this.x>=0){
                 this.x += 752;
 
             }
             else{
-                 this.x -=752;
+                this.x -=752;
             }
+
         }
+
         
         this.checkSpike();
         this.checkNoChange();
