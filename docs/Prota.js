@@ -312,20 +312,20 @@ export default class Prota extends Personaje {
             }
         }
         
-        this.checkSpike();
-        this.checkNoChange();
+        //this.checkSpike();
+        //this.checkNoChange();
     }
-    checkSpike(){
-        //this.spikeTile.getTileAtWorldXY(this.x, this.y);
-        if(this.scene.layerSpike.getTileAtWorldXY(this.x, this.y) != null){
-            this.decreaseHealth(1);
+    // checkSpike(){
+    //     //this.spikeTile.getTileAtWorldXY(this.x, this.y);
+    //     if(this.scene.layerSpike.getTileAtWorldXY(this.x, this.y) != null){
+    //         this.decreaseHealth(1);
 
-        }
-    }
-    checkNoChange(){
-        this.noChange=this.scene.layerNoChange.getTileAtWorldXY(this.x, this.y) != null;
+    //     }
+    // }
+    // checkNoChange(){
+    //     this.noChange=this.scene.layerNoChange.getTileAtWorldXY(this.x, this.y) != null;
         
-    }
+    // }
     isStill(){
         return (this.direction.x == 0 && this.direction.y == 0);
     }

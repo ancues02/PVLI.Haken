@@ -31,14 +31,16 @@ export default class Game extends Phaser.Scene {
      this.load.image('enemigo3', './Enemy3.1.png');
      this.load.image('muelle', './muelle.png');
      this.load.image('zumito', './zumito.png');
-     this.load.image('bubble','./bubble.png')
-     this.load.image('spike','./Spike.png')
+     this.load.image('bubble','./bubble.png');
+     this.load.image('spike','./Spike.png');
+     this.load.image('bloques', './PatronBloques.png');
 
      //var platforms =this.physics.add.staticGroup();;
-     this.load.image ('tile','./Sprute.png')
-     this.load.image ('tile2','./atlas2.png')
+     this.load.image ('tile','./Sprute.png');
+     this.load.image ('tile2','./atlas2.png');
 
-     this.load.tilemapTiledJSON("tilemap","./Mapa.json")
+     //this.load.tilemapTiledJSON("tilemap","./Mapa.json");
+     this.load.tilemapTiledJSON("tilemap","./Mapa2.json");
      //this.load.tilemapTiledJSON("pinchos","./Mapa.json")
      this.load.spritesheet('coinAnim','coin.png', { frameWidth: 50, frameHeight: 50 });
 
@@ -52,22 +54,25 @@ export default class Game extends Phaser.Scene {
       tileHeight:32,
       
     });
-    this.map.addTilesetImage('TileMap','tile');
-    this.map.addTilesetImage('TileMap2','tile2');
-    this.map.addTilesetImage('Pinchos','spike');
+    // this.map.addTilesetImage('TileMap','tile');
+    // this.map.addTilesetImage('TileMap2','tile2');
+    // this.map.addTilesetImage('Pinchos','spike');
+
+    this.map.addTilesetImage('TileMap','bloques');
+
 
     //this.spikeGroup=this.add.group();
 
     this.layerBackground=this.map.createDynamicLayer('Background','TileMap',0,0);
     this.layerPlatform=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
-    this.layerNoChange=this.map.createDynamicLayer('NoChange','TileMap2',0,0);
+    //this.layerNoChange=this.map.createDynamicLayer('NoChange','TileMap2',0,0);
     
-    this.layerSpike=this.map.createDynamicLayer('PinchosLayer','Pinchos',0,0);
+    //this.layerSpike=this.map.createDynamicLayer('PinchosLayer','Pinchos',0,0);
     
     //this.map.createFromObjects('Pinchos', 0,true, this.spikeGroup);
 
     this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
-    this.player = new Prota (this, 450, 200, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
+    this.player = new Prota (this, 450, 50, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
     this.enemiesGroup = this.add.group();
     this.enemiesGroupNoCollision= this.add.group();
     //this.spikeGroup=this.add.group();
