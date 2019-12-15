@@ -70,8 +70,8 @@ export default class Game extends Phaser.Scene {
     this.layerPlatform=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
     //this.map.createFromObjects('Pinchos', 0,true, this.spikeGroup);
 
-    this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
-    this.player = new Prota (this, 450, 50, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
+    this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa //50
+    this.player = new Prota (this, 200, 50, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
     this.enemiesGroup = this.add.group();
     this.enemiesGroupNoCollision= this.add.group();
     //this.spikeGroup=this.add.group();
@@ -79,17 +79,26 @@ export default class Game extends Phaser.Scene {
     //this.layerSpike.setTileIndexCallback(1,this.col() , this.player);
 
 
-    this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
-    this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo2");
-    this.enemigo2 = new Reizen (this, 1400, 400, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroupNoCollision,"enemigo4");
-    this.enemigo3 = new Gezi (this, 1230, 600, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroup,"enemigo3");
+    this.enemigo = new Zoppo (this, 1000, 350, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
+    this.zoppo2 = new Zoppo (this, 100, 3050, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
+    this.zoppo3 = new Zoppo (this, 600, 3050, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
+    /*Esto seria un gezi*/this.zoppo4 = new Zoppo (this, 600, 3790, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
+
+    this.enemigo1 = new Rinne (this, 200, 2400, 500, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo2");
+    this.rinne2 = new Rinne (this, 1000, 3350, 500, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo2");
 
 
-    this.coin = new Coin (this, 600, 300, "coinAnim");
+    this.enemigo2 = new Reizen (this, 600, 5500, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroupNoCollision,"enemigo4");
+    this.reizen2 = new Reizen (this, 1500, 5800, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroupNoCollision,"enemigo4");
 
-    this.shield = new Shield (this, 300, 600, "shield");
-    this.spring = new Spring(this, 1300, 650, "muelle");
-    this.bateriaDash = new BateriaDash(this, 500, 960, "zumito");
+    //this.enemigo3 = new Gezi (this, 660, 3810, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroup,"enemigo3"); gezi falla, puede ser la posicion
+
+
+    //this.coin = new Coin (this, 600, 300, "coinAnim");
+
+    //this.shield = new Shield (this, 300, 600, "shield");
+    //this.spring = new Spring(this, 1300, 650, "muelle");
+    //this.bateriaDash = new BateriaDash(this, 500, 960, "zumito");
 
     //this.spike=new Spike(this,300,600,"spike");
     
