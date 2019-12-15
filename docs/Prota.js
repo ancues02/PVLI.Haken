@@ -59,6 +59,7 @@ export default class Prota extends Personaje {
         this.jumpImpulse = jumpImpulse;
         this.springPicked=false;//para saltar más cuando pillas un spring
         this.dimValue = 1; //1 == lado izq, -1 == lado derecho
+        this.dimMargin = 730;   //espacio que hay que recorrer para cambiar de dimension
         this.changeMov=false;
         this.changeMovTime=10000//10 segundos con los controles invertidos
 
@@ -239,31 +240,38 @@ export default class Prota extends Personaje {
         //siempre hay una animacion excepto cuando acaba la animacion swap que entonces nos cambiamos de lado
         if(!this.yoMismo.anims.isPlaying){
             this.yoMismo.anims.play('idle');
-            this.changeDimValue();
-            if(this.x<=710 && this.x>=0){
-                this.x += 746;
+            //this.changeDimValue();
+            // if(this.x<=710 && this.x>=0){
+            //     this.x += 746;
 
+            // }
+            // else{
+            //     this.x -=746;
+            // }
+            if(this.checkChange()){
+                this.x += (this.dimValue * this.dimMargin);
+                this.changeDimValue();
             }
-            else{
-                this.x -=746;
-            }
-
         }
 
         
         this.checkSpike();
         this.checkNoChange();
     }
+
+    //Comprueba si el cambio de dimension es posible
+    checkChange(){
+        return this.scene.layerPlatform.getTileAtWorldXY(this.x + (this.dimValue * this.dimMargin), this.y) === null;    //si es null, es que no hay plataforma, por tanto es posible el cambio
+    }
+
     checkSpike(){
         //this.spikeTile.getTileAtWorldXY(this.x, this.y);
         if(this.scene.layerSpike.getTileAtWorldXY(this.x, this.y) != null){
             this.decreaseHealth(1);
-
         }
     }
     checkNoChange(){
         this.noChange=this.scene.layerNoChange.getTileAtWorldXY(this.x, this.y) != null;
-        
     }
     canChange(){
         if(this.noChange) return "NO";
