@@ -109,7 +109,7 @@ export default class Game extends Phaser.Scene {
     this.coin4_1 = new Coin (this, 532, 5200, "coinAnim");
     this.coin4_2 = new Coin (this, 1400,5750, "coinAnim");
 
-    //this.shield = new Shield (this, 300, 600, "shield");
+    this.shield = new Shield (this, 300, 600, "shield");
     //this.spring = new Spring(this, 1300, 650, "muelle");
     //this.bateriaDash = new BateriaDash(this, 500, 960, "zumito");
 
@@ -147,6 +147,10 @@ export default class Game extends Phaser.Scene {
     this.textTime.setFontSize(25);
     this.textTime.x=50;
 
+    this.textChange = this.add.text(this.cameras.main.left, this.player.getY());
+    this.textChange.setFontSize(25);
+    this.textChange.x=1250;
+
     //Configuracion de la camara
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
     this.cameras.main.setSize(1500,600);
@@ -159,19 +163,28 @@ export default class Game extends Phaser.Scene {
     //console.log(this.textScore.y);
     this.textScore.y=(this.player.getY()-this.cameras.main.width/4+170);
     if (this.textScore.y<=0)this.textScore.y=0;
+    if (this.textScore.y>=5800)this.textScore.y=5800;    
     this.textScore.text = 'Score: ' + this.player.getPoints();
 
     this.textDepth.y=(this.player.getY()-this.cameras.main.width/4+200);
     if (this.textDepth.y<=30)this.textDepth.y=30;
+    if (this.textDepth.y>=5830)this.textDepth.y=5830;
     this.textDepth.text = 'Depth: ' + Math.round(this.player.y);
     
     this.textTime.y=(this.player.getY()-this.cameras.main.width/4+230);
     if (this.textTime.y<=60)this.textTime.y=60;
+    if (this.textTime.y>=5860)this.textTime.y=5860;
     this.textTime.text = 'Time: ' + Math.round(this.time/1000);
 
     this.textDash.y=(this.player.getY()-this.cameras.main.width/4+180);
     if (this.textDash.y<=0)this.textDash.y=0;
+    if (this.textDash.y>=5800)this.textDash.y=5800;
     this.textDash.text = 'Dash: ' + this.player.canDash();
+
+    this.textChange.y=(this.player.getY()-this.cameras.main.width/4+210);
+    if (this.textChange.y<=30)this.textChange.y=30;
+    if (this.textChange.y>=5830)this.textChange.y=5830;
+    this.textChange.text = 'Change Side: ' + this.player.canChange();
    
 }
 
