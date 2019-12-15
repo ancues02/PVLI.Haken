@@ -29,6 +29,7 @@ export default class Game extends Phaser.Scene {
      this.load.image('enemigo', './Enemy.png');
      this.load.image('enemigo2', './enemy2.png');
      this.load.image('enemigo3', './Enemy3.1.png');
+     this.load.image('enemigo4', './ghost.png');
      this.load.image('muelle', './muelle.png');
      this.load.image('zumito', './zumito.png');
      this.load.image('bubble','./bubble.png');
@@ -64,11 +65,9 @@ export default class Game extends Phaser.Scene {
     //this.spikeGroup=this.add.group();
 
     this.layerBackground=this.map.createDynamicLayer('Background','TileMap',0,0);
+    this.layerNoChange=this.map.createDynamicLayer('NoChange','TileMap',0,0);
+    this.layerSpike=this.map.createDynamicLayer('Pinchos','TileMap',0,0);
     this.layerPlatform=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
-    //this.layerNoChange=this.map.createDynamicLayer('NoChange','TileMap2',0,0);
-    
-    //this.layerSpike=this.map.createDynamicLayer('PinchosLayer','Pinchos',0,0);
-    
     //this.map.createFromObjects('Pinchos', 0,true, this.spikeGroup);
 
     this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa
@@ -82,7 +81,7 @@ export default class Game extends Phaser.Scene {
 
     this.enemigo = new Zoppo (this, 600, 700, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
     this.enemigo1 = new Rinne (this, 230, 1250, 500, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo2");
-    this.enemigo2 = new Reizen (this, 1400, 400, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroupNoCollision,"enemigo");
+    this.enemigo2 = new Reizen (this, 1400, 400, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroupNoCollision,"enemigo4");
     this.enemigo3 = new Gezi (this, 1230, 600, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroup,"enemigo3");
 
 

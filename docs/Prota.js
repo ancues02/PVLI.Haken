@@ -95,7 +95,7 @@ export default class Prota extends Personaje {
     
     preUpdate(time, delta){
         
-        if(this.y >= 3100){//esto es por si se cae, luego no será necesario
+        if(this.y >= 6400){//esto es por si se cae, luego no será necesario
             this.scene.changeScene('Game')
         }
          
@@ -251,20 +251,20 @@ export default class Prota extends Personaje {
         }
 
         
-        //this.checkSpike();
-        //this.checkNoChange();
+        this.checkSpike();
+        this.checkNoChange();
     }
-    // checkSpike(){
-    //     //this.spikeTile.getTileAtWorldXY(this.x, this.y);
-    //     if(this.scene.layerSpike.getTileAtWorldXY(this.x, this.y) != null){
-    //         this.decreaseHealth(1);
+    checkSpike(){
+        //this.spikeTile.getTileAtWorldXY(this.x, this.y);
+        if(this.scene.layerSpike.getTileAtWorldXY(this.x, this.y) != null){
+            this.decreaseHealth(1);
 
-    //     }
-    // }
-    // checkNoChange(){
-    //     this.noChange=this.scene.layerNoChange.getTileAtWorldXY(this.x, this.y) != null;
+        }
+    }
+    checkNoChange(){
+        this.noChange=this.scene.layerNoChange.getTileAtWorldXY(this.x, this.y) != null;
         
-    // }
+    }
     isStill(){
         return (this.direction.x == 0 && this.direction.y == 0);
     }

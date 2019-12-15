@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="47" height="200" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="1">
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="47" height="200" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="1">
  <tileset firstgid="1" name="TileMap" tilewidth="32" tileheight="32" tilecount="504" columns="28">
   <image source="PatronBloques.png" width="896" height="592"/>
   <tile id="0">
@@ -64,22 +64,42 @@
   </tile>
   <tile id="12">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="13">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="14">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="15">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="19">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="28">
@@ -144,22 +164,42 @@
   </tile>
   <tile id="40">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="41">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="42">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="43">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="44">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="45">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="46">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="47">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="56">
@@ -224,22 +264,42 @@
   </tile>
   <tile id="68">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="69">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="70">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="71">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="72">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="73">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="74">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="75">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="84">
@@ -304,22 +364,42 @@
   </tile>
   <tile id="96">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="97">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="98">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="99">
    <properties>
-    <property name="colision" type="bool" value="false"/>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="100">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="101">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="102">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="103">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="112">
@@ -398,6 +478,26 @@
    </properties>
   </tile>
   <tile id="127">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="128">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="129">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="130">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="131">
    <properties>
     <property name="colision" type="bool" value="false"/>
    </properties>
@@ -482,6 +582,26 @@
     <property name="colision" type="bool" value="false"/>
    </properties>
   </tile>
+  <tile id="156">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="157">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="158">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="159">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
   <tile id="168">
    <properties>
     <property name="colision" type="bool" value="false"/>
@@ -558,6 +678,26 @@
    </properties>
   </tile>
   <tile id="183">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="184">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="185">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="186">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="187">
    <properties>
     <property name="colision" type="bool" value="false"/>
    </properties>
@@ -642,43 +782,873 @@
     <property name="colision" type="bool" value="false"/>
    </properties>
   </tile>
+  <tile id="212">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="213">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="214">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="215">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="224">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="225">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="226">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="227">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="228">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="229">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="230">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="231">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="232">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="233">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="234">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="235">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="236">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="237">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="238">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="239">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="252">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="253">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="254">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="255">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="256">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="257">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="258">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="259">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="260">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="261">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="262">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="263">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="264">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="265">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="266">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="267">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="280">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="281">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="282">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="283">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="284">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="285">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="286">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="287">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="288">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="289">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="290">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="291">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="292">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="293">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="294">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="295">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="308">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="309">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="310">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="311">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="312">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="313">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="314">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="315">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="316">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="317">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="318">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="319">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="320">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="321">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="322">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="323">
+   <properties>
+    <property name="colision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="336">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="337">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="338">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="339">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="340">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="341">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="342">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="343">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="344">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="345">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="346">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="347">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="348">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="349">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="350">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="351">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="364">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="365">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="366">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="367">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="368">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="369">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="370">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="371">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="372">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="373">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="374">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="375">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="376">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="377">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="378">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="379">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="392">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="393">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="394">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="395">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="396">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="397">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="398">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="399">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="400">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="401">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="402">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="403">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="404">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="405">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="406">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="407">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="420">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="421">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="422">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="423">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="424">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="425">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="426">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="427">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="428">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="429">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="430">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="431">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="432">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="433">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="434">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="435">
+   <properties>
+    <property name="colision" type="bool" value="false"/>
+   </properties>
+  </tile>
  </tileset>
  <layer id="1" name="Background" width="47" height="200">
   <data encoding="csv">
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,121,121,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,121,121,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,121,121,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,121,121,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,0,0,0,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,178,177,
-207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,
-207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,0,0,0,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,
-207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,0,0,0,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,
-207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,0,0,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,207,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,406,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,406,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,406,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,406,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,406,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,406,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,406,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,406,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,406,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,406,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,406,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,406,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,406,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,406,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,406,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,406,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,406,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,406,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,406,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,406,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,406,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,406,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,378,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,406,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,406,0,0,
+0,0,405,378,405,405,402,405,405,405,405,405,405,405,405,405,405,405,405,405,378,405,405,405,405,351,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,405,402,402,405,405,405,405,402,405,405,405,402,405,405,405,378,405,405,405,405,351,406,406,406,406,401,406,406,406,406,406,406,406,406,406,406,406,406,406,351,0,0,
+0,0,405,378,405,402,405,402,405,405,405,402,402,402,405,402,402,405,405,405,378,405,405,405,405,351,406,406,406,406,401,401,406,406,406,406,406,401,406,406,406,406,406,401,351,0,0,
+0,0,402,402,406,402,402,402,406,402,406,402,406,402,402,402,402,406,406,402,402,406,352,352,352,401,406,406,401,406,401,401,406,406,401,406,401,401,401,406,406,401,401,401,401,0,0,
+0,0,406,402,402,402,402,402,406,406,402,402,402,402,406,406,402,406,406,402,402,402,0,0,0,401,401,401,406,401,401,401,401,406,401,401,401,401,401,401,406,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,406,402,402,402,402,402,402,406,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,406,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,402,0,0,0,401,401,401,401,401,401,401,401,394,401,401,401,401,401,401,401,401,401,401,401,0,0,
+0,0,402,402,402,402,393,402,402,402,402,402,402,402,402,402,402,402,402,402,402,393,0,0,0,401,401,394,401,401,401,401,401,401,394,401,401,401,401,401,401,401,401,401,394,0,0,
+0,0,402,402,402,393,393,393,402,402,402,393,402,402,402,402,402,402,402,401,402,393,0,0,0,401,401,394,394,401,401,401,394,394,401,394,394,394,401,401,394,401,401,401,401,0,0,
+0,0,402,393,402,393,393,393,402,402,393,393,393,402,402,393,402,402,402,402,393,393,0,0,0,394,401,394,394,394,401,394,401,394,394,394,401,401,401,394,394,394,394,401,394,0,0,
+0,0,393,393,402,393,393,393,393,402,393,393,402,402,402,393,393,402,402,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,401,394,394,0,0,
+0,0,393,402,393,393,393,393,393,393,393,393,393,393,393,393,393,402,402,402,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,170,393,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,170,393,170,393,0,0,0,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,170,170,393,0,0,0,394,394,394,394,169,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,393,170,170,170,0,0,0,394,394,394,394,169,394,394,394,394,394,394,394,394,394,394,169,394,394,394,394,0,0,
+0,0,393,393,393,393,393,393,393,170,393,393,393,393,393,393,170,170,393,393,170,393,0,0,0,394,394,394,394,169,394,394,394,394,394,394,394,394,394,394,394,394,394,394,394,0,0,
+0,0,170,170,393,393,393,170,393,393,393,393,393,393,393,393,170,393,393,170,170,170,0,0,0,394,394,394,394,169,394,394,169,394,394,394,394,394,169,394,394,394,169,394,394,0,0,
+0,0,393,170,170,393,393,393,393,170,170,393,393,393,170,170,393,393,170,170,393,170,0,0,0,394,394,169,169,394,394,394,169,394,394,394,393,169,169,394,394,393,169,169,394,0,0,
+0,0,170,170,393,170,393,170,170,170,393,170,393,170,170,170,393,170,170,170,170,170,352,352,352,169,393,169,393,169,169,393,169,169,393,169,169,169,169,393,169,169,169,169,169,0,0,
+0,0,170,393,170,170,393,170,170,393,393,170,393,170,393,170,393,170,393,393,393,170,0,0,0,169,169,169,169,393,393,393,169,169,393,393,169,169,393,393,393,393,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,393,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0,
+0,0,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,170,0,0,0,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,169,0,0
+</data>
+ </layer>
+ <layer id="4" name="NoChange" width="47" height="200">
+  <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -784,6 +1754,20 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -823,16 +1807,36 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,0,0,399,399,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,0,0,0,399,399,399,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,0,0,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,399,399,399,399,399,399,399,399,0,0,
+0,0,399,399,399,399,399,399,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,399,399,399,399,399,399,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,399,399,399,399,399,399,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,399,399,399,399,399,399,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,399,399,399,399,399,399,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,399,399,399,399,399,399,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,399,399,399,399,399,399,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,399,399,399,399,399,399,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,0,0,
+0,0,399,399,399,399,399,399,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,0,0,
+0,0,399,399,399,399,399,399,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,0,0,
+0,0,399,399,399,399,399,399,399,399,399,399,399,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,399,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,399,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -849,206 +1853,614 @@
  </layer>
  <layer id="2" name="Plataformas" width="47" height="200">
   <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,154,153,154,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,0,
-0,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,154,153,154,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,0,
-0,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,154,153,154,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,0,
-0,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,154,153,154,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,0,
-0,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,154,153,154,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,0,
-0,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,154,153,154,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,154,153,154,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,239,296,296,296,296,239,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,239,296,296,296,296,239,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,239,296,296,296,296,296,296,296,296,296,296,296,296,296,296,239,0,0,0,0,43,71,43,0,0,239,296,296,296,296,296,296,296,239,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,239,296,296,239,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,239,296,296,296,296,296,296,296,296,296,296,296,296,296,296,296,296,296,296,239,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,239,296,296,296,296,296,296,296,239,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,239,296,296,296,239,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,239,296,296,296,296,239,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,239,296,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,239,296,239,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,239,296,296,296,296,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,239,296,239,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,235,292,292,292,292,292,292,292,292,292,292,292,292,292,292,292,292,292,292,235,43,71,43,235,292,235,0,0,0,0,0,0,0,0,0,0,0,0,0,0,235,292,235,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,235,292,292,292,292,292,292,292,292,292,292,292,235,0,0,0,43,44,
+44,43,235,235,235,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,317,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,235,292,292,235,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,235,292,292,292,235,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,235,292,292,292,292,292,292,292,292,235,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,235,292,292,292,292,235,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,235,292,292,292,235,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,235,292,235,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,235,292,292,292,292,292,292,292,292,292,235,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,235,292,292,292,292,292,292,292,292,292,292,292,292,292,292,292,292,292,292,235,43,71,43,0,0,0,0,0,0,0,0,0,0,0,235,292,292,292,292,292,292,292,235,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,227,284,284,284,284,284,227,0,0,0,0,0,0,227,284,284,284,284,284,227,43,71,43,227,284,284,284,284,284,284,284,284,284,284,284,284,284,227,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,227,284,284,284,284,227,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,227,284,284,227,0,0,0,0,0,0,0,227,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,284,0,0,0,0,0,0,0,0,0,227,284,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,227,284,227,0,0,0,0,0,0,0,0,227,284,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,284,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,227,284,284,284,227,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,227,284,284,284,227,0,0,0,0,0,0,0,0,227,284,284,284,284,284,227,43,71,43,227,284,284,284,227,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,227,284,284,284,284,284,227,43,71,43,0,0,0,0,0,0,0,0,227,284,284,284,284,284,284,284,284,227,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,227,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,227,284,227,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,227,284,284,227,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,227,284,227,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,227,284,227,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,227,284,284,284,284,284,284,227,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,227,284,284,284,284,227,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,43,71,43,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,43,71,43,0,0,0,0,0,0,0,0,3,0,3,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,43,71,43,0,0,0,0,0,0,0,3,0,0,0,3,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,3,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,3,60,3,0,0,0,0,43,44,
+44,43,0,0,0,3,0,3,0,0,0,0,0,0,0,0,0,0,0,0,3,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,3,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,60,3,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,60,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,3,60,60,60,60,60,60,60,60,60,3,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,3,60,60,3,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,3,60,60,60,60,60,3,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,3,60,3,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,3,60,3,0,0,0,0,0,0,43,44,
+44,43,3,60,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,3,60,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,3,60,3,0,0,0,0,0,0,0,0,3,60,3,0,43,71,43,0,0,0,0,0,3,60,3,0,0,0,0,0,0,0,0,3,60,3,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,71,43,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,44,
+44,43,3,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,3,43,71,43,3,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,60,3,43,44
+</data>
+ </layer>
+ <layer id="5" name="EnemigosPickUps" width="47" height="200">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,151,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,201,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,151,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,204,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,124,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,151,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,201,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,201,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,204,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,151,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,151,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,152,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,203,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,151,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,201,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,202,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,124,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,151,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,202,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,202,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="Pinchos" width="47" height="200">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,207,207,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,207,207,207,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,207,207,207,207,207,207,207,207,207,207,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,207,207,207,207,207,207,207,207,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,207,207,207,207,207,207,207,0,0,0,0,0,0,207,207,207,207,207,207,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,207,207,207,207,207,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,207,207,207,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,207,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,207,207,207,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,207,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,207,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,207,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,207,0,207,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,207,207,207,207,207,207,207,207,207,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,207,0,0,207,207,95,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,207,207,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,207,207,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,207,207,207,0,0,0,0,0,0,0,0,207,207,207,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
 </map>
