@@ -358,6 +358,7 @@ export default class Prota extends Personaje {
                 setTimeout(()=>this.damageCD = true,2000); //cambiar esto
             }
             else if(this.lives<=0){
+                this.scene.mainTheme.stop();
                 this.scene.changeScene('Game');
                 //this.scene.updateScore(200);
             

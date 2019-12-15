@@ -46,7 +46,8 @@ export default class Game extends Phaser.Scene {
     this.load.tilemapTiledJSON("tilemap","./Mapa2.json");
     //this.load.tilemapTiledJSON("pinchos","./Mapa.json")
     
-
+    //Carga de audio
+    this.load.audio('mainTheme', './Caves of sorrow.ogg');
   }
 
   create() {     
@@ -155,6 +156,17 @@ export default class Game extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
     this.cameras.main.setSize(1500,600);
 
+    //Configuracion de sonido
+    this.mainTheme = this.sound.add('mainTheme', {
+      mute: false,
+      volume: 0.7,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: true,
+      delay: 0
+    } );
+    this.mainTheme.play();
   }
 
  
@@ -185,7 +197,7 @@ export default class Game extends Phaser.Scene {
     if (this.textChange.y<=30)this.textChange.y=30;
     if (this.textChange.y>=5830)this.textChange.y=5830;
     this.textChange.text = 'Change Side: ' + this.player.canChange();
-   
+    
 }
 
 managePause() {
