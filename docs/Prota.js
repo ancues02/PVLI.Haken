@@ -148,7 +148,7 @@ export default class Prota extends Personaje {
             }
             if(this.a.isDown){
                 
-               if(this.yoMismo.anims.getCurrentKey()!='walk' &&  this.yoMismo.anims.getCurrentKey()!='hurting'){
+               if(this.yoMismo.anims.getCurrentKey()!='walk' &&  this.yoMismo.anims.getCurrentKey()!='hurting' && this.yoMismo.anims.getCurrentKey()!='swap'){
                     this.yoMismo.anims.play('walk');
                }
                 if(this.changeMov){
@@ -159,7 +159,7 @@ export default class Prota extends Personaje {
 
                 this.horizontalMove();
             }else if(this.d.isDown){
-                if(this.yoMismo.anims.getCurrentKey()!='walk'&& this.yoMismo.anims.getCurrentKey()!='hurting'){
+                if(this.yoMismo.anims.getCurrentKey()!='walk'&& this.yoMismo.anims.getCurrentKey()!='hurting' && this.yoMismo.anims.getCurrentKey()!='swap'){
                     this.yoMismo.anims.play('walk');
                     //this.changeAnim=false;
                } 
@@ -241,11 +241,11 @@ export default class Prota extends Personaje {
             this.yoMismo.anims.play('idle');
             this.changeDimValue();
             if(this.x<=710 && this.x>=0){
-                this.x += 752;
+                this.x += 746;
 
             }
             else{
-                this.x -=752;
+                this.x -=746;
             }
 
         }
@@ -264,6 +264,10 @@ export default class Prota extends Personaje {
     checkNoChange(){
         this.noChange=this.scene.layerNoChange.getTileAtWorldXY(this.x, this.y) != null;
         
+    }
+    canChange(){
+        if(this.noChange) return "NO";
+        else return "SÍ";
     }
     isStill(){
         return (this.direction.x == 0 && this.direction.y == 0);
@@ -360,7 +364,7 @@ export default class Prota extends Personaje {
             return "NO";
 
         }
-        else return "Sí"
+        else return "SÍ";
     }
     changeDirectionX(nx){ 
         //console.log("hola")  
