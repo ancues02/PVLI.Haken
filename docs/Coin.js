@@ -6,7 +6,7 @@ export default class Coin extends PickMe{
         this.scene.anims.create({
             key: 'movCoin',
             frames: this.scene.anims.generateFrameNumbers(sprite, { start: 0, end: 5 }),
-            frameRate: 1,
+            frameRate: 3,
             repeat: -1
         });
         this.anims.play('movCoin');

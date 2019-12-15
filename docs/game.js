@@ -19,35 +19,40 @@ export default class Game extends Phaser.Scene {
 
 
   preload() { 
-    //this.load.image('personaje','./favicon.png');
+    //Imagenes Sprites
+    this.load.image('shield','./shield.png');
+    this.load.image('coin', './1coin.png');
+    this.load.image('espada', './sword2.png');
+    this.load.image('espadaAtacando', './sword1.png');
+    this.load.image('enemigo', './Enemy.png');
+    this.load.image('enemigo2', './enemy2.png');
+    this.load.image('enemigo3', './Enemy3.1.png');
+    this.load.image('enemigo4', './ghost.png');
+    this.load.image('muelle', './muelle.png');
+    this.load.image('zumito', './zumito.png');
+    this.load.image('bubble','./bubble.png');
+    this.load.image('spike','./Spike.png');
+    this.load.image('bloques', './PatronBloques.png');
 
-  this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 48, frameHeight: 61});
-  this.load.image('shield','./shield.png');
-  this.load.image('coin', './1coin.png');
-     this.load.image('espada', './sword2.png');
-     this.load.image('espadaAtacando', './sword1.png');
-     this.load.image('enemigo', './Enemy.png');
-     this.load.image('enemigo2', './enemy2.png');
-     this.load.image('enemigo3', './Enemy3.1.png');
-     this.load.image('enemigo4', './ghost.png');
-     this.load.image('muelle', './muelle.png');
-     this.load.image('zumito', './zumito.png');
-     this.load.image('bubble','./bubble.png');
-     this.load.image('spike','./Spike.png');
-     this.load.image('bloques', './PatronBloques.png');
+    //Imagenes Tilesets
+    this.load.image ('tile','./Sprute.png');  
+    this.load.image ('tile2','./atlas2.png');
 
-     //var platforms =this.physics.add.staticGroup();;
-     this.load.image ('tile','./Sprute.png');
-     this.load.image ('tile2','./atlas2.png');
+    //Spritesheets para animaciones
+    this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 48, frameHeight: 61});
+    this.load.spritesheet('coinAnim','./coin.png', { frameWidth: 46, frameHeight: 46 });
 
-     //this.load.tilemapTiledJSON("tilemap","./Mapa.json");
-     this.load.tilemapTiledJSON("tilemap","./Mapa2.json");
-     //this.load.tilemapTiledJSON("pinchos","./Mapa.json")
-     this.load.spritesheet('coinAnim','coin.png', { frameWidth: 50, frameHeight: 50 });
+    //Carga del .json
+    this.load.tilemapTiledJSON("tilemap","./Mapa2.json");
+    //this.load.tilemapTiledJSON("pinchos","./Mapa.json")
+    
 
   }
 
-  create() {
+  create() {     
+    this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//Boton pausa
+
+    //Creacion del tilemap
     this.map = this.make.tilemap(
       {
       key:'tilemap',
@@ -63,15 +68,16 @@ export default class Game extends Phaser.Scene {
 
 
     //this.spikeGroup=this.add.group();
-
+    //Layers del tilemap
     this.layerBackground=this.map.createDynamicLayer('Background','TileMap',0,0);
     this.layerNoChange=this.map.createDynamicLayer('NoChange','TileMap',0,0);
     this.layerSpike=this.map.createDynamicLayer('Pinchos','TileMap',0,0);
     this.layerPlatform=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
     //this.map.createFromObjects('Pinchos', 0,true, this.spikeGroup);
+    //200 50
+    this.player = new Prota (this, 200, 50, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");  //avatar del jugador
 
-    this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//boton pausa //50
-    this.player = new Prota (this, 200, 50, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");
+    //Creacion de enemigos
     this.enemiesGroup = this.add.group();
     this.enemiesGroupNoCollision= this.add.group();
     //this.spikeGroup=this.add.group();
@@ -79,22 +85,29 @@ export default class Game extends Phaser.Scene {
     //this.layerSpike.setTileIndexCallback(1,this.col() , this.player);
 
 
-    this.enemigo = new Zoppo (this, 1000, 350, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
+    this.zoppo = new Zoppo (this, 1000, 350, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
     this.zoppo2 = new Zoppo (this, 100, 3050, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
     this.zoppo3 = new Zoppo (this, 600, 3050, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
     /*Esto seria un gezi*/this.zoppo4 = new Zoppo (this, 600, 3790, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
 
-    this.enemigo1 = new Rinne (this, 200, 2400, 500, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo2");
+    this.rinne = new Rinne (this, 200, 2400, 500, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo2");
     this.rinne2 = new Rinne (this, 1000, 3350, 500, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo2");
 
 
-    this.enemigo2 = new Reizen (this, 600, 5500, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroupNoCollision,"enemigo4");
+    this.reizen = new Reizen (this, 600, 5500, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroupNoCollision,"enemigo4");
     this.reizen2 = new Reizen (this, 1500, 5800, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroupNoCollision,"enemigo4");
 
     //this.enemigo3 = new Gezi (this, 660, 3810, 200, {x:1, y:0}, 2, 1, 1,this.enemiesGroup,"enemigo3"); gezi falla, puede ser la posicion
 
-
-    //this.coin = new Coin (this, 600, 300, "coinAnim");
+    //Creacion de pickUps
+    this.coin1_1 = new Coin (this, 1050, 250, "coinAnim");
+    this.coin1_2 = new Coin (this, 1005, 1200, "coinAnim");
+    this.coin2_1 = new Coin (this, 140, 2100, "coinAnim");
+    this.coin2_2 = new Coin (this, 1100, 3020, "coinAnim");
+    this.coin3_1 = new Coin (this, 600, 3700, "coinAnim");
+    this.coin3_2 = new Coin (this, 150, 4000, "coinAnim");
+    this.coin4_1 = new Coin (this, 532, 5200, "coinAnim");
+    this.coin4_2 = new Coin (this, 1400,5750, "coinAnim");
 
     //this.shield = new Shield (this, 300, 600, "shield");
     //this.spring = new Spring(this, 1300, 650, "muelle");
@@ -102,6 +115,7 @@ export default class Game extends Phaser.Scene {
 
     //this.spike=new Spike(this,300,600,"spike");
     
+    //Configuracion de colisiones
     this.layerPlatform.setCollisionByProperty({ colision: true });
     //console.log(this.map.getTileProperties);
     this.physics.add.collider(this.player,this.layerPlatform);
@@ -112,10 +126,10 @@ export default class Game extends Phaser.Scene {
     // this.physics.add.collider(this.enemigo1,this.layerPlatform);
     // this.physics.add.collider(this.enemigo3,this.layerPlatform);
 
-    this.time = 0;
-
-
     
+
+    //Configuracion de la interfaz
+    this.time = 0;
     
     this.textDash=this.add.text(this.cameras.main.left, this.player.getY());
     this.textDash.setFontSize(25);
@@ -133,6 +147,7 @@ export default class Game extends Phaser.Scene {
     this.textTime.setFontSize(25);
     this.textTime.x=50;
 
+    //Configuracion de la camara
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
     this.cameras.main.setSize(1500,600);
 
