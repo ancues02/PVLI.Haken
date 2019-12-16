@@ -55,6 +55,7 @@ export default class Prota extends Personaje {
         this.espadaAtacando.setVisible(false);
         this.shield.setVisible(false);
     
+        this.finalScore=0;
         this.startPos={x: x, y: y};
         this.jumpImpulse = jumpImpulse;
         this.springPicked=false;//para saltar más cuando pillas un spring
@@ -76,7 +77,6 @@ export default class Prota extends Personaje {
         this.dashCd = 0;//es el cd del dash
         //this.noDash=0;//el tiempo que no puede usar el dash(time+dashCd)
         this.dashSpeed = 600;//la velocidad a la que te mueves
-        
         this.noChange=false;//cuando es true no puedes cambiar de lado
        
         //teclas para manejo de eventos
@@ -95,7 +95,6 @@ export default class Prota extends Personaje {
     }
     
     preUpdate(time, delta){
-        
         if(this.y >= 6400){//esto es por si se cae, luego no será necesario
             this.scene.changeScene('Game')
         }
@@ -259,21 +258,20 @@ export default class Prota extends Personaje {
         this.checkNoChange();
     }
 
-    //Comprueba si el cambio de dimension es posible
+    //Comprueba si a donde vas a cambiar hay una un obstaculo
     checkChange(){
         return this.scene.layerPlatform.getTileAtWorldXY(this.x + (this.dimValue * this.dimMargin), this.y) === null;    //si es null, es que no hay plataforma, por tanto es posible el cambio
     }
 
-    checkSpike(){
-        //this.spikeTile.getTileAtWorldXY(this.x, this.y);
+    checkSpike(){//comprueba si 
         if(this.scene.layerSpike.getTileAtWorldXY(this.x, this.y) != null){
             this.decreaseHealth(1);
         }
     }
-    checkNoChange(){
+    checkNoChange(){//comprueba si puedes cambiar de lado
         this.noChange=this.scene.layerNoChange.getTileAtWorldXY(this.x, this.y) != null;
     }
-    canChange(){
+    canChange(){//para el texto de si puedes o no cambiar de lado
         if(this.noChange) return "NO";
         else return "SÍ";
     }
@@ -309,8 +307,8 @@ export default class Prota extends Personaje {
             }
         }else if(this.direction.y===-1 && this.direction.x===0){//arriba
                     
-                    if(this.espada.flipX)   this.espada.setRotation(0.78)
-                    else this.espada.setRotation(-0.78)
+            if(this.espada.flipX)   this.espada.setRotation(0.78)
+             else this.espada.setRotation(-0.78)
 
         }
     }
@@ -341,10 +339,11 @@ export default class Prota extends Personaje {
     changeDimValue(){
         this.dimValue *= -1;
     }
-    //para que algunos enemigos sepas en que lado está
+    //para que algunos enemigos sepan en que lado está
     getDimValue(){//1 lado izquierdo
         return this.dimValue;
     }
+    //te quita vida o cambia de escena si no te quedan vidas
     decreaseHealth(damage){
         if(this.damageCD)
         {
@@ -359,15 +358,17 @@ export default class Prota extends Personaje {
             }
             else if(this.lives<=0){
                 this.scene.mainTheme.stop();
-                this.scene.changeScene('Game');
-                //this.scene.updateScore(200);
+                this.finalScore=Math.round((this.points*this.y/10)/Math.round(this.scene.time/1000));//formula que da tu puntuacion final
+                this.scene.addText();
+                this.scene.scene.pause();
+                this.scene.scene.sendToBack();
+                this.scene.scene.run('Death');
             
             }
         }
         
     }
-      //es un poco feo pero funciona con javascript, es para el texto que ponemos
-    //durante la aprtida de si puedes usar el dash o lo tienes en cd
+      //es para poner el texto de si puedes o no dashear
     canDash(){
         if(!this.dashAvailable){
             return "NO";
@@ -376,7 +377,6 @@ export default class Prota extends Personaje {
         else return "SÍ";
     }
     changeDirectionX(nx){ 
-        //console.log("hola")  
         if(nx===-1){
             this.espada.x=-20;
             this.espada.setFlipX(true); 
@@ -391,16 +391,12 @@ export default class Prota extends Personaje {
             this.espadaAtacando.setFlipX(false);
             this.yoMismo.setFlipX(false);
         }
-
-        //lo de arriba me fallaba cuando se le pasaba 0 como parametro
-        //sii ponemos esto, se pone la espada en el centro cuando la direccion en x es 0
-        // this.espada.x=nx * 20;
-        // this.espada.setFlipX(nx === -1); 
-        // this.espadaAtacando.x= nx* 20;
-        // this.espadaAtacando.setFlipX(nx === -1);
-        // this.yoMismo.setFlipX(nx === -1);
-         this.direction.x = nx;
+        this.direction.x = nx;
         
+    }
+    getFinalScore(){
+       
+        return this.finalScore;
     }
     
 

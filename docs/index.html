@@ -115,6 +115,7 @@
     
                 import Menu from './Menu.js';
                 import Pause from './Pause.js';
+                import Death from './Death.js'
                 var config = {
                     type: Phaser.WEBGL,
                     width: 1500,
@@ -129,7 +130,7 @@
                         mode: Phaser.Scale.FIT,
                         autoCenter: Phaser.Scale.CENTER_BOTH
                     },
-                    scene: [ Menu,Pause,Game ],
+                    scene: [ Menu,Pause,Death,Game ],
                     physics: { default: 'arcade', arcade: { gravity: { y: 600 }, debug: false } }
                 };
                 new Phaser.Game(config);

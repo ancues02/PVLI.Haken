@@ -21,7 +21,7 @@ export default class Game extends Phaser.Scene {
   preload() { 
     //Imagenes Sprites
     this.load.image('shield','./shield.png');
-    this.load.image('coin', './1coin.png');
+    //this.load.image('coin', './1coin.png');
     this.load.image('espada', './sword2.png');
     this.load.image('espadaAtacando', './sword1.png');
     this.load.image('enemigo', './Enemy.png');
@@ -220,9 +220,16 @@ changeScene(nameScene){
 
 }
 
+addText(){//pone un texto que muestra tu puntuacion final ((puntos * (profundidad/10))/tiempo) 
+  this.textFinalScore = this.add.text(this.cameras.main.left, this.player.getY());
+  this.textFinalScore.setFontSize(100);
+  this.textFinalScore.x=400;
+  this.textFinalScore.y=this.player.getY()-this.cameras.main.width/4+330;
+  this.textFinalScore.text = 'Final Score ' + this.player.getFinalScore();
+}
+
   update(time, delta) { 
-    //this.checkSpike();
-    //console.log("pos X "+this.player.getX() + "pos Y "+Math.round(this.player.getY()))
+    
     this.cameras.main.centerOnY( this.player.getY() + 100);  
 
     this.time += Math.round(delta); 
