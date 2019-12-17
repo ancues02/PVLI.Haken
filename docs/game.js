@@ -42,7 +42,8 @@ export default class Game extends Phaser.Scene {
     this.load.audio('playerDeathSound', './playerDeath.wav');
     this.load.audio('enemyDeathSound', './deadEnemy.wav');
     this.load.audio('dashSound', './dash.mp3');
-
+    this.load.audio('pickUpSound', './pickUp.ogg')
+    this.load.audio('changeSideSound', './changeSide.wav')
   }
 
   create() {   
@@ -75,6 +76,34 @@ export default class Game extends Phaser.Scene {
     this.layerNoChange=this.map.createDynamicLayer('NoChange','TileMap',0,0);
     this.layerSpike=this.map.createDynamicLayer('Pinchos','Pinchos',0,0);
     this.layerPlatform=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
+    //Configuracion de sonido
+    let soundsConfig = {
+      mute: false,
+      volume: 0.5,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: false,
+      delay: 0
+    };
+    this.mainTheme = this.sound.add('mainTheme', {
+      mute: false,
+      volume: 0.7,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: true,
+      delay: 0
+    } );
+    this.mainTheme.play();
+    this.jumpSound = this.sound.add('jumpSound', soundsConfig );
+    this.playerDeathSound = this.sound.add('playerDeathSound', soundsConfig);
+    this.enemyDeathSound = this.sound.add('enemyDeathSound', soundsConfig);
+    this.pickUpSound = this.sound.add('pickUpSound', soundsConfig);
+    this.coinSound = this.sound.add('coinSound', soundsConfig);
+    this.dashSound = this.sound.add('dashSound', soundsConfig);
+    this.changeSideSound = this.sound.add('changeSideSound', soundsConfig);
+
 
     this.player = new Prota (this, 200, 50, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");  //avatar del jugador
 
@@ -95,16 +124,16 @@ export default class Game extends Phaser.Scene {
     this.reizen2 = new Reizen (this, 1500, 5800, 200, {x:1, y:0}, 20, 1, 1,this.enemiesGroupNoCollision,"reizen");
 
     //Creacion de pickUps
-    this.coin1_1 = new Coin (this, 1050, 250,50, "coinAnim");
-    this.coin1_2 = new Coin (this, 1005, 1200,50, "coinAnim");
-    this.coin2_1 = new Coin (this, 140, 2100,50, "coinAnim");
-    this.coin2_2 = new Coin (this, 1100, 3020,50, "coinAnim");
-    this.coin3_1 = new Coin (this, 600, 3700,50, "coinAnim");
-    this.coin3_2 = new Coin (this, 150, 4000,50, "coinAnim");
-    this.coin4_1 = new Coin (this, 532, 5200,50, "coinAnim");
-    this.coin4_2 = new Coin (this, 1400,5750,50, "coinAnim");
+    this.coin1_1 = new Coin (this, 1050, 250,50, "coinAnim", this.coinSound);
+    this.coin1_2 = new Coin (this, 1005, 1200,50, "coinAnim", this.coinSound);
+    this.coin2_1 = new Coin (this, 140, 2100,50, "coinAnim", this.coinSound);
+    this.coin2_2 = new Coin (this, 1100, 3020,50, "coinAnim", this.coinSound);
+    this.coin3_1 = new Coin (this, 600, 3700,50, "coinAnim", this.coinSound);
+    this.coin3_2 = new Coin (this, 150, 4000,50, "coinAnim", this.coinSound);
+    this.coin4_1 = new Coin (this, 532, 5200,50, "coinAnim", this.coinSound);
+    this.coin4_2 = new Coin (this, 1400,5750,50, "coinAnim", this.coinSound);
 
-    this.shield = new Shield (this, 300, 600, "shield");
+    this.shield = new Shield (this, 300, 600, "shield",this.pickUpSound);
       
     //Configuracion de colisiones
     this.layerPlatform.setCollisionByProperty({ colision: true });
@@ -139,32 +168,6 @@ export default class Game extends Phaser.Scene {
     //Configuracion de la camara
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
     this.cameras.main.setSize(1500,600);
-
-    //Configuracion de sonido
-    let soundsConfig = {
-      mute: false,
-      volume: 0.5,
-      rate: 1,
-      detune: 0,
-      seek: 0,
-      loop: false,
-      delay: 0
-    };
-    this.mainTheme = this.sound.add('mainTheme', {
-      mute: false,
-      volume: 0.7,
-      rate: 1,
-      detune: 0,
-      seek: 0,
-      loop: true,
-      delay: 0
-    } );
-    this.mainTheme.play();
-    this.jumpSound = this.sound.add('jumpSound', soundsConfig );
-    this.playerDeathSound = this.sound.add('playerDeathSound', soundsConfig);
-    this.enemyDeathSound = this.sound.add('enemyDeathSound', soundsConfig);
-    this.coinSound = this.sound.add('coinSound', soundsConfig);
-    this.dashSound = this.sound.add('dashSound', soundsConfig);
   }
 
  

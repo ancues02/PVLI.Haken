@@ -1,7 +1,7 @@
 import PickMe from './PickMe.js';
 export default class Coin extends PickMe{
-    constructor(scene,x, y,points, sprite){
-        super(scene, x, y, sprite);
+    constructor(scene,x, y,points, sprite, sound){
+        super(scene, x, y, sprite, sound);
         this.points=points;
         this.scene.anims.create({
             key: 'movCoin',
@@ -16,7 +16,7 @@ export default class Coin extends PickMe{
         super.preUpdate(time,delta);
         if(this.activePower===true){
             this.scene.player.addPoint(this.points);
-            this.scene.coinSound.play();
+           // this.scene.coinSound.play();
             this.destroy();
         }
         

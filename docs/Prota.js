@@ -240,6 +240,7 @@ export default class Prota extends Personaje {
         if(!this.yoMismo.anims.isPlaying){
             this.yoMismo.anims.play('idle');
             if(this.checkChange()){
+                this.scene.changeSideSound.play();
                 this.x += (this.dimValue * this.scene.dimMargin);
                 this.changeDimValue();
             }
