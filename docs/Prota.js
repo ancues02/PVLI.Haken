@@ -358,6 +358,7 @@ export default class Prota extends Personaje {
         
     }
     end(){
+        //this.scene.mainTheme.stop();
         this.finalScore=Math.round((this.points*this.y/10)/Math.round(this.scene.time/1000));//formula que da tu puntuacion final
         this.scene.addText();
         this.scene.scene.pause();

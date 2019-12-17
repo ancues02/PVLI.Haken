@@ -26,7 +26,7 @@ export default class Game extends Phaser.Scene {
     this.load.image('bubble','./bubble.png');
     this.load.image('spike','./Spike.png');
     this.load.image('bloques', './PatronBloques.png');
-
+    this.load.image('invertidor','./invertidor.png');
     //Spritesheets para animaciones
     this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 48, frameHeight: 61});
     this.load.spritesheet('coinAnim','./coin.png', { frameWidth: 46, frameHeight: 46 });
@@ -96,6 +96,7 @@ export default class Game extends Phaser.Scene {
       delay: 0
     } );
     this.mainTheme.play();
+    //this.mainTheme.stop();
     this.jumpSound = this.sound.add('jumpSound', soundsConfig );
     this.playerDeathSound = this.sound.add('playerDeathSound', soundsConfig);
     this.enemyDeathSound = this.sound.add('enemyDeathSound', soundsConfig);
@@ -203,17 +204,19 @@ export default class Game extends Phaser.Scene {
 
 managePause() {
   
-   
+  this.mainTheme.pause();
   this.scene.pause();
   this.scene.sendToBack();
   this.scene.run('Pause');
-  
   this.escape.isDown=false;//para que no detecte que estas pulsando escape
+  //this.mainTheme.resume();
+  //this.mainTheme.stop();
 
 }
 
 changeScene(nameScene){
   this.mainTheme.stop();
+ 
   this.scene.stop();
   this.scene.start(nameScene);
 
