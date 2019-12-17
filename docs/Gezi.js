@@ -1,11 +1,8 @@
-import Enemy from './Enemy.js';  //esto esta aqui porque funciona
+import Enemy from './Enemy.js'; 
 export default class Gezi extends Enemy  {
     
     constructor(scene, x,y, speed, dir, points, damage, lives,group,  sprite){
         super(scene,x,y, speed, dir, points, damage,lives,group, sprite);
-       
-        this.firstTouch=true;
-        
         this.pared=false;
         this.distance=200;
         this.body.setMaxVelocity(speed,speed);
@@ -18,8 +15,6 @@ export default class Gezi extends Enemy  {
     preUpdate(){
         //esto es que comprueba que no se sale de los limites no?
         if(this.y<=10) this.changeDirectionY(1);
-       
-
        
         //empieza bajando hasta encontrar suelo 
         if(this.goDown){
@@ -42,42 +37,37 @@ export default class Gezi extends Enemy  {
             else{
                 if(this.body.onCeiling()){//y tiene que ser -1
                 //console.log("Entro en techo")
-                this.body.angle=180;
-                this.angle=180;
-                if(this.body.onWall()){
-                    if(!this.pared){//estabas yendo por el techo hasta tocar el muro
-                        //console.log("de techo paso a pared")
-                        this.changeDirectionY(1)
-                    }
-                    else{
-                        //console.log("de pared paso a techo")
-                        if(this.direction.x===1){//se mueve a la derecha
-                            this.x-=10;
-                        
+                    this.body.angle=180;
+                    this.angle=180;
+                    if(this.body.onWall()){
+                        if(!this.pared){//estabas yendo por el techo hasta tocar el muro
+                            //console.log("de techo paso a pared")
+                            this.changeDirectionY(1)
                         }
-                        else {
-        
-                            this.x+=10;
+                        else{
+                            //console.log("de pared paso a techo")
+                            if(this.direction.x===1){//se mueve a la derecha
+                                this.x-=10;
+                            
+                            }
+                            else {
+            
+                                this.x+=10;
+                            }
+                            //this.x-=10
+                            this.changeDirectionX(-this.direction.x);
+
                         }
-                        //this.x-=10
-                        this.changeDirectionX(-this.direction.x);
+                    
 
                     }
-                   
-
-                }
-                this.pared=false;
-
-
-                
+                    this.pared=false;           
                 }
                 else if(this.body.onFloor()){//y tiene que ser 1
                     this.body.angle=0;
                     this.angle=0;
                     if(this.direction.x===1)   this.yoMismo.setFlipX(true);
                     else this.yoMismo.setFlipX(false);
-
-
                     //console.log("ENTRO EN FLOOR")
                     if(this.body.onWall()){
                         //this.suelo=false;
@@ -118,10 +108,7 @@ export default class Gezi extends Enemy  {
                         this.angle=270;
                     }
                     
-                    this.pared=true;
-                
-                    
-                    
+                    this.pared=true;         
 
                 }
                 else{

@@ -7,8 +7,6 @@ export default class Shield extends PickMe{
     preUpdate(){
         super.preUpdate();
         if(this.activePower===true){
-            console.log("soy un Shield");
-
             this.scene.player.shielded();
             this.destroy();
         }

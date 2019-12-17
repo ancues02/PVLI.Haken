@@ -16,6 +16,7 @@ export default class Coin extends PickMe{
         super.preUpdate(time,delta);
         if(this.activePower===true){
             this.scene.player.addPoint(this.points);
+            this.scene.coinSound.play();
             this.destroy();
         }
         

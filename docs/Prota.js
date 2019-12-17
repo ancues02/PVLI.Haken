@@ -1,8 +1,7 @@
-import Personaje from './Personaje.js';  //esto esta aqui porque funciona
+import Personaje from './Personaje.js'; 
 export default class Prota extends Personaje {
     constructor(scene, x,y, speed, dir, points, jumpImpulse,lives, sprite,espada,espadaAtacando,shield,spikeLayer){
         super(scene,x,y, speed, dir, points, lives, sprite);
-        //this.yoMismo= this.scene.add.sprite(0,0,sprite); //quitar
         this.spikeTile=spikeLayer;
         this.espada= this.scene.add.sprite(20,0,espada);
         this.espadaAtacando= this.scene.add.sprite(20,0,espadaAtacando);
@@ -184,6 +183,7 @@ export default class Prota extends Personaje {
             //para dejar de animar que caes
             if(this.yoMismo.anims.getCurrentKey()==='jumpDown' && this.body.onFloor() ){
                 this.yoMismo.anims.play('idle');
+                //this.scene.jumpSound.stop();
             }
             //para animar que caes
             if(!this.body.onFloor() &&  !this.dashing && this.yoMismo.anims.getCurrentKey()!='swap' &&
@@ -195,7 +195,7 @@ export default class Prota extends Personaje {
                
                 this.yoMismo.anims.play('jump');
                 this.yoMismo.anims.chain('jumpDown');
-                    
+                this.scene.jumpSound.play();
                 if(this.springPicked){      
                     this.body.setVelocityY(1.5*this.jumpImpulse);
                     this.springPicked=false;
@@ -213,6 +213,7 @@ export default class Prota extends Personaje {
                     this.attackDuration = 250;
                 }
                 else if(this.dashAvailable){   //si me estoy moviendo, hago el dash
+                    this.scene.dashSound.play();
                     this.placeSword();
                     if(Math.abs(this.direction.y) === Math.abs(this.direction.x)){     //dash diagonal mas razonable
                         this.body.setVelocityX(0.7* this.direction.x * this.dashSpeed);
@@ -227,8 +228,7 @@ export default class Prota extends Personaje {
                     this.dashing = true;
                     this.dashDuration = 250;
                 }
-            }
-            
+            }          
         }
         
         //empieza la animacion de cambio de dimension que realmente te cambia de dimension al acabar la animacion
@@ -239,14 +239,6 @@ export default class Prota extends Personaje {
         //siempre hay una animacion excepto cuando acaba la animacion swap que entonces nos cambiamos de lado
         if(!this.yoMismo.anims.isPlaying){
             this.yoMismo.anims.play('idle');
-            //this.changeDimValue();
-            // if(this.x<=710 && this.x>=0){
-            //     this.x += 746;
-
-            // }
-            // else{
-            //     this.x -=746;
-            // }
             if(this.checkChange()){
                 this.x += (this.dimValue * this.scene.dimMargin);
                 this.changeDimValue();
@@ -259,8 +251,9 @@ export default class Prota extends Personaje {
     }
 
     //Comprueba si a donde vas a cambiar hay una un obstaculo
+    //si es null, es que no hay plataforma, por tanto es posible el cambio
     checkChange(){
-        return this.scene.layerPlatform.getTileAtWorldXY(this.x + (this.dimValue * this.scene.dimMargin), this.y) === null;    //si es null, es que no hay plataforma, por tanto es posible el cambio
+        return this.scene.layerPlatform.getTileAtWorldXY(this.x + (this.dimValue * this.scene.dimMargin), this.y) === null;    
     }
 
     checkSpike(){//comprueba si 
@@ -356,6 +349,7 @@ export default class Prota extends Personaje {
             }
             else if(this.lives<=0){
                 this.scene.mainTheme.stop();
+                this.scene.playerDeathSound.play();
                 this.end();
             
             }
