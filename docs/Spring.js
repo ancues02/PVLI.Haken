@@ -1,13 +1,12 @@
 import PickMe from './PickMe.js';
 export default class Spring extends PickMe{
-    constructor(scene,x, y, sprite){
-        super(scene, x, y, sprite);
+    constructor(scene,x, y, sprite, sound){
+        super(scene, x, y, sprite, sound);
     }
     preUpdate(){
         super.preUpdate();
-        if(this.activePower===true){
+        if(this.activePower){
             this.scene.player.changeJumpImpulse();
-            console.log("soy un Spring");
             this.destroy();
         }
         
