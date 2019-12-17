@@ -16,8 +16,8 @@ export default class Reizen extends Enemy{
         //como no tiene colisiones hay que cambiar su direccion para que no se pase de los limites
         if(!this.followPlayer ){
             this.horizontalMove();
-            if(this.x<=30)this.changeDirectionX(1);
-            else if(this.x>=1500) this.changeDirectionX(-1);
+            if(this.x<=this.scene.limits.left)this.changeDirectionX(1);
+            else if(this.x>=this.scene.limits.right) this.changeDirectionX(-1);
             if(Phaser.Math.Distance.Between(this.x,this.y,this.scene.player.getX(),this.scene.player.getY())<this.distance) {
                 this.followPlayer=true;
                 //this.speed=this.vel/1.5;

@@ -12,6 +12,8 @@ export default class Personaje extends Phaser.GameObjects.Container{
         this.direction = dir;
         this.speed = speed;
         this.points = points;
+        //this.dimMargin = 730;   //espacio que hay que recorrer para cambiar de dimension
+
         
     }
     decreaseHealth(){

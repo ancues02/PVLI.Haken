@@ -9,7 +9,7 @@ import Reizen from './Reizen.js';
 import Gezi from './Gezi.js';
 import Zoppo from './Zoppo.js'
 import Shield from './Shield.js';
-import Spike from './Spike.js';//pinchos
+//import Spike from './Spike.js';//pinchos
 import changeMov from './changeMov.js'//invierte los controles
 //import Contenerdor from './Contenedor.js';
 export default class Game extends Phaser.Scene {
@@ -34,10 +34,6 @@ export default class Game extends Phaser.Scene {
     this.load.image('spike','./Spike.png');
     this.load.image('bloques', './PatronBloques.png');
 
-    //Imagenes Tilesets
-    this.load.image ('tile','./Sprute.png');  
-    this.load.image ('tile2','./atlas2.png');
-
     //Spritesheets para animaciones
     this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 48, frameHeight: 61});
     this.load.spritesheet('coinAnim','./coin.png', { frameWidth: 46, frameHeight: 46 });
@@ -50,7 +46,15 @@ export default class Game extends Phaser.Scene {
     this.load.audio('mainTheme', './Caves of sorrow.ogg');
   }
 
-  create() {     
+  create() {   
+    
+    this.limits = {
+      top:0,
+      down: 6400,//6338
+      left: 0,
+      right: 1500      
+    }
+    this.dimMargin=730;//es la distancia que hay en cada lado
     this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//Boton pausa
 
     //Creacion del tilemap
@@ -66,13 +70,14 @@ export default class Game extends Phaser.Scene {
     // this.map.addTilesetImage('Pinchos','spike');
 
     this.map.addTilesetImage('TileMap','bloques');
+    this.map.addTilesetImage('Pinchos','spike');
 
 
     //this.spikeGroup=this.add.group();
     //Layers del tilemap
     this.layerBackground=this.map.createDynamicLayer('Background','TileMap',0,0);
     this.layerNoChange=this.map.createDynamicLayer('NoChange','TileMap',0,0);
-    this.layerSpike=this.map.createDynamicLayer('Pinchos','TileMap',0,0);
+    this.layerSpike=this.map.createDynamicLayer('Pinchos','Pinchos',0,0);
     this.layerPlatform=this.map.createDynamicLayer('Plataformas','TileMap',0,0);
     //this.map.createFromObjects('Pinchos', 0,true, this.spikeGroup);
     //200 50
@@ -81,14 +86,16 @@ export default class Game extends Phaser.Scene {
     //Creacion de enemigos
     this.enemiesGroup = this.add.group();
     this.enemiesGroupNoCollision= this.add.group();
+    this.zoppo6 = new Reizen (this, 500, 400, 200, {x:1, y:0}, 5, 1, 1, this.enemiesGroupNoCollision,"enemigo3");
+
     //this.spikeGroup=this.add.group();
     //this.add.sprite(200, 360, 'coinAnim');
     //this.layerSpike.setTileIndexCallback(1,this.col() , this.player);
 
 
-    this.zoppo = new Zoppo (this, 1000, 350, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
-    this.zoppo2 = new Zoppo (this, 100, 3050, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
-    this.zoppo3 = new Zoppo (this, 600, 3050, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
+    this.zoppo = new Zoppo (this, 1000, 350, 200, {x:1, y:0}, 5, 1, 1, this.enemiesGroup,"enemigo");
+    this.zoppo2 = new Zoppo (this, 100, 3050, 200, {x:1, y:0}, 5, 1, 1, this.enemiesGroup,"enemigo");
+    this.zoppo3 = new Zoppo (this, 600, 3050, 200, {x:1, y:0}, 5, 1, 1, this.enemiesGroup,"enemigo");
     /*Esto seria un gezi*/this.zoppo4 = new Zoppo (this, 600, 3790, 200, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo");
 
     this.rinne = new Rinne (this, 200, 2400, 500, {x:1, y:0}, 2, 1, 1, this.enemiesGroup,"enemigo2");
@@ -215,6 +222,7 @@ managePause() {
 }
 
 changeScene(nameScene){
+  this.mainTheme.stop();
   this.scene.stop();
   this.scene.start(nameScene);
 

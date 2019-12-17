@@ -60,7 +60,6 @@ export default class Prota extends Personaje {
         this.jumpImpulse = jumpImpulse;
         this.springPicked=false;//para saltar más cuando pillas un spring
         this.dimValue = 1; //1 == lado izq, -1 == lado derecho
-        this.dimMargin = 730;   //espacio que hay que recorrer para cambiar de dimension
         this.changeMov=false;
         this.changeMovTime=10000//10 segundos con los controles invertidos
 
@@ -248,7 +247,7 @@ export default class Prota extends Personaje {
             //     this.x -=746;
             // }
             if(this.checkChange()){
-                this.x += (this.dimValue * this.dimMargin);
+                this.x += (this.dimValue * this.scene.dimMargin);
                 this.changeDimValue();
             }
         }
@@ -260,7 +259,7 @@ export default class Prota extends Personaje {
 
     //Comprueba si a donde vas a cambiar hay una un obstaculo
     checkChange(){
-        return this.scene.layerPlatform.getTileAtWorldXY(this.x + (this.dimValue * this.dimMargin), this.y) === null;    //si es null, es que no hay plataforma, por tanto es posible el cambio
+        return this.scene.layerPlatform.getTileAtWorldXY(this.x + (this.dimValue * this.scene.dimMargin), this.y) === null;    //si es null, es que no hay plataforma, por tanto es posible el cambio
     }
 
     checkSpike(){//comprueba si 
