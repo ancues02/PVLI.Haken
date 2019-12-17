@@ -6,7 +6,7 @@ export default class changeMov extends PickMe{
    
     preUpdate(){
         super.preUpdate();
-        if(this.activePower===true){
+        if(this.activePower){
             this.scene.player.invertMov();
             this.destroy();
         }

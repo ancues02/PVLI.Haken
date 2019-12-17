@@ -1,10 +1,13 @@
 import Personaje from './Personaje.js'; 
+const state = {
+    NORMAL: 0,
+    DASH: 1,
+    ATTACK: 2
+}
 export default class Prota extends Personaje {
-    constructor(scene, x,y, speed, dir, points, jumpImpulse,lives, sprite,espada,espadaAtacando,shield,spikeLayer){
+    constructor(scene, x,y, speed, dir, points, jumpImpulse,lives, sprite,espada,espadaAtacando,shield){
         super(scene,x,y, speed, dir, points, lives, sprite);
-        this.spikeTile=spikeLayer;
-        this.espada= this.scene.add.sprite(20,0,espada);
-        this.espadaAtacando= this.scene.add.sprite(20,0,espadaAtacando);
+        //animaciones
         this.scene.anims.create({//animacionde estar quieto
             key: 'idle',
             frames: this.scene.anims.generateFrameNumbers(sprite, { start: 33, end: 36 }),
@@ -43,11 +46,13 @@ export default class Prota extends Personaje {
             repeat: 6
         });
         this.yoMismo.anims.play('idle');
-
         
+        this.state = state.NORMAL;
+        this.espada= this.scene.add.sprite(20,0,espada);
+        this.espadaAtacando= this.scene.add.sprite(20,0,espadaAtacando);
         this.shield= this.scene.add.sprite(0,0,shield);
         this.shield.setAlpha(0.8);
-
+        
         this.add(this.espada);
         this.add(this.espadaAtacando);
         this.add(this.shield);
@@ -93,144 +98,140 @@ export default class Prota extends Personaje {
     }
     
     preUpdate(time, delta){
-        if(this.y >= 6330){//esto es por si se cae, luego no será necesario
+        if(this.y >= 6330){//para saber si llegamos al final
             this.end();      
         }
-        //setTimeout(()=>this.damageCD = true,2000); //cambiar esto
-        if( this.yoMismo.anims.getCurrentKey()!='hurting') this.immune=true;
-        if(this.attacking){                //Estado ataque
-            
-            this.attackDuration = Math.max(0, this.attackDuration - delta); //asi los hace el profesor
-            if(this.attackDuration === 0){
-                this.attacking=false;
-                this.espada.setVisible(true);
-                this.espadaAtacando.setVisible(false);            
-            }
-        }
-        else if(this.dashing){ //Estado dash   
-            this.yoMismo.anims.play('dash');
-            this.dashDuration = Math.max(0, this.dashDuration - delta);
-            if(this.dashDuration === 0){
-                this.dashing = false;
-                if(this.body.velocity.y<=0)  {
-                    //si se usa dash hacia arriba se para, si es para abajo que siga bajando
-                    this.body.setVelocityY(0);
+        if( this.yoMismo.anims.getCurrentKey()!='hurting') this.immune=true;        //para volver a recibir daño cuando la animación de daño termina
+        switch(this.state){
+            case state.ATTACK:
+                this.attackDuration = Math.max(0, this.attackDuration - delta);
+                if(this.attackDuration === 0){
+                    this.state = state.NORMAL;
+                    this.espada.setVisible(true);
+                    this.espadaAtacando.setVisible(false);            
                 }
-                this.body.setAllowGravity(true);//aunque pongas la velocity en 0, sigue afectando la gravedad parece
-                this.espada.setRotation(0);
-                this.espadaAtacando.setRotation(0);
-                this.dashCd = 1500;
-                this.espada.setVisible(true);
-                this.espadaAtacando.setVisible(false);
-            }
-        }
-        //estado normal
-        else {  
-            if(!this.dashAvailable){    //cd del dash
-                
-                this.dashCd = Math.max(0, this.dashCd - delta);
-                if(this.dashCd === 0){
-                    this.dashAvailable = true;
+                break;
+            case state.DASH:
+                this.yoMismo.anims.play('dash');
+                this.dashDuration = Math.max(0, this.dashDuration - delta);
+                if(this.dashDuration === 0){
+                    this.state = state.NORMAL;
+                    if(this.body.velocity.y<=0)  {
+                        //si se usa dash hacia arriba se para, si es para abajo que siga bajando
+                        this.body.setVelocityY(0);
+                    }
+                    this.body.setAllowGravity(true);//aunque pongas la velocity en 0, sigue afectando la gravedad parece
+                    this.espada.setRotation(0);
+                    this.espadaAtacando.setRotation(0);
+                    this.dashCd = 1500;
+                    this.espada.setVisible(true);
+                    this.espadaAtacando.setVisible(false);
                 }
-            }  
-            //Movimiento                      
-            if(this.w.isDown){
-                
-                this.changeDirectionY(-1);
-            }
-            else if(this.s.isDown){
-                this.changeDirectionY (1);
-                
-            }
-            else{
-                this.changeDirectionY(0);
-            }
-            if(this.a.isDown){
-                
-               if(this.yoMismo.anims.getCurrentKey()!='walk' &&  this.yoMismo.anims.getCurrentKey()!='hurting' && this.yoMismo.anims.getCurrentKey()!='swap'){
-                    this.yoMismo.anims.play('walk');
-               }
-                if(this.changeMov){
-                    this.changeDirectionX(1 * this.dimValue);
-
+                break;
+            case state.NORMAL:
+                if(!this.dashAvailable){    //cd del dash       
+                    this.dashCd = Math.max(0, this.dashCd - delta);
+                    if(this.dashCd === 0){
+                        this.dashAvailable = true;
+                    }
+                }  
+                //Movimiento                      
+                if(this.w.isDown){       
+                    this.changeDirectionY(-1);
                 }
-                else  this.changeDirectionX(-1 * this.dimValue);
-
-                this.horizontalMove();
-            }else if(this.d.isDown){
-                if(this.yoMismo.anims.getCurrentKey()!='walk'&& this.yoMismo.anims.getCurrentKey()!='hurting' && this.yoMismo.anims.getCurrentKey()!='swap'){
-                    this.yoMismo.anims.play('walk');
-                    //this.changeAnim=false;
-               } 
-                if(this.changeMov){
-                    this.changeDirectionX(-1 * this.dimValue);
-
-                }
-                else  this.changeDirectionX(1 * this.dimValue);          
-                this.horizontalMove();    
-            }
-            else{
-                this.stop();
-                //haces la animacion idle si no estás en esa animacion ni otras porque aqui entras si no se pulsa 'a' o 'd'
-                if(this.yoMismo.anims.getCurrentKey()!='idle' && this.yoMismo.anims.getCurrentKey()!='jump'&&
-                 this.yoMismo.anims.getCurrentKey()!='jumpDown' && this.yoMismo.anims.getCurrentKey()!='swap'
-                 && this.yoMismo.anims.getCurrentKey()!='hurting'){
-                    
-                    this.yoMismo.anims.play('idle');
-               }               
-
-            }
-            //para dejar de animar que caes
-            if(this.yoMismo.anims.getCurrentKey()==='jumpDown' && this.body.onFloor() ){
-                this.yoMismo.anims.play('idle');
-                //this.scene.jumpSound.stop();
-            }
-            //para animar que caes
-            if(!this.body.onFloor() &&  !this.dashing && this.yoMismo.anims.getCurrentKey()!='swap' &&
-              this.yoMismo.anims.getCurrentKey()!='hurting' ) {
-                this.yoMismo.anims.play('jumpDown');
-            }
-            //jump
-            else if(this.space.isDown && this.body.onFloor()){
-               
-                this.yoMismo.anims.play('jump');
-                this.yoMismo.anims.chain('jumpDown');
-                this.scene.jumpSound.play();
-                if(this.springPicked){      
-                    this.body.setVelocityY(1.5*this.jumpImpulse);
-                    this.springPicked=false;
+                else if(this.s.isDown){
+                    this.changeDirectionY (1);      
                 }
                 else{
-                    this.body.setVelocityY(this.jumpImpulse);
+                    this.changeDirectionY(0);
                 }
-            }
-            //Dash y ataque
-            if(Phaser.Input.Keyboard.JustDown(this.j)){
-                if(this.isStill()){ //si estoy quieto, ataco
-                    this.espada.setVisible(false);
-                    this.espadaAtacando.setVisible(true);
-                    this.attacking=true;
-                    this.attackDuration = 250;
-                }
-                else if(this.dashAvailable){   //si me estoy moviendo, hago el dash
-                    this.scene.dashSound.play();
-                    this.placeSword();
-                    if(Math.abs(this.direction.y) === Math.abs(this.direction.x)){     //dash diagonal mas razonable
-                        this.body.setVelocityX(0.7* this.direction.x * this.dashSpeed);
-                        this.body.setVelocityY(0.7 * this.direction.y * this.dashSpeed);
+                if(this.a.isDown){             
+                        if(this.yoMismo.anims.getCurrentKey()!='walk' &&  this.yoMismo.anims.getCurrentKey()!='hurting' && this.yoMismo.anims.getCurrentKey()!='swap'){
+                                this.yoMismo.anims.play('walk');
+                        }
+                        if(this.changeMov){
+                            this.changeDirectionX(1 * this.dimValue);
+
+                        }
+                        else  this.changeDirectionX(-1 * this.dimValue);
+
+                    this.horizontalMove();
+                }else if(this.d.isDown){
+                        if(this.yoMismo.anims.getCurrentKey()!='walk'&& this.yoMismo.anims.getCurrentKey()!='hurting' && this.yoMismo.anims.getCurrentKey()!='swap'){
+                            this.yoMismo.anims.play('walk');
+                            //this.changeAnim=false;
+                        }    
+                        if(this.changeMov){
+                            this.changeDirectionX(-1 * this.dimValue);
+
+                        }
+                        else  this.changeDirectionX(1 * this.dimValue);          
+                        this.horizontalMove();    
                     }
                     else{
-                        this.body.setVelocityX(this.direction.x * this.dashSpeed);
-                        this.body.setVelocityY(this.direction.y * this.dashSpeed);
-                    }
-                    this.body.setAllowGravity(false);
-                    this.dashAvailable = false;
-                    this.dashing = true;
-                    this.dashDuration = 250;
+                        this.stop();
+                        //haces la animacion idle si no estás en esa animacion ni otras porque aqui entras si no se pulsa 'a' o 'd'
+                        if(this.yoMismo.anims.getCurrentKey()!='idle' && this.yoMismo.anims.getCurrentKey()!='jump'&&
+                        this.yoMismo.anims.getCurrentKey()!='jumpDown' && this.yoMismo.anims.getCurrentKey()!='swap'
+                        && this.yoMismo.anims.getCurrentKey()!='hurting'){
+                            
+                            this.yoMismo.anims.play('idle');
+                    }               
+
                 }
-            }          
+                //para dejar de animar que caes
+                if(this.yoMismo.anims.getCurrentKey()==='jumpDown' && this.body.onFloor() ){
+                    this.yoMismo.anims.play('idle');
+                    //this.scene.jumpSound.stop();
+                }
+                //para animar que caes
+                if(!this.body.onFloor() &&  !this.dashing && this.yoMismo.anims.getCurrentKey()!='swap' &&
+                this.yoMismo.anims.getCurrentKey()!='hurting' ) {
+                    this.yoMismo.anims.play('jumpDown');
+                }
+                //jump
+                else if(this.space.isDown && this.body.onFloor()){
+                
+                    this.yoMismo.anims.play('jump');
+                    this.yoMismo.anims.chain('jumpDown');
+                    this.scene.jumpSound.play();
+                    if(this.springPicked){      
+                        this.body.setVelocityY(1.5*this.jumpImpulse);
+                        this.springPicked=false;
+                    }
+                    else{
+                        this.body.setVelocityY(this.jumpImpulse);
+                    }
+                }
+                //Dash y ataque
+                if(Phaser.Input.Keyboard.JustDown(this.j)){
+                    if(this.isStill()){ //si estoy quieto, ataco
+                        this.espada.setVisible(false);
+                        this.espadaAtacando.setVisible(true);
+                        this.state = state.ATTACK;
+                        this.attackDuration = 250;
+                    }
+                    else if(this.dashAvailable){   //si me estoy moviendo, hago el dash
+                        this.scene.dashSound.play();
+                        this.placeSword();
+                        if(Math.abs(this.direction.y) === Math.abs(this.direction.x)){     //dash diagonal mas razonable
+                            this.body.setVelocityX(0.7* this.direction.x * this.dashSpeed);
+                            this.body.setVelocityY(0.7 * this.direction.y * this.dashSpeed);
+                        }
+                        else{
+                            this.body.setVelocityX(this.direction.x * this.dashSpeed);
+                            this.body.setVelocityY(this.direction.y * this.dashSpeed);
+                        }
+                        this.body.setAllowGravity(false);
+                        this.dashAvailable = false;
+                        this.state = state.DASH;
+                        this.dashDuration = 250;
+                    }
+                }
+                break; 
+
         }
-        
+    
         //empieza la animacion de cambio de dimension que realmente te cambia de dimension al acabar la animacion
         if(Phaser.Input.Keyboard.JustDown(this.k) && !this.noChange ){
             this.yoMismo.anims.play('swap');
@@ -246,7 +247,6 @@ export default class Prota extends Personaje {
             }
         }
 
-        
         this.checkSpike();
         this.checkNoChange();
     }
@@ -270,13 +270,13 @@ export default class Prota extends Personaje {
         else return "SÍ";
     }
     isStill(){
-        return (this.direction.x == 0 && this.direction.y == 0);
+        return (this.direction.x == 0 && this.direction.y === 0);
     }
     isDashing(){
-        return this.dashing;
+        return this.state === state.DASH;
     }
     isAttacking(){
-        return this.attacking;
+        return this.state === state.ATTACK;
     }
     placeSword(){
         if(this.direction.y===0) {//lados
