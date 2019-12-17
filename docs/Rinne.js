@@ -5,7 +5,7 @@ export default class Rinne extends Zoppo  {
     constructor(scene, x,y, speed, dir, points, damage, lives, group, sprite){
         super(scene,x,y, speed, dir, points, damage,lives,group, sprite);
         this.startMove=false;
-        this.range=50;
+        this.distance=100;
     }
 
     preUpdate(){
@@ -15,7 +15,7 @@ export default class Rinne extends Zoppo  {
             
         } 
         //para que empiece a moverse hacia donde está el jugador
-        else if(!this.startMove && this.y-this.scene.player.y<=this.range){
+        else if(!this.startMove && this.y-this.scene.player.y<=this.distance){
             if(this.x<this.scene.dimMargin && this.scene.player.getDimValue()===1 ||this.x>this.scene.dimMargin && this.scene.player.getDimValue()===-1 ){
                 console.log(this.scene.player.getDimValue());
                 this.startMove=true;

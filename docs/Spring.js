@@ -7,7 +7,6 @@ export default class Spring extends PickMe{
         super.preUpdate();
         if(this.activePower===true){
             this.scene.player.changeJumpImpulse();
-            console.log("soy un Spring");
             this.destroy();
         }
         

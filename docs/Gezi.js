@@ -7,7 +7,7 @@ export default class Gezi extends Enemy  {
         this.firstTouch=true;
         
         this.pared=false;
-        this.startMovY=200;
+        this.distance=200;
         this.body.setMaxVelocity(speed,speed);
         this.body.setAllowGravity(false);
         this.goDown=true;
@@ -34,7 +34,7 @@ export default class Gezi extends Enemy  {
         else {
             //se empieza a mover solo si coincide que el personaje esta en su mismo lado y a una cierta distancia
             if(!this.startMove ){
-                if(this.y-this.scene.player.y<=this.startMovY && (this.x<this.scene.dimMargin && this.scene.player.getDimValue()===1
+                if(this.y-this.scene.player.y<=this.distance && (this.x<this.scene.dimMargin && this.scene.player.getDimValue()===1
                  || this.x>this.scene.dimMargin && this.scene.player.getDimValue()===-1 )){
                     this.startMove=true;
                 }

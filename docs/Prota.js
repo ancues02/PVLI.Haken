@@ -63,7 +63,7 @@ export default class Prota extends Personaje {
         this.changeMov=false;
         this.changeMovTime=10000//10 segundos con los controles invertidos
 
-        this.damageCD = true;//es para controlar que los enemigos no hagan daño todo el rato       
+        this.immune = true;//es para controlar que los enemigos no hagan daño todo el rato       
         //variables para el ataque
         //this.attackTime=0;
         this.attacking=false;
@@ -94,10 +94,11 @@ export default class Prota extends Personaje {
     }
     
     preUpdate(time, delta){
-        if(this.y >= 6400){//esto es por si se cae, luego no será necesario
-            this.scene.changeScene('Game')
+        if(this.y >= 6330){//esto es por si se cae, luego no será necesario
+            this.end();      
         }
-         
+        //setTimeout(()=>this.damageCD = true,2000); //cambiar esto
+        if( this.yoMismo.anims.getCurrentKey()!='hurting') this.immune=true;
         if(this.attacking){                //Estado ataque
             
             this.attackDuration = Math.max(0, this.attackDuration - delta); //asi los hace el profesor
@@ -344,28 +345,29 @@ export default class Prota extends Personaje {
     }
     //te quita vida o cambia de escena si no te quedan vidas
     decreaseHealth(damage){
-        if(this.damageCD)
+        if(this.immune)
         {
             this.yoMismo.anims.play('hurting');
             this.yoMismo.anims.chain('idle');
             this.lives-=damage;
             if(this.lives === 1){
-                this.damageCD = false;
+                this.immune = false;
                 this.shield.setVisible(false);
-
-                setTimeout(()=>this.damageCD = true,2000); //cambiar esto
             }
             else if(this.lives<=0){
                 this.scene.mainTheme.stop();
-                this.finalScore=Math.round((this.points*this.y/10)/Math.round(this.scene.time/1000));//formula que da tu puntuacion final
-                this.scene.addText();
-                this.scene.scene.pause();
-                this.scene.scene.sendToBack();
-                this.scene.scene.run('Death');
+                this.end();
             
             }
         }
         
+    }
+    end(){
+        this.finalScore=Math.round((this.points*this.y/10)/Math.round(this.scene.time/1000));//formula que da tu puntuacion final
+        this.scene.addText();
+        this.scene.scene.pause();
+        this.scene.scene.sendToBack();
+        this.scene.scene.run('Death');
     }
       //es para poner el texto de si puedes o no dashear
     canDash(){
