@@ -200,6 +200,7 @@ export default class Prota extends Personaje {
                         this.espada.setVisible(false);
                         this.espadaAtacando.setVisible(true);
                         this.state = state.ATTACK;
+                        this.scene.attackSound.play();
                         this.attackDuration = 250;
                     }
                     else if(this.dashAvailable){   //si me estoy moviendo, hago el dash

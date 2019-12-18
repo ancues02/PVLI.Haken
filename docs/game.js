@@ -37,6 +37,7 @@ export default class Game extends Phaser.Scene {
     //Carga de audio
     this.load.audio('mainTheme', './Caves of sorrow.ogg');
     this.load.audio('jumpSound', './jump.wav');
+    this.load.audio('attackSound', './attack.wav');
     this.load.audio('coinSound', './coin.wav');
     this.load.audio('playerDeathSound', './playerDeath.wav');
     this.load.audio('enemyDeathSound', './deadEnemy.wav');
@@ -96,6 +97,7 @@ export default class Game extends Phaser.Scene {
     //this.menuTheme = this.sound.add('menuTheme', themeConfig);
     this.mainTheme.play();
     this.jumpSound = this.sound.add('jumpSound', soundsConfig );
+    this.attackSound = this.sound.add('attackSound', soundsConfig );
     this.playerDeathSound = this.sound.add('playerDeathSound', soundsConfig);
     this.enemyDeathSound = this.sound.add('enemyDeathSound', soundsConfig);
     this.pickUpSound = this.sound.add('pickUpSound', soundsConfig);

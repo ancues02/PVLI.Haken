@@ -4,10 +4,10 @@ export default class EndMenu extends Phaser.Scene {
         super('EndMenu');
     }
     preload(){
-        this.load.audio('menuTheme','./menuTheme.ogg');
+        this.load.audio('endTheme','./endMenu.wav');
       }
     create(){    
-        this.menuTheme = this.sound.add('menuTheme', {
+        this.menuTheme = this.sound.add('endTheme', {
             mute: false,
             volume: 0.7,
             rate: 1,
