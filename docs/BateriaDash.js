@@ -1,15 +1,14 @@
 import PickMe from './PickMe.js';
 export default class BateríaDash extends PickMe{
-    constructor(scene,x, y, sprite){
-        super(scene, x, y, sprite);
+    constructor(scene,x, y, sprite, sound){
+        super(scene, x, y, sprite, sound);
     }
   
 
     preUpdate(){
         super.preUpdate();
-        if(this.activePower===true){
+        if(this.activePower){
             this.scene.player.resetDash();
-            console.log("soy un BateríaDash");
             this.destroy();
         }
         

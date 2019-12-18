@@ -136,9 +136,11 @@ export default class Game extends Phaser.Scene {
     this.coin4_2 = new Coin (this, 1400,5750,50, "coinAnim", this.coinSound);
 
     //pickUps
-    this.shield = new Shield (this, 300, 600, "shield",this.pickUpSound);
+    this.shield = new Shield (this, 220, 600, "bubble",this.pickUpSound);
     this.invertidor=new changeMov(this,1250,4600,'invertidor',this.pickUpSound);  
-    this.spring=new Spring(this,600,800,"muelle",this.pickUpSound)
+    this.spring=new Spring(this,570,2630,"muelle",this.pickUpSound);
+    this.resetDash = new BateriaDash (this, 250, 4100, "zumito", this.pickUpSound);
+
 
     //Configuracion de colisiones
     this.layerPlatform.setCollisionByProperty({ colision: true });

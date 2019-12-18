@@ -391,7 +391,7 @@ export default class Prota extends Personaje {
         return this.finalScore;
     }
     invertMov(){
-        this.changeMov= -1;
+        this.changeMov *= -1;
     }
 
 }
