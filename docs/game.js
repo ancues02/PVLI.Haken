@@ -16,7 +16,6 @@ export default class Game extends Phaser.Scene {
   }
   preload() { 
     //Imagenes Sprites
-    this.load.image('shield','./shield.png');
     this.load.image('espada', './sword2.png');
     this.load.image('espadaAtacando', './sword1.png');
     this.load.image('muelle', './muelle.png');
