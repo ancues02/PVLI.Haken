@@ -68,13 +68,10 @@ export default class Prota extends Personaje {
 
         this.immune = true;//es para controlar que los enemigos no hagan daño todo el rato       
         //variables para el ataque
-        //this.attackTime=0;
-        this.attacking=false;
+        
         this.attackDuration = 0;
         //variables para el dash
-        this.dashing = false;//para hacer daño mientras usas el dash
         this.dashAvailable = true;//para poder hacer dash
-        //this.dashingTime = 0; //el tiempo que esta haciendo dash (dashDuration + time) 
         this.dashDuration=0;//tiempo que esta usando el dash, si es 0, puedes usar el dash
         this.dashCd = 0;//es el cd del dash
         //this.noDash=0;//el tiempo que no puede usar el dash(time+dashCd)
@@ -350,12 +347,8 @@ export default class Prota extends Personaje {
         
     }
     end(){
-        //this.scene.mainTheme.stop();
         let finalScore=Math.round((this.points*this.y/10)/Math.round(this.scene.time/1000));//formula que da tu puntuacion final
-        this.scene.endGame(finalScore);
-        //this.dies();
-
-        
+        this.scene.endGame(finalScore);        
     }
       //es para poner el texto de si puedes o no dashear
     canDash(){

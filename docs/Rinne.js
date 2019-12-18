@@ -2,11 +2,11 @@ import Zoppo from './Zoppo.js';
 //comportamiento igual que zoppo pero empieza a moverse cuando el jugador esta a su "misma" altura
 export default class Rinne extends Zoppo  {
     constructor(scene, x,y, speed, dir, points, damage, lives, group, sprite,anim){
-        super(scene,x,y, speed, dir, points, damage,lives,group, sprite);
+        super(scene,x,y, speed, dir, points, damage,lives,group, sprite,anim);
         this.startMove=false;
         this.distance=100;
                 
-        this.yoMismo.anims.play(anim);    }
+      }
 
     preUpdate(){
         if(this.startMove){

@@ -2,10 +2,8 @@ import Enemy from './Enemy.js';
 //se mueve hasta encontrar un obstaculo o hueco, entonces cambia de direccion 
 export default class Zoppo extends Enemy  {
     constructor(scene, x,y, speed, dir, points, damage, lives, group, sprite,anim){
-        super(scene,x,y, speed, dir, points, damage,lives, group, sprite);
-        this.noFloorMove=15;//se usa para cambiar de direccion y que no caiga
-      
-        this.yoMismo.anims.play(anim);
+        super(scene,x,y, speed, dir, points, damage,lives, group, sprite,anim);
+        this.noFloorMove=15;//se usa para cambiar de direccion y que no caiga      
     }
 
     preUpdate(){

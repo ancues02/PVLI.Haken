@@ -8,6 +8,8 @@ import Gezi from './Gezi.js';
 import Zoppo from './Zoppo.js'
 import Shield from './Shield.js';
 import changeMov from './changeMov.js'
+
+//es la escena donde se juega
 export default class Game extends Phaser.Scene {
   constructor() {
     super( 'Game' );
@@ -51,7 +53,7 @@ export default class Game extends Phaser.Scene {
     
     this.limits = {
       top:0,
-      down: 6400,//6338
+      down: 6400,
       left: 0,
       right: 1500      
     }
@@ -162,8 +164,6 @@ export default class Game extends Phaser.Scene {
     this.coin3_2 = new Coin (this, 150, 4000,50, "coinAnim", this.coinSound);
     this.coin4_1 = new Coin (this, 532, 5200,50, "coinAnim", this.coinSound);
     this.coin4_2 = new Coin (this, 1400,5750,50, "coinAnim", this.coinSound);
-
-    //pickUps
     this.shield = new Shield (this, 220, 600, "bubble",this.pickUpSound);
     this.invertidor=new changeMov(this,1250,4600,'invertidor',this.pickUpSound);  
     this.spring=new Spring(this,570,2630,"muelle",this.pickUpSound);
@@ -179,25 +179,20 @@ export default class Game extends Phaser.Scene {
     //Configuracion de la interfaz
     this.time = 0;
     
-    this.textDash=this.add.text(this.cameras.main.left, this.player.getY());
+    this.textDash=this.add.text(1350, this.player.getY());
     this.textDash.setFontSize(25);
-    this.textDash.x=1350;
 
-    this.textScore = this.add.text(this.cameras.main.left, this.player.getY());
+    this.textScore = this.add.text(50, this.player.getY());
     this.textScore.setFontSize(25);
-    this.textScore.x=50;
    
-    this.textDepth = this.add.text(this.cameras.main.left, this.player.getY());
+    this.textDepth = this.add.text(50, this.player.getY());
     this.textDepth.setFontSize(25);
-    this.textDepth.x=50;
     
-    this.textTime = this.add.text(this.cameras.main.left, this.player.getY());
+    this.textTime = this.add.text(50, this.player.getY());
     this.textTime.setFontSize(25);
-    this.textTime.x=50;
 
-    this.textChange = this.add.text(this.cameras.main.left, this.player.getY());
+    this.textChange = this.add.text(1250, this.player.getY());
     this.textChange.setFontSize(25);
-    this.textChange.x=1250;
 
     //Configuracion de la camara
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
@@ -206,9 +201,8 @@ export default class Game extends Phaser.Scene {
   }
 
  
-  
-  updateScore(){
-    //console.log(this.textScore.y);
+  //movemos los textos que estan en pantalla
+  updateTexts(){
     this.textScore.y=(this.player.getY()-this.cameras.main.width/4+170);
     if (this.textScore.y<=0)this.textScore.y=0;
     if (this.textScore.y>=5800)this.textScore.y=5800;    
@@ -251,15 +245,19 @@ export default class Game extends Phaser.Scene {
   //pone un texto que muestra tu puntuacion final ((puntos * (profundidad/10))/tiempo) 
   // y otro de si ganas o pierdes y luego cambiamos a la escena Death
   endGame(finalScore){
+    let win=false;
     let y=this.player.getY();
-    if(y>6300) y=6000;
-    this.textm = this.add.text(400, y-100);
-    if(y>=6000){
-      this.textm.text = 'You Win!!!';
+    if(y>6200){
+      win=true;
+      y=6000;
+    } 
+    this.textWin = this.add.text(400, y-100);
+    if(win){
+      this.textWin.text = 'You Win!!!';
     }
-    else this.textm.text = 'You Lose';
-    this.textm.setFontSize(100);
-    this.textm.setColor('#ffcc00');
+    else this.textWin.text = 'You Lose';
+    this.textWin.setFontSize(100);
+    this.textWin.setColor('#ffcc00');
     
     this.textFinalScore = this.add.text(400, y);
     this.textFinalScore.setFontSize(100);
@@ -270,14 +268,12 @@ export default class Game extends Phaser.Scene {
     this.changeScene('Death');
   }
 
+  //actualizamos la posicion de la camara y los textos y lleva la pausa de la escena
   update(time, delta) { 
     if(this.mainTheme.isPaused) this.mainTheme.resume();//para resume la musica despues de menu pausa
     this.cameras.main.centerOnY( this.player.getY() + 100);  
-
-    this.time += Math.round(delta); 
-    
-    this.updateScore();
-
+    this.time += Math.round(delta);   
+    this.updateTexts();
     if(this.escape.isDown){
       this.managePause();
     }

@@ -3,15 +3,13 @@ import Enemy from './Enemy.js';
 export default class Gezi extends Enemy  {
     
     constructor(scene, x,y, speed, dir, points, damage, lives,group,  sprite, anim){
-        super(scene,x,y, speed, dir, points, damage,lives,group, sprite);
+        super(scene,x,y, speed, dir, points, damage,lives,group, sprite,anim);
         this.pared=false;
         //this.distance=200;
         this.body.setMaxVelocity(speed,speed);
         this.body.setAllowGravity(false);
         this.goDown=true;
-        //this.startMove=false;
        
-        this.yoMismo.anims.play(anim);
 
     }
     //empieza bajando hasta encontrar suelo porque no tiene gravedad(por si lo colocamos mal al crearlo)

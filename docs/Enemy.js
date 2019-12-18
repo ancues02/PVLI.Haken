@@ -1,10 +1,12 @@
 import Personaje from './Personaje.js';
 //padre de todos los enemigos menos los pinchos
 export default class Enemy extends Personaje  {
-    constructor(scene, x,y, speed, dir, points, damage, lives, group, sprite){
+    constructor(scene, x,y, speed, dir, points, damage, lives, group, sprite,anim){
         super(scene,x,y, speed, dir, points, lives, sprite);
         this.damage = damage;
         group.add(this);
+        this.yoMismo.anims.play(anim);
+
     }
     //te reduce la vida
     decreaseHealth(){
