@@ -16,7 +16,7 @@ export default class Zoppo extends Enemy  {
     preUpdate(){
         this.horizontalMove();//lo movemos
         //para cambiar de direccion si no hay suelo o encuentra un muro
-        if(this.body.onFloor()===false || this.body.onWall()===true) {
+        if(!this.body.onFloor() || this.body.onWall()) {
             console.log("hols")
             if(this.direction.x===1){
                 this.x-=this.noFloorMove;
