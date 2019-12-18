@@ -355,7 +355,7 @@ export default class Prota extends Personaje {
         //this.scene.mainTheme.stop();
         let finalScore=Math.round((this.points*this.y/10)/Math.round(this.scene.time/1000));//formula que da tu puntuacion final
         this.scene.endGame(finalScore);
-        this.dies();
+        //this.dies();
 
         
     }
