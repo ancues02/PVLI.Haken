@@ -19,16 +19,13 @@ export default class Game extends Phaser.Scene {
     this.load.image('shield','./shield.png');
     this.load.image('espada', './sword2.png');
     this.load.image('espadaAtacando', './sword1.png');
-    this.load.image('zoppo', './Enemy.png');
-    this.load.image('rinne', './enemy2.png');
-    this.load.image('gezi', './Enemy3.1.png');
-    this.load.image('reizen', './ghost.png');
     this.load.image('muelle', './muelle.png');
-    this.load.image('zumito', './zumito.png');
+    this.load.image('zumito', './zumito.png');    //no es un zumo, es para resetear el dash
     this.load.image('bubble','./bubble.png');
     this.load.image('spike','./Spike.png');
     this.load.image('bloques', './PatronBloques.png');
     this.load.image('invertidor','./invertidor.png');
+
     //Spritesheets para animaciones
     this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 48, frameHeight: 61});
     this.load.spritesheet('coinAnim','./coin.png', { frameWidth: 46, frameHeight: 46 });
@@ -36,7 +33,6 @@ export default class Game extends Phaser.Scene {
 
     //Carga del .json
     this.load.tilemapTiledJSON("tilemap","./Mapa2.json");
-    //this.load.tilemapTiledJSON("pinchos","./Mapa.json")
     
     //Carga de audio
     this.load.audio('mainTheme', './Caves of sorrow.ogg');
@@ -50,7 +46,7 @@ export default class Game extends Phaser.Scene {
   }
 
   create() {   
-    
+    //Limites del juego
     this.limits = {
       top:0,
       down: 6400,
@@ -60,7 +56,7 @@ export default class Game extends Phaser.Scene {
     this.dimMargin=730;//es la distancia que hay en cada lado
     this.escape=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);//Boton pausa
 
-    //Creacion del tilemap
+    //Creacion del mapa
     this.map = this.make.tilemap(
       {
       key:'tilemap',
@@ -68,8 +64,6 @@ export default class Game extends Phaser.Scene {
       tileHeight:32,
       
     });
-    
-
     this.map.addTilesetImage('TileMap','bloques');
     this.map.addTilesetImage('Pinchos','spike');
 
@@ -89,7 +83,7 @@ export default class Game extends Phaser.Scene {
       loop: false,
       delay: 0
     };
-    this.mainTheme = this.sound.add('mainTheme', {
+    let themeConfig = {
       mute: false,
       volume: 0.7,
       rate: 1,
@@ -97,9 +91,10 @@ export default class Game extends Phaser.Scene {
       seek: 0,
       loop: true,
       delay: 0
-    } );
+    };
+    this.mainTheme = this.sound.add('mainTheme', themeConfig);
+    //this.menuTheme = this.sound.add('menuTheme', themeConfig);
     this.mainTheme.play();
-    //this.mainTheme.stop();
     this.jumpSound = this.sound.add('jumpSound', soundsConfig );
     this.playerDeathSound = this.sound.add('playerDeathSound', soundsConfig);
     this.enemyDeathSound = this.sound.add('enemyDeathSound', soundsConfig);
@@ -243,7 +238,7 @@ export default class Game extends Phaser.Scene {
 
   }
   //pone un texto que muestra tu puntuacion final ((puntos * (profundidad/10))/tiempo) 
-  // y otro de si ganas o pierdes y luego cambiamos a la escena Death
+  // y otro de si ganas o pierdes y luego cambiamos a la escena EndMenu
   endGame(finalScore){
     let win=false;
     let y=this.player.getY();
@@ -265,7 +260,7 @@ export default class Game extends Phaser.Scene {
     this.textFinalScore.text = 'Final Score ' + finalScore;
 
     this.mainTheme.stop();
-    this.changeScene('Death');
+    this.changeScene('EndMenu');
   }
 
   //actualizamos la posicion de la camara y los textos y lleva la pausa de la escena
