@@ -2,20 +2,14 @@ import Enemy from './Enemy.js';
 export default class Reizen extends Enemy{
     //enemigo volador, es el unico que no desciende de enemigo porque no queremos
     //que colisione con los muros. 
-    constructor(scene, x,y, speed, dir, points, damage, lives,group , sprite){
+    constructor(scene, x,y, speed, dir, points, damage, lives,group , sprite,anim){
         super(scene,x,y, speed, dir, points,damage,lives,group ,sprite);
         this.followPlayer=false;
         this.distance=200;
         this.changeDirectionX(-1);
         this.body.setAllowGravity(false);//como vuelas no tienes gravedad
-        this.scene.anims.create({ //esto no va en game, para no tenerlo cada vez que creamos uno
-            key: 'reizenAnim',
-            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 9, end: 10}),
-            frameRate: 3,
-            repeat: -1
-        });
-        this.yoMismo.anims.play('reizenAnim');
-        }
+        
+        this.yoMismo.anims.play(anim);        }
 
     preUpdate(){
         //cuando no sigue al personaje se mueve en horizontal

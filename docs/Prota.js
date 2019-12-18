@@ -227,20 +227,18 @@ export default class Prota extends Personaje {
         }
     
         //si se cumplen las condiciones haces la animacion de cambiar de lado (que cuando acabe cambias de lado)
-        if(Phaser.Input.Keyboard.JustDown(this.k) && !this.noChange /*&& this.yoMismo.anims.getCurrentKey()!='hurting'*/ ){
+        if(Phaser.Input.Keyboard.JustDown(this.k) && !this.noChange && this.yoMismo.anims.getCurrentKey()!='hurting' ){
             this.yoMismo.anims.play('swap');
-            
-        }
-        //siempre hay una animacion excepto cuando acaba la animacion swap que entonces nos cambiamos de lado
-        if(!this.yoMismo.anims.isPlaying){
-            this.yoMismo.anims.play('idle');
+            this.yoMismo.anims.chain('idle');
             if(this.checkChange()){
                 this.scene.changeSideSound.play();
                 this.x += (this.dimValue * this.scene.dimMargin);
                 this.changeDimValue();
             }
+            
         }
-
+        //siempre hay una animacion excepto cuando acaba la animacion swap que entonces nos cambiamos de lado
+      
         this.checkSpike();
         this.checkNoChange();
     }

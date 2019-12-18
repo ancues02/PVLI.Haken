@@ -107,24 +107,51 @@ export default class Game extends Phaser.Scene {
     this.changeSideSound = this.sound.add('changeSideSound', soundsConfig);
 
 
+//creamos las animaciones de los enemigos para que al instanciar un mismo enemigo no se cree la animacion mas de una vez
+    this.zoppoAnim=this.anims.create({
+      key: 'zoppoAnim',
+      frames: this.anims.generateFrameNumbers('enemiesSheet', { start: 0, end: 2 }),
+      frameRate: 2,
+      repeat: -1
+  });
+
+  this.rinneAnim=this.anims.create({
+    key: 'rinneAnim',
+    frames: this.anims.generateFrameNumbers('enemiesSheet', { start: 3, end: 4}),
+    frameRate: 3,
+    repeat: -1
+  });  
+
+  this.reizenAnim=this.anims.create({ //esto no va en game, para no tenerlo cada vez que creamos uno
+    key: 'reizenAnim',
+    frames: this.anims.generateFrameNumbers('enemiesSheet', { start: 9, end: 10}),
+    frameRate: 3,
+    repeat: -1
+  });
+  this.geziAnim=this.anims.create({
+    key: 'geziAnim',
+    frames: this.anims.generateFrameNumbers('enemiesSheet', { start: 6, end: 7}),
+    frameRate: 3,
+    repeat: -1
+  });
     this.player = new Prota (this, 200, 50, 300, {x:1, y:0}, 0, -350, 1,"personaje","espada","espadaAtacando","bubble");  //avatar del jugador
 
     //Creacion de enemigos
     this.enemiesGroup = this.add.group();
     this.enemiesGroupNoCollision= this.add.group();
 
-    this.zoppo = new Zoppo (this, 1000, 350, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet");
-    this.zoppo2 = new Zoppo (this, 100, 3050, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet");
-    this.zoppo3 = new Zoppo (this, 600, 3050, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet");
+    this.zoppo = new Zoppo (this, 1000, 350, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet",this.zoppoAnim);
+    this.zoppo2 = new Zoppo (this, 100, 3050, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet",this.zoppoAnim);
+    this.zoppo3 = new Zoppo (this, 600, 3050, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet",this.zoppoAnim);
 
-    this.gezzi = new Gezi (this, 600, 3790, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet");
-    this.gezzi = new Gezi (this, 500, 300, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet");
+    this.gezzi = new Gezi (this, 600, 3790, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet", this.geziAnim);
+    this.gezzi = new Gezi (this, 500, 300, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet", this.geziAnim);
 
-    this.rinne = new Rinne (this, 200, 2400, 500, {x:1, y:0}, 15, 1, 1, this.enemiesGroup,"enemiesSheet");
-    this.rinne2 = new Rinne (this, 1000, 3350, 500, {x:1, y:0}, 15, 1, 1, this.enemiesGroup,"enemiesSheet");
+    this.rinne = new Rinne (this, 200, 2400, 500, {x:1, y:0}, 15, 1, 1, this.enemiesGroup,"enemiesSheet",this.rinneAnim);
+    this.rinne2 = new Rinne (this, 1000, 3350, 500, {x:1, y:0}, 15, 1, 1, this.enemiesGroup,"enemiesSheet",this.rinneAnim);
 
-    this.reizen = new Reizen (this, 600, 5500, 200, {x:1, y:0}, 20, 1, 1,this.enemiesGroupNoCollision,"enemiesSheet");
-    this.reizen2 = new Reizen (this, 1500, 5800, 200, {x:1, y:0}, 20, 1, 1,this.enemiesGroupNoCollision,"enemiesSheet");
+    this.reizen = new Reizen (this, 600, 5500, 200, {x:1, y:0}, 20, 1, 1,this.enemiesGroupNoCollision,"enemiesSheet",this.reizenAnim);
+    this.reizen2 = new Reizen (this, 1500, 5800, 200, {x:1, y:0}, 20, 1, 1,this.enemiesGroupNoCollision,"enemiesSheet",this.reizenAnim);
 
     //Creacion de pickUps
     this.coin1_1 = new Coin (this, 1050, 250,50, "coinAnim", this.coinSound);

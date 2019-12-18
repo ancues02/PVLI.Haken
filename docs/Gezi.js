@@ -2,7 +2,7 @@ import Enemy from './Enemy.js';
 //enemigo que se mueve por las paredes
 export default class Gezi extends Enemy  {
     
-    constructor(scene, x,y, speed, dir, points, damage, lives,group,  sprite){
+    constructor(scene, x,y, speed, dir, points, damage, lives,group,  sprite, anim){
         super(scene,x,y, speed, dir, points, damage,lives,group, sprite);
         this.pared=false;
         //this.distance=200;
@@ -10,13 +10,8 @@ export default class Gezi extends Enemy  {
         this.body.setAllowGravity(false);
         this.goDown=true;
         //this.startMove=false;
-        this.scene.anims.create({
-            key: 'geziAnim',
-            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 6, end: 7}),
-            frameRate: 3,
-            repeat: -1
-        });
-        this.yoMismo.anims.play('geziAnim');
+       
+        this.yoMismo.anims.play(anim);
 
     }
     //empieza bajando hasta encontrar suelo porque no tiene gravedad(por si lo colocamos mal al crearlo)
