@@ -10,7 +10,7 @@ export default class Personaje extends Phaser.GameObjects.Container{
         this.lives = lives;
         this.direction = dir;
         this.speed = speed;
-        this.points = points;      
+        this.points = points;    
     }
     decreaseHealth(){
         this.lives--;

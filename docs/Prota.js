@@ -1,4 +1,5 @@
 import Personaje from './Personaje.js'; 
+//Estados del prota
 const state = {
     NORMAL: 0,
     DASH: 1,
@@ -59,7 +60,6 @@ export default class Prota extends Personaje {
         this.espadaAtacando.setVisible(false);
         this.shield.setVisible(false);
     
-        this.startPos={x: x, y: y};
         this.jumpImpulse = jumpImpulse;
         this.springPicked=false;//para saltar más cuando pillas un spring
         this.dimValue = 1; //1 == lado izq, -1 == lado derecho
@@ -67,14 +67,12 @@ export default class Prota extends Personaje {
         this.changeMovTime=10000//10 segundos con los controles invertidos NOLOUSAMOS
 
         this.immune = true;//es para controlar que los enemigos no hagan daño todo el rato       
-        //variables para el ataque
-        
+        //variable para controlar la duración del ataque, si es 0 se puede atacar
         this.attackDuration = 0;
         //variables para el dash
         this.dashAvailable = true;//para poder hacer dash
         this.dashDuration=0;//tiempo que esta usando el dash, si es 0, puedes usar el dash
         this.dashCd = 0;//es el cd del dash
-        //this.noDash=0;//el tiempo que no puede usar el dash(time+dashCd)
         this.dashSpeed = 600;//la velocidad a la que te mueves
         this.noChange=false;//cuando es true no puedes cambiar de lado
        
@@ -89,8 +87,6 @@ export default class Prota extends Personaje {
 
         //ponemos un maximo de velocidades
         this.body.setMaxVelocity(500,800);
-
-
     }
     
     preUpdate(time, delta){
@@ -99,8 +95,8 @@ export default class Prota extends Personaje {
         }
         if( this.yoMismo.anims.getCurrentKey()!='hurting') this.immune=true;        //para volver a recibir daño cuando la animación de daño termina
         switch(this.state){
-            case state.ATTACK:
-                this.attackDuration = Math.max(0, this.attackDuration - delta);
+            case state.ATTACK: 
+                this.attackDuration = Math.max(0, this.attackDuration - delta); 
                 if(this.attackDuration === 0){
                     this.state = state.NORMAL;
                     this.espada.setVisible(true);
@@ -116,10 +112,10 @@ export default class Prota extends Personaje {
                 if(this.dashDuration === 0){
                     this.state = state.NORMAL;
                     if(this.body.velocity.y<=0)  {
-                        //si se usa dash hacia arriba se para, si es para abajo que siga bajando
+                        //si se usa dash para abajo, se mantiene la velocidad
                         this.body.setVelocityY(0);
                     }
-                    this.body.setAllowGravity(true);//aunque pongas la velocity en 0, sigue afectando la gravedad parece
+                    this.body.setAllowGravity(true);
                     this.espada.setRotation(0);
                     this.espadaAtacando.setRotation(0);
                     this.dashCd = 1500;
@@ -134,7 +130,7 @@ export default class Prota extends Personaje {
                         this.dashAvailable = true;
                     }
                 }  
-                //Movimiento                      
+                //Movimiento y animaciones de movimiento                    
                 if(this.w.isDown){       
                     this.changeDirectionY(-1);
                 }
@@ -154,7 +150,6 @@ export default class Prota extends Personaje {
                 }else if(this.d.isDown){
                     if(this.yoMismo.anims.getCurrentKey()!='walk'&& this.yoMismo.anims.getCurrentKey()!='hurting' && this.yoMismo.anims.getCurrentKey()!='swap'){
                         this.yoMismo.anims.play('walk');
-                        //this.changeAnim=false;
                     }    
                     this.changeDirectionX(this.changeMov * this.dimValue);          
                     this.horizontalMove();    
@@ -173,7 +168,6 @@ export default class Prota extends Personaje {
                 //para dejar de animar que caes
                 if(this.yoMismo.anims.getCurrentKey()==='jumpDown' && this.body.onFloor() ){
                     this.yoMismo.anims.play('idle');
-                    //this.scene.jumpSound.stop();
                 }
                 //para animar que caes
                 if(!this.body.onFloor() &&  !this.dashing && this.yoMismo.anims.getCurrentKey()!='swap' &&
@@ -206,7 +200,7 @@ export default class Prota extends Personaje {
                     else if(this.dashAvailable){   //si me estoy moviendo, hago el dash
                         this.scene.dashSound.play();
                         this.placeSword();
-                        if(Math.abs(this.direction.y) === Math.abs(this.direction.x)){     //dash diagonal mas razonable
+                        if(Math.abs(this.direction.y) === Math.abs(this.direction.x)){     //dash diagonal 
                             this.body.setVelocityX(0.7* this.direction.x * this.dashSpeed);
                             this.body.setVelocityY(0.7 * this.direction.y * this.dashSpeed);
                         }
@@ -224,8 +218,9 @@ export default class Prota extends Personaje {
 
         }
     
-        //si se cumplen las condiciones haces la animacion de cambiar de lado (que cuando acabe cambias de lado)
-        if(Phaser.Input.Keyboard.JustDown(this.k) && !this.noChange && this.yoMismo.anims.getCurrentKey()!='hurting' ){
+        //si se cumplen las condiciones(no hemos recibido daño, no estamos en una zona que impide el cambio 
+        // y en la posicion a la que cambiamos de lado no hay plataformas) cambiamos de lado
+        if(Phaser.Input.Keyboard.JustDown(this.k) && !this.noChange && this.immune ){
             this.yoMismo.anims.play('swap');
             this.yoMismo.anims.chain('idle');
             if(this.checkChange()){
@@ -235,39 +230,43 @@ export default class Prota extends Personaje {
             }
             
         }
-        //siempre hay una animacion excepto cuando acaba la animacion swap que entonces nos cambiamos de lado
-      
+        
         this.checkSpike();
         this.checkNoChange();
     }
 
-    //Comprueba si a donde vas a cambiar hay una un obstaculo
+    //Comprueba si a donde vas a cambiar hay un obstaculo
     //si es null, es que no hay plataforma, por tanto es posible el cambio
     checkChange(){
         return this.scene.layerPlatform.getTileAtWorldXY(this.x + (this.dimValue * this.scene.dimMargin), this.y) === null;    
     }
-
-    checkSpike(){//comprueba si colisionas con los pinchos 
+    //comprueba si colisionas con los pinchos 
+    checkSpike(){
         if(this.scene.layerSpike.getTileAtWorldXY(this.x, this.y) != null){
             this.decreaseHealth(1);
         }
     }
-    checkNoChange(){//comprueba si puedes cambiar de lado
+    //comprueba si estamos en una zona que impide el cambio de lado
+    checkNoChange(){
         this.noChange=this.scene.layerNoChange.getTileAtWorldXY(this.x, this.y) != null;
     }
-    canChange(){//para el texto de si puedes o no cambiar de lado
-        if(this.noChange) return "NO";
-        else return "SÍ";
+    //para el texto de si puedes o no cambiar de lado
+    canChange(){
+        return this.noChange;
     }
+    //devuelve si estas quieto
     isStill(){
         return (this.direction.x == 0 && this.direction.y === 0);
     }
+    //devuelve si estas dasheando
     isDashing(){
         return this.state === state.DASH;
     }
+    //devuelve si estas atacando
     isAttacking(){
         return this.state === state.ATTACK;
     }
+    //posiciona la espada
     placeSword(){
         if(this.direction.y===0) {//lados
             this.espada.setVisible(false);
@@ -300,19 +299,19 @@ export default class Prota extends Personaje {
     getFlipped(){
         return this.yoMismo.flipX;
     }
+    //aumenta la puntuacion
     addPoint(points){
         this.points+=points;
-        
-        //console.log(this.points);
     }
+    //Hace que el siguiente salto sea mas fuerte
     changeJumpImpulse(){
         this.springPicked=true;
     }
+    //Resetea el dash
     resetDash(){
         this.dashAvailable = true;
     }
-    //cuando cogemos un escudo, ponemos como
-    // maximo una vida mas y se ve el escudo
+    //cuando cogemos un escudo, ponemos como maximo una vida mas y se ve el escudo
     shielded(){
         if(this.lives === 1){
             this.lives++;
@@ -320,10 +319,11 @@ export default class Prota extends Personaje {
 
         }
     }
+    //cambia el valor de la dimension en la que estas
     changeDimValue(){
         this.dimValue *= -1;
     }
-    //para que algunos enemigos sepan en que lado está
+    //para que algunos enemigos sepan en que lado esta
     getDimValue(){//1 lado izquierdo
         return this.dimValue;
     }
@@ -339,26 +339,22 @@ export default class Prota extends Personaje {
                 this.shield.setVisible(false);
             }
             else if(this.lives<=0){
-                this.scene.mainTheme.stop();
                 this.scene.playerDeathSound.play();
-                this.end();
-            
+                this.end();            
             }
         }
         
     }
+    //Enseña la puntuacion final y cambia al menu final
     end(){
         let finalScore=Math.round((this.points*this.y/10)/Math.round(this.scene.time/1000));//formula que da tu puntuacion final
         this.scene.endGame(finalScore);        
     }
       //es para poner el texto de si puedes o no dashear
     canDash(){
-        if(!this.dashAvailable){
-            return "NO";
-
-        }
-        else return "SÍ";
+         return this.dashAvailable;
     }
+    //Cambia la direccion en la x, y maneja la espada
     changeDirectionX(nx){ 
         if(nx===-1){
             this.espada.x=-20;
@@ -377,6 +373,7 @@ export default class Prota extends Personaje {
         this.direction.x = nx;
         
     }
+    //invierte los controles (al coger un invertidor)
     invertMov(){
         this.changeMov *= -1;
     }

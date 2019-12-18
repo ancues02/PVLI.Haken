@@ -144,7 +144,6 @@ export default class Game extends Phaser.Scene {
     this.zoppo3 = new Zoppo (this, 600, 3050, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet",this.zoppoAnim);
 
     this.gezzi = new Gezi (this, 600, 3790, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet", this.geziAnim);
-    this.gezzi = new Gezi (this, 500, 300, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet", this.geziAnim);
 
     this.rinne = new Rinne (this, 200, 2400, 500, {x:1, y:0}, 15, 1, 1, this.enemiesGroup,"enemiesSheet",this.rinneAnim);
     this.rinne2 = new Rinne (this, 1000, 3350, 500, {x:1, y:0}, 15, 1, 1, this.enemiesGroup,"enemiesSheet",this.rinneAnim);
@@ -218,12 +217,14 @@ export default class Game extends Phaser.Scene {
     this.textDash.y=(this.player.getY()-this.cameras.main.width/4+180);
     if (this.textDash.y<=0)this.textDash.y=0;
     if (this.textDash.y>=5800)this.textDash.y=5800;
-    this.textDash.text = 'Dash: ' + this.player.canDash();
+    if (this.player.canDash())  this.textDash.text = 'Dash: SI';
+    else this.textDash.text = 'Dash: NO';
 
     this.textChange.y=(this.player.getY()-this.cameras.main.width/4+210);
     if (this.textChange.y<=30)this.textChange.y=30;
     if (this.textChange.y>=5830)this.textChange.y=5830;
-    this.textChange.text = 'Change Side: ' + this.player.canChange();
+    if (!this.player.canChange())  this.textChange.text = 'Change Side: SI';
+    else this.textChange.text = 'Change Side: NO';
     
   }
   //hacemos que deje de detectar que estas pulsando ESC, pausamos la musica y cambiamos la escena
