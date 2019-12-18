@@ -1,4 +1,5 @@
 h1 {
+  background-color: aliceblue;
   font-family: 'Anton', sans-serif;
   letter-spacing: 0.2em;
   font-size: 40px;
@@ -9,19 +10,7 @@ h1 {
   text-align: center;
   bottom:0;
 }
-/*.footer{
-font-family: 'Anton', sans-serif;
-    font-size: 15px;
-    background-color: #fff;
-    bottom:0;
-    position:fixed;
-    text-align: center
+canvas{
+  border: solid rgb(56, 50, 114) 0.5rem;
+  border-radius: 1rem;
 }
-.footer-divider {
-  margin: 5rem 0 2rem 0; /* Space out the Bootstrap <hr> more */
-/*}
-footer p {
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
-}*/
-
