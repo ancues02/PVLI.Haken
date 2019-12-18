@@ -1,9 +1,8 @@
 
 export default class Pause extends Phaser.Scene {
-    constructor() {
+    constructor(scene) {
         super('Pause');
-        //this.depth(1);
-
+        
       }
 
       create(){
@@ -24,12 +23,10 @@ export default class Pause extends Phaser.Scene {
       //si se pulsa otra vez escape podemos volver a jugar
       update(){
         if(this.escape.isDown){
-          this.scene.stop('Pause'),this.scene.resume('Game')    
+          this.scene.stop('Pause'),this.scene.resume('Game')
+    
         }
       }
-      /*UpdateScore(point){
-        console.log(point);
-      }*/
-    
+      
       
 }

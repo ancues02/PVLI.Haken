@@ -112,7 +112,10 @@ export default class Prota extends Personaje {
                 }
                 break;
             case state.DASH:
-                this.yoMismo.anims.play('dash');
+                if(this.yoMismo.anims.getCurrentKey()!='hurting'){
+                    this.yoMismo.anims.play('dash');  
+                }
+                
                 this.dashDuration = Math.max(0, this.dashDuration - delta);
                 if(this.dashDuration === 0){
                     this.state = state.NORMAL;
@@ -358,6 +361,7 @@ export default class Prota extends Personaje {
         
     }
     end(){
+        //this.scene.mainTheme.stop();
         this.finalScore=Math.round((this.points*this.y/10)/Math.round(this.scene.time/1000));//formula que da tu puntuacion final
         this.scene.addText();
         this.scene.scene.pause();
@@ -394,6 +398,8 @@ export default class Prota extends Personaje {
        
         return this.finalScore;
     }
-    
+    invertMov(){
+        this.changeMov=true;
+    }
 
 }

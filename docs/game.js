@@ -26,7 +26,7 @@ export default class Game extends Phaser.Scene {
     this.load.image('bubble','./bubble.png');
     this.load.image('spike','./Spike.png');
     this.load.image('bloques', './PatronBloques.png');
-
+    this.load.image('invertidor','./invertidor.png');
     //Spritesheets para animaciones
     this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 48, frameHeight: 61});
     this.load.spritesheet('coinAnim','./coin.png', { frameWidth: 46, frameHeight: 46 });
@@ -97,6 +97,7 @@ export default class Game extends Phaser.Scene {
       delay: 0
     } );
     this.mainTheme.play();
+    //this.mainTheme.stop();
     this.jumpSound = this.sound.add('jumpSound', soundsConfig );
     this.playerDeathSound = this.sound.add('playerDeathSound', soundsConfig);
     this.enemyDeathSound = this.sound.add('enemyDeathSound', soundsConfig);
@@ -134,13 +135,15 @@ export default class Game extends Phaser.Scene {
     this.coin4_1 = new Coin (this, 532, 5200,50, "coinAnim", this.coinSound);
     this.coin4_2 = new Coin (this, 1400,5750,50, "coinAnim", this.coinSound);
 
+    //pickUps
     this.shield = new Shield (this, 300, 600, "shield",this.pickUpSound);
-      
+    this.invertidor=new changeMov(this,1250,4600,'invertidor',this.pickUpSound);  
+    this.spring=new Spring(this,600,800,"muelle",this.pickUpSound)
+
     //Configuracion de colisiones
     this.layerPlatform.setCollisionByProperty({ colision: true });
     this.physics.add.collider(this.player,this.layerPlatform);
     this.physics.add.collider(this.enemiesGroup, this.layerPlatform);
-    
     
 
     //Configuracion de la interfaz
@@ -169,6 +172,7 @@ export default class Game extends Phaser.Scene {
     //Configuracion de la camara
     this.cameras.main.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
     this.cameras.main.setSize(1500,600);
+
   }
 
  
@@ -202,34 +206,32 @@ export default class Game extends Phaser.Scene {
     
 }
 
-managePause() {
-  
-   
-  this.scene.pause();
-  this.scene.sendToBack();
-  this.scene.run('Pause');
-  
-  this.escape.isDown=false;//para que no detecte que estas pulsando escape
+  managePause() {
+    
+    this.mainTheme.pause();
+    this.scene.pause();
+    this.scene.sendToBack();
+    this.scene.run('Pause');
+    this.escape.isDown=false;//para que no detecte que estas pulsando escape
+  }
 
-}
+  changeScene(nameScene){
+    this.mainTheme.pause();
+    this.scene.stop();
+    this.scene.start(nameScene);
 
-changeScene(nameScene){
-  this.mainTheme.stop();
-  this.scene.stop();
-  this.scene.start(nameScene);
-
-}
-//pone un texto que muestra tu puntuacion final ((puntos * (profundidad/10))/tiempo) 
-addText(){
-  this.textFinalScore = this.add.text(this.cameras.main.left, this.player.getY());
-  this.textFinalScore.setFontSize(100);
-  this.textFinalScore.x=400;
-  this.textFinalScore.y=this.player.getY()-this.cameras.main.width/4+330;
-  this.textFinalScore.text = 'Final Score ' + this.player.getFinalScore();
-}
+  }
+  //pone un texto que muestra tu puntuacion final ((puntos * (profundidad/10))/tiempo) 
+  addText(){
+    this.textFinalScore = this.add.text(this.cameras.main.left, this.player.getY());
+    this.textFinalScore.setFontSize(100);
+    this.textFinalScore.x=400;
+    this.textFinalScore.y=this.player.getY()-this.cameras.main.width/4+330;
+    this.textFinalScore.text = 'Final Score ' + this.player.getFinalScore();
+  }
 
   update(time, delta) { 
-    
+    if(this.mainTheme.isPaused) this.mainTheme.resume();//para resume la musica despues de menu pausa
     this.cameras.main.centerOnY( this.player.getY() + 100);  
 
     this.time += Math.round(delta); 
@@ -239,7 +241,8 @@ addText(){
     
     if(this.escape.isDown){
       this.managePause();
-
     }
+
+  
   }
 }
