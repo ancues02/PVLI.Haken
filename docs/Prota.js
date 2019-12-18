@@ -64,8 +64,8 @@ export default class Prota extends Personaje {
         this.jumpImpulse = jumpImpulse;
         this.springPicked=false;//para saltar más cuando pillas un spring
         this.dimValue = 1; //1 == lado izq, -1 == lado derecho
-        this.changeMov=false;
-        this.changeMovTime=10000//10 segundos con los controles invertidos
+        this.changeMov=1;   //si es -1 invierte los controles
+        this.changeMovTime=10000//10 segundos con los controles invertidos NOLOUSAMOS
 
         this.immune = true;//es para controlar que los enemigos no hagan daño todo el rato       
         //variables para el ataque
@@ -149,27 +149,19 @@ export default class Prota extends Personaje {
                     this.changeDirectionY(0);
                 }
                 if(this.a.isDown){             
-                        if(this.yoMismo.anims.getCurrentKey()!='walk' &&  this.yoMismo.anims.getCurrentKey()!='hurting' && this.yoMismo.anims.getCurrentKey()!='swap'){
-                                this.yoMismo.anims.play('walk');
-                        }
-                        if(this.changeMov){
-                            this.changeDirectionX(1 * this.dimValue);
-
-                        }
-                        else  this.changeDirectionX(-1 * this.dimValue);
+                    if(this.yoMismo.anims.getCurrentKey()!='walk' &&  this.yoMismo.anims.getCurrentKey()!='hurting' && this.yoMismo.anims.getCurrentKey()!='swap'){
+                            this.yoMismo.anims.play('walk');
+                    }
+                    this.changeDirectionX(-this.changeMov* this.dimValue);
 
                     this.horizontalMove();
                 }else if(this.d.isDown){
-                        if(this.yoMismo.anims.getCurrentKey()!='walk'&& this.yoMismo.anims.getCurrentKey()!='hurting' && this.yoMismo.anims.getCurrentKey()!='swap'){
-                            this.yoMismo.anims.play('walk');
-                            //this.changeAnim=false;
-                        }    
-                        if(this.changeMov){
-                            this.changeDirectionX(-1 * this.dimValue);
-
-                        }
-                        else  this.changeDirectionX(1 * this.dimValue);          
-                        this.horizontalMove();    
+                    if(this.yoMismo.anims.getCurrentKey()!='walk'&& this.yoMismo.anims.getCurrentKey()!='hurting' && this.yoMismo.anims.getCurrentKey()!='swap'){
+                        this.yoMismo.anims.play('walk');
+                        //this.changeAnim=false;
+                    }    
+                    this.changeDirectionX(this.changeMov * this.dimValue);          
+                    this.horizontalMove();    
                     }
                     else{
                         this.stop();
@@ -399,7 +391,7 @@ export default class Prota extends Personaje {
         return this.finalScore;
     }
     invertMov(){
-        this.changeMov=true;
+        this.changeMov= -1;
     }
 
 }
