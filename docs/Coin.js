@@ -1,4 +1,5 @@
 import PickMe from './PickMe.js';
+//moneda, te da puntos
 export default class Coin extends PickMe{
     constructor(scene,x, y,points, sprite, sound){
         super(scene, x, y, sprite, sound);

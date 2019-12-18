@@ -6,7 +6,6 @@ export default class Reizen extends Enemy{
         super(scene,x,y, speed, dir, points,damage,lives,group ,sprite);
         this.followPlayer=false;
         this.distance=200;
-        //this.vel=speed;//necesario porque cuando sigue al jugador vamos a disminuir su velocidad
         this.changeDirectionX(-1);
         this.body.setAllowGravity(false);//como vuelas no tienes gravedad
         this.scene.anims.create({ //esto no va en game, para no tenerlo cada vez que creamos uno
@@ -27,16 +26,14 @@ export default class Reizen extends Enemy{
             else if(this.x>=this.scene.limits.right) this.changeDirectionX(-1);
             if(Phaser.Math.Distance.Between(this.x,this.y,this.scene.player.getX(),this.scene.player.getY())<this.distance) {
                 this.followPlayer=true;
-                //this.speed=this.vel/1.5;
             }
             
         }
-        //aqui está a una distancia pequeña(this.distance) del jugador y le sigue,
+        //aqui esta a una distancia pequeña(this.distance) del jugador y le sigue,
         // si se aleja demasiado deja de seguirle
         else{
+            //aqui deja de seguirle
             if(Phaser.Math.Distance.Between(this.x,this.y,this.scene.player.getX(),this.scene.player.getY())>this.distance) {
-                //this.speed=this.vel;
-
                 this.followPlayer=false;
                 if(this.scene.player.getDimValue()===1) {
                     this.changeDirectionX(-1);
@@ -50,6 +47,7 @@ export default class Reizen extends Enemy{
                 this.verticalMove();
 
             }
+            //aqui le sigue
             else{
                 this.horizontalMove();
                 this.verticalMove();
@@ -68,47 +66,7 @@ export default class Reizen extends Enemy{
                     this.changeDirectionY(0);
                 } 
             }
-
-        }
-        
+        }        
         this.colisionPlayer();
-
     }
-    /*hurt(){
-        this.lives--;
-        if(this.lives<=0){
-        this.scene.player.addPoint(this.points);
-        this.destroy();
-        }
-    }
-    //si el getFlipped = true signigica que el jugador mira a la izquierda
-    colisionPlayer(){
-        if ( this.scene.physics.overlap(this.scene.player, this)){
-
-            if(!this.scene.player.isDashing() ){
-                if( this.scene.player.isAttacking()){
-                    if(this.getX()<this.scene.player.getX() ){
-                        if( this.scene.player.getFlipped())    this.hurt();
-                        else{
-                            this.scene.player.decreaseHealth(this.damage);
-                        } 
-                        
-                    }
-                    else{
-                        if( !this.scene.player.getFlipped())    this.hurt();
-                        else{
-                            this.scene.player.decreaseHealth(this.damage);
-                        }                         
-                    }
-                }
-                else{
-                    this.scene.player.decreaseHealth(this.damage);
-                } 
-            }
-            else{
-                this.hurt();
-            }
-            
-       }
-    }*/
 }

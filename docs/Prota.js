@@ -59,7 +59,6 @@ export default class Prota extends Personaje {
         this.espadaAtacando.setVisible(false);
         this.shield.setVisible(false);
     
-        this.finalScore=0;
         this.startPos={x: x, y: y};
         this.jumpImpulse = jumpImpulse;
         this.springPicked=false;//para saltar más cuando pillas un spring
@@ -227,8 +226,8 @@ export default class Prota extends Personaje {
 
         }
     
-        //empieza la animacion de cambio de dimension que realmente te cambia de dimension al acabar la animacion
-        if(Phaser.Input.Keyboard.JustDown(this.k) && !this.noChange ){
+        //si se cumplen las condiciones haces la animacion de cambiar de lado (que cuando acabe cambias de lado)
+        if(Phaser.Input.Keyboard.JustDown(this.k) && !this.noChange /*&& this.yoMismo.anims.getCurrentKey()!='hurting'*/ ){
             this.yoMismo.anims.play('swap');
             
         }
@@ -252,7 +251,7 @@ export default class Prota extends Personaje {
         return this.scene.layerPlatform.getTileAtWorldXY(this.x + (this.dimValue * this.scene.dimMargin), this.y) === null;    
     }
 
-    checkSpike(){//comprueba si 
+    checkSpike(){//comprueba si colisionas con los pinchos 
         if(this.scene.layerSpike.getTileAtWorldXY(this.x, this.y) != null){
             this.decreaseHealth(1);
         }
@@ -354,11 +353,11 @@ export default class Prota extends Personaje {
     }
     end(){
         //this.scene.mainTheme.stop();
-        this.finalScore=Math.round((this.points*this.y/10)/Math.round(this.scene.time/1000));//formula que da tu puntuacion final
-        this.scene.addText();
-        this.scene.scene.pause();
-        this.scene.scene.sendToBack();
-        this.scene.scene.run('Death');
+        let finalScore=Math.round((this.points*this.y/10)/Math.round(this.scene.time/1000));//formula que da tu puntuacion final
+        this.scene.endGame(finalScore);
+        this.dies();
+
+        
     }
       //es para poner el texto de si puedes o no dashear
     canDash(){
@@ -385,10 +384,6 @@ export default class Prota extends Personaje {
         }
         this.direction.x = nx;
         
-    }
-    getFinalScore(){
-       
-        return this.finalScore;
     }
     invertMov(){
         this.changeMov *= -1;

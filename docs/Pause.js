@@ -1,4 +1,5 @@
-
+//Menu de Pausa, tiene las opciones de ir al menu y de seguir jugando
+//ademas si se pulsa escape se reanuda partidas
 export default class Pause extends Phaser.Scene {
     constructor(scene) {
         super('Pause');
@@ -18,7 +19,6 @@ export default class Pause extends Phaser.Scene {
         menuButton.on('pointerdown', ()=> { this.scene.stop('Pause'),this.scene.stop('Game')
         ,this.scene.start('Menu')});
 
-        //this.add.text(10, 400, 'Última puntuación: '+this.player.getY(), {font:'100px', fill: '#000'});
       }
       //si se pulsa otra vez escape podemos volver a jugar
       update(){

@@ -1,4 +1,5 @@
 export default class Personaje extends Phaser.GameObjects.Container{
+    //padre de todos los enemigos y del prota, tiene metodos basicos de movimiento, cambio direccion y destruccion
     constructor(scene, x,y, speed, dir, points, lives,sprite){
         super(scene, x, y);   
         this.yoMismo= this.scene.add.sprite(0,0,sprite);

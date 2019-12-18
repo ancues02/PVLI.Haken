@@ -1,4 +1,5 @@
 import PickMe from './PickMe.js';
+//invierte los controles
 export default class changeMov extends PickMe{
     constructor(scene,x, y, sprite, sound){
         super(scene, x, y, sprite, sound);       

@@ -7,7 +7,7 @@ import Reizen from './Reizen.js';
 import Gezi from './Gezi.js';
 import Zoppo from './Zoppo.js'
 import Shield from './Shield.js';
-import changeMov from './changeMov.js'//invierte los controles
+import changeMov from './changeMov.js'
 export default class Game extends Phaser.Scene {
   constructor() {
     super( 'Game' );
@@ -118,6 +118,7 @@ export default class Game extends Phaser.Scene {
     this.zoppo3 = new Zoppo (this, 600, 3050, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet");
 
     this.gezzi = new Gezi (this, 600, 3790, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet");
+    this.gezzi = new Gezi (this, 500, 300, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet");
 
     this.rinne = new Rinne (this, 200, 2400, 500, {x:1, y:0}, 15, 1, 1, this.enemiesGroup,"enemiesSheet");
     this.rinne2 = new Rinne (this, 1000, 3350, 500, {x:1, y:0}, 15, 1, 1, this.enemiesGroup,"enemiesSheet");
@@ -206,30 +207,40 @@ export default class Game extends Phaser.Scene {
     if (this.textChange.y>=5830)this.textChange.y=5830;
     this.textChange.text = 'Change Side: ' + this.player.canChange();
     
-}
-
+  }
+  //hacemos que deje de detectar que estas pulsando ESC, pausamos la musica y cambiamos la escena
   managePause() {
-    
     this.mainTheme.pause();
+    this.escape.isDown=false;
+    this.changeScene('Pause')
+  }
+  //cambiamos la escena al nombre que nos llegue
+  changeScene(nameScene){
     this.scene.pause();
     this.scene.sendToBack();
-    this.scene.run('Pause');
-    this.escape.isDown=false;//para que no detecte que estas pulsando escape
-  }
-
-  changeScene(nameScene){
-    this.mainTheme.pause();
-    this.scene.stop();
-    this.scene.start(nameScene);
+    this.scene.run(nameScene);
 
   }
   //pone un texto que muestra tu puntuacion final ((puntos * (profundidad/10))/tiempo) 
-  addText(){
-    this.textFinalScore = this.add.text(this.cameras.main.left, this.player.getY());
+  // y otro de si ganas o pierdes y luego cambiamos a la escena Death
+  endGame(finalScore){
+    let y=this.player.getY();
+    if(y>6300) y=6000;
+    this.textm = this.add.text(400, y-100);
+    if(y>=6000){
+      this.textm.text = 'You Win!!!';
+    }
+    else this.textm.text = 'You Lose';
+    this.textm.setFontSize(100);
+    this.textm.setColor('#ffcc00');
+    
+    this.textFinalScore = this.add.text(400, y);
     this.textFinalScore.setFontSize(100);
-    this.textFinalScore.x=400;
-    this.textFinalScore.y=this.player.getY()-this.cameras.main.width/4+330;
-    this.textFinalScore.text = 'Final Score ' + this.player.getFinalScore();
+    this.textFinalScore.setColor('#ffcc00');
+    this.textFinalScore.text = 'Final Score ' + finalScore;
+
+    this.mainTheme.stop();
+    this.changeScene('Death');
   }
 
   update(time, delta) { 
@@ -239,12 +250,10 @@ export default class Game extends Phaser.Scene {
     this.time += Math.round(delta); 
     
     this.updateScore();
-    
-    
+
     if(this.escape.isDown){
       this.managePause();
     }
-
   
   }
 }
