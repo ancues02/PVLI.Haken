@@ -9,7 +9,13 @@ export default class Gezi extends Enemy  {
         this.body.setAllowGravity(false);
         this.goDown=true;
         this.startMove=false;
-       
+        this.scene.anims.create({
+            key: 'geziAnim',
+            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 6, end: 7}),
+            frameRate: 3,
+            repeat: -1
+        });
+        this.yoMismo.anims.play('geziAnim');
     }
     
     preUpdate(){

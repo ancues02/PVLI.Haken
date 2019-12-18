@@ -30,6 +30,7 @@ export default class Game extends Phaser.Scene {
     //Spritesheets para animaciones
     this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 48, frameHeight: 61});
     this.load.spritesheet('coinAnim','./coin.png', { frameWidth: 46, frameHeight: 46 });
+    this.load.spritesheet('enemiesSheet', './enemiesSheet.png',  { frameWidth: 70, frameHeight: 80});
 
     //Carga del .json
     this.load.tilemapTiledJSON("tilemap","./Mapa2.json");
@@ -111,17 +112,17 @@ export default class Game extends Phaser.Scene {
     this.enemiesGroup = this.add.group();
     this.enemiesGroupNoCollision= this.add.group();
 
-    this.zoppo = new Zoppo (this, 1000, 350, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"zoppo");
-    this.zoppo2 = new Zoppo (this, 100, 3050, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"zoppo");
-    this.zoppo3 = new Zoppo (this, 600, 3050, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"zoppo");
+    this.zoppo = new Zoppo (this, 1000, 350, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet");
+    this.zoppo2 = new Zoppo (this, 100, 3050, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet");
+    this.zoppo3 = new Zoppo (this, 600, 3050, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet");
 
-    this.gezzi = new Gezi (this, 600, 3790, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"gezi");
+    this.gezzi = new Gezi (this, 600, 3790, 200, {x:1, y:0}, 10, 1, 1, this.enemiesGroup,"enemiesSheet");
 
-    this.rinne = new Rinne (this, 200, 2400, 500, {x:1, y:0}, 15, 1, 1, this.enemiesGroup,"rinne");
-    this.rinne2 = new Rinne (this, 1000, 3350, 500, {x:1, y:0}, 15, 1, 1, this.enemiesGroup,"rinne");
+    this.rinne = new Rinne (this, 200, 2400, 500, {x:1, y:0}, 15, 1, 1, this.enemiesGroup,"enemiesSheet");
+    this.rinne2 = new Rinne (this, 1000, 3350, 500, {x:1, y:0}, 15, 1, 1, this.enemiesGroup,"enemiesSheet");
 
-    this.reizen = new Reizen (this, 600, 5500, 200, {x:1, y:0}, 20, 1, 1,this.enemiesGroupNoCollision,"reizen");
-    this.reizen2 = new Reizen (this, 1500, 5800, 200, {x:1, y:0}, 20, 1, 1,this.enemiesGroupNoCollision,"reizen");
+    this.reizen = new Reizen (this, 600, 5500, 200, {x:1, y:0}, 20, 1, 1,this.enemiesGroupNoCollision,"enemiesSheet");
+    this.reizen2 = new Reizen (this, 1500, 5800, 200, {x:1, y:0}, 20, 1, 1,this.enemiesGroupNoCollision,"enemiesSheet");
 
     //Creacion de pickUps
     this.coin1_1 = new Coin (this, 1050, 250,50, "coinAnim", this.coinSound);

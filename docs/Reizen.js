@@ -9,6 +9,13 @@ export default class Reizen extends Enemy{
         //this.vel=speed;//necesario porque cuando sigue al jugador vamos a disminuir su velocidad
         this.changeDirectionX(-1);
         this.body.setAllowGravity(false);//como vuelas no tienes gravedad
+        this.scene.anims.create({ //esto no va en game, para no tenerlo cada vez que creamos uno
+            key: 'reizenAnim',
+            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 9, end: 10}),
+            frameRate: 3,
+            repeat: -1
+        });
+        this.yoMismo.anims.play('reizenAnim');
         }
 
     preUpdate(){

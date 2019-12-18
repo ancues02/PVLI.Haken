@@ -3,6 +3,19 @@ export default class Zoppo extends Enemy  {
     constructor(scene, x,y, speed, dir, points, damage, lives, group, sprite){
         super(scene,x,y, speed, dir, points, damage,lives, group, sprite);
         this.noFloorMove=10;//para que cambie de direccion cuando no hay suelo
+        this.scene.anims.create({
+            key: 'zoppoAnim',
+            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 0, end: 2 }),
+            frameRate: 2,
+            repeat: -1
+        });
+        this.scene.anims.create({
+            key: 'rinneAnim',
+            frames: this.scene.anims.generateFrameNumbers(sprite, { start: 3, end: 4}),
+            frameRate: 3,
+            repeat: -1
+        });
+        this.startAnim();
     }
 
     preUpdate(){
@@ -19,5 +32,9 @@ export default class Zoppo extends Enemy  {
             }
         }
         super.colisionPlayer();   
+    }
+
+    startAnim(){
+        this.yoMismo.anims.play('zoppoAnim');
     }
 }

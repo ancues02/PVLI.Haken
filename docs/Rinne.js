@@ -22,8 +22,10 @@ export default class Rinne extends Zoppo  {
                 else this.direction.x=-1;
             }
             
-        } 
+        }   
+    }
 
-       
+    startAnim(){
+        this.yoMismo.anims.play('rinneAnim');
     }
 }
