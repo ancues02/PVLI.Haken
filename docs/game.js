@@ -30,7 +30,7 @@ export default class Game extends Phaser.Scene {
     //Spritesheets para animaciones
     this.load.spritesheet('personaje','./Fumiko.png',{frameWidth: 48, frameHeight: 61});
     this.load.spritesheet('coinAnim','./coin.png', { frameWidth: 46, frameHeight: 46 });
-    this.load.spritesheet('enemiesSheet', './enemiesSheet.png',  { frameWidth: 70, frameHeight: 80});
+    this.load.spritesheet('enemiesSheet', './enemiesSheet.png',  { frameWidth: 46, frameHeight: 68});
 
     //Carga del .json
     this.load.tilemapTiledJSON("tilemap","./Mapa2.json");

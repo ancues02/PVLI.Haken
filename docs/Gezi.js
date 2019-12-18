@@ -72,8 +72,8 @@ export default class Gezi extends Enemy  {
                 else if(this.body.onFloor()){//y tiene que ser 1
                     this.body.angle=0;
                     this.angle=0;
-                    if(this.direction.x===1)   this.yoMismo.setFlipX(true);
-                    else this.yoMismo.setFlipX(false);
+                    if(this.direction.x===1)   this.yoMismo.setFlipX(false);
+                    else this.yoMismo.setFlipX(true);
                     //console.log("ENTRO EN FLOOR")
                     if(this.body.onWall()){
                         //this.suelo=false;
