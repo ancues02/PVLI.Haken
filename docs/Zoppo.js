@@ -3,7 +3,7 @@ import Enemy from './Enemy.js';
 export default class Zoppo extends Enemy  {
     constructor(scene, x,y, speed, dir, points, damage, lives, group, sprite){
         super(scene,x,y, speed, dir, points, damage,lives, group, sprite);
-        this.noFloorMove=10;//se usa para cambiar de direccion y que no caiga
+        this.noFloorMove=15;//se usa para cambiar de direccion y que no caiga
         this.scene.anims.create({
             key: 'zoppoAnim',
             frames: this.scene.anims.generateFrameNumbers(sprite, { start: 0, end: 2 }),
@@ -16,7 +16,7 @@ export default class Zoppo extends Enemy  {
     preUpdate(){
         this.horizontalMove();//lo movemos
         //para cambiar de direccion si no hay suelo o encuentra un muro
-        if(this.body.onFloor()===false && this.body.onWall()===false) {
+        if(this.body.onFloor()===false || this.body.onWall()===true) {
             console.log("hols")
             if(this.direction.x===1){
                 this.x-=this.noFloorMove;
